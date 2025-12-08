@@ -1,0 +1,35 @@
+{
+  "id": "11",
+  "title": "Cross Products and Linear Transformations",
+  "lesson_title": "Cross products in the light of linear transformations",
+  "objectives": [
+    "Understand the determinant formula for cross products",
+    "Connect cross products to duality"
+  ],
+  "cards": [
+    {
+      "uid": "11-001",
+      "front": "How do you compute the 3D cross product using a determinant?",
+      "back": "v × w = det([î  v₁  w₁])\n              ([ĵ  v₂  w₂])\n              ([k̂  v₃  w₃])\n\nExpand along the first column with basis vectors î, ĵ, k̂.",
+      "tags": ["ch11", "cross-product", "computation"]
+    },
+    {
+      "uid": "11-002",
+      "front": "What is the formula for v × w in terms of components?",
+      "back": "v × w = î(v₂w₃ - v₃w₂) + ĵ(v₃w₁ - v₁w₃) + k̂(v₁w₂ - v₂w₁)\n\nOr as a vector:\n[v₂w₃ - v₃w₂]\n[v₃w₁ - v₁w₃]\n[v₁w₂ - v₂w₁]",
+      "tags": ["ch11", "cross-product", "formula"]
+    },
+    {
+      "uid": "11-003",
+      "front": "How does duality explain the cross product?",
+      "back": "Treating det([u, v, w]) as a linear function of u (with v, w fixed), there exists a dual vector p such that:\n\np · u = det([u, v, w])\n\nThis dual vector p is exactly v × w.",
+      "tags": ["ch11", "cross-product", "duality"]
+    },
+    {
+      "uid": "11-004",
+      "front": "Why does the determinant formula give a vector perpendicular to both inputs?",
+      "back": "The dual vector (cross product) must give zero when dotted with v or w (since det is zero when two columns are identical).\n\nZero dot product means perpendicular.",
+      "tags": ["ch11", "cross-product", "insight"]
+    }
+  ]
+}

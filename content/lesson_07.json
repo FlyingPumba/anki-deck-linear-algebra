@@ -1,0 +1,60 @@
+{
+  "id": "07",
+  "title": "Inverse Matrices, Column Space, and Null Space",
+  "lesson_title": "Inverse matrices, column space, and null space",
+  "objectives": [
+    "Understand and compute inverse matrices",
+    "Define rank, column space, and null space",
+    "Solve systems of linear equations"
+  ],
+  "cards": [
+    {
+      "uid": "07-001",
+      "front": "How can a system of linear equations be written in matrix form?",
+      "back": "Ax = v\n\nWhere A is the coefficient matrix, x is the vector of unknowns, and v is the output vector.\n\nSolving means finding which input x transforms to output v.",
+      "tags": ["ch07", "linear-systems", "definition"]
+    },
+    {
+      "uid": "07-002",
+      "front": "What is the inverse matrix A⁻¹?",
+      "back": "The unique transformation that undoes A.\n\nA⁻¹A = I (identity matrix)\n\nGeometrically: playing the transformation in reverse.",
+      "tags": ["ch07", "inverse", "definition"]
+    },
+    {
+      "uid": "07-003",
+      "front": "When does the inverse matrix A⁻¹ exist?",
+      "back": "When det(A) ≠ 0.\n\nThe transformation must not squish space to a lower dimension. If det(A) = 0, there's no inverse.",
+      "tags": ["ch07", "inverse", "existence"]
+    },
+    {
+      "uid": "07-004",
+      "front": "How do you solve Ax = v using the inverse?",
+      "back": "x = A⁻¹v\n\nMultiply both sides by A⁻¹ on the left:\nA⁻¹(Ax) = A⁻¹v\nIx = A⁻¹v\nx = A⁻¹v",
+      "tags": ["ch07", "linear-systems", "solving"]
+    },
+    {
+      "uid": "07-005",
+      "front": "What is the rank of a matrix?",
+      "back": "The number of dimensions in the transformation's output.\n\n- Rank 1: output is a line\n- Rank 2: output is a plane\n- Full rank: rank equals number of columns (det ≠ 0)",
+      "tags": ["ch07", "rank", "definition"]
+    },
+    {
+      "uid": "07-006",
+      "front": "What is the column space of a matrix?",
+      "back": "The set of all possible output vectors; the span of the columns of the matrix.\n\nIt represents where all vectors can land after the transformation.",
+      "tags": ["ch07", "column-space", "definition"]
+    },
+    {
+      "uid": "07-007",
+      "front": "What is the null space (kernel) of a matrix?",
+      "back": "The set of all vectors that land on the origin after the transformation.\n\nFor Ax = 0, the null space contains all solutions x.",
+      "tags": ["ch07", "null-space", "definition"]
+    },
+    {
+      "uid": "07-008",
+      "front": "When does Ax = v have a solution if det(A) = 0?",
+      "back": "Only if v lies within the column space of A.\n\nThe output v must be reachable by the transformation, even though the transformation squishes space.",
+      "tags": ["ch07", "linear-systems", "existence"]
+    }
+  ]
+}

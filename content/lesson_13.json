@@ -1,0 +1,42 @@
+{
+  "id": "13",
+  "title": "Change of Basis",
+  "lesson_title": "Change of basis",
+  "objectives": [
+    "Understand different coordinate systems",
+    "Translate vectors between bases",
+    "Transform matrices between bases"
+  ],
+  "cards": [
+    {
+      "uid": "13-001",
+      "front": "What is a change of basis?",
+      "back": "Converting how a vector is described between two different coordinate systems with different basis vectors.\n\nThe same geometric vector can have different numerical coordinates depending on your choice of basis.",
+      "tags": ["ch13", "change-of-basis", "definition"]
+    },
+    {
+      "uid": "13-002",
+      "front": "How do you translate coordinates from \"their\" basis to \"your\" basis?",
+      "back": "Create a matrix P whose columns are their basis vectors expressed in your coordinates.\n\nMultiply: (your coordinates) = P × (their coordinates)",
+      "tags": ["ch13", "change-of-basis", "translation"]
+    },
+    {
+      "uid": "13-003",
+      "front": "How do you translate from \"your\" basis to \"their\" basis?",
+      "back": "Use the inverse matrix P⁻¹.\n\n(their coordinates) = P⁻¹ × (your coordinates)",
+      "tags": ["ch13", "change-of-basis", "translation"]
+    },
+    {
+      "uid": "13-004",
+      "front": "What does the expression A⁻¹MA represent?",
+      "back": "The same transformation M expressed in a different coordinate system.\n\n1. A⁻¹: translate input to your coordinates\n2. M: apply transformation in your coordinates\n3. A: translate output to their coordinates\n\nThis is called a similarity transformation or conjugation.",
+      "tags": ["ch13", "change-of-basis", "similarity"]
+    },
+    {
+      "uid": "13-005",
+      "front": "Why is change of basis useful?",
+      "back": "Some bases make certain transformations simpler.\n\nFor example, choosing eigenvectors as a basis can turn a complex matrix into a simple diagonal matrix.",
+      "tags": ["ch13", "change-of-basis", "insight"]
+    }
+  ]
+}

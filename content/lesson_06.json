@@ -1,0 +1,54 @@
+{
+  "id": "06",
+  "title": "The Determinant",
+  "lesson_title": "The determinant",
+  "objectives": [
+    "Understand the geometric meaning of the determinant",
+    "Compute 2×2 and 3×3 determinants",
+    "Interpret sign and zero determinants"
+  ],
+  "cards": [
+    {
+      "uid": "06-001",
+      "front": "What is the geometric meaning of the determinant?",
+      "back": "The factor by which a linear transformation changes areas (2D) or volumes (3D).\n\nA determinant of 3 means all areas are tripled. A determinant of 0.5 means all areas are halved.",
+      "tags": ["ch06", "determinant", "definition"]
+    },
+    {
+      "uid": "06-002",
+      "front": "How do you compute the determinant of a 2×2 matrix?\n\ndet([a  b])\n   ([c  d])",
+      "back": "det = ad - bc\n\nMultiply the diagonals: main diagonal (ad) minus anti-diagonal (bc).",
+      "tags": ["ch06", "determinant", "computation"]
+    },
+    {
+      "uid": "06-003",
+      "front": "What does a positive determinant mean?",
+      "back": "The transformation preserves orientation.\n\nSpace is scaled by that factor, but not \"flipped.\" The basis vectors maintain their relative handedness.",
+      "tags": ["ch06", "determinant", "sign"]
+    },
+    {
+      "uid": "06-004",
+      "front": "What does a negative determinant mean?",
+      "back": "The transformation inverts orientation (like flipping a sheet of paper).\n\nThe absolute value gives the area/volume scaling factor.",
+      "tags": ["ch06", "determinant", "sign"]
+    },
+    {
+      "uid": "06-005",
+      "front": "What does a determinant of zero mean?",
+      "back": "The transformation squishes space into a lower dimension (a line, plane, or point).\n\nThis indicates the matrix columns are linearly dependent. The transformation is not invertible.",
+      "tags": ["ch06", "determinant", "zero"]
+    },
+    {
+      "uid": "06-006",
+      "front": "What is the determinant of a product of matrices?\n\ndet(M₁M₂) = ?",
+      "back": "det(M₁M₂) = det(M₁) × det(M₂)\n\nThe scaling factors multiply. If M₁ triples area and M₂ doubles it, the composition multiplies area by 6.",
+      "tags": ["ch06", "determinant", "properties"]
+    },
+    {
+      "uid": "06-007",
+      "front": "How do you determine orientation in 3D using the right-hand rule?",
+      "back": "If the transformed basis vectors still follow the right-hand rule (index finger→î, middle→ĵ, thumb→k̂), the determinant is positive.\n\nOtherwise, the determinant is negative.",
+      "tags": ["ch06", "determinant", "3d"]
+    }
+  ]
+}

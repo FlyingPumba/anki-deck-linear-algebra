@@ -1,0 +1,40 @@
+{
+  "id": "15",
+  "title": "Quick Eigenvalue Computation",
+  "lesson_title": "A quick trick for computing eigenvalues",
+  "objectives": [
+    "Use trace and determinant to find 2×2 eigenvalues quickly"
+  ],
+  "cards": [
+    {
+      "uid": "15-001",
+      "front": "What is the trace of a matrix?",
+      "back": "The sum of the diagonal entries.\n\nFor a 2×2 matrix [a b; c d]: trace = a + d",
+      "tags": ["ch15", "trace", "definition"]
+    },
+    {
+      "uid": "15-002",
+      "front": "How does the trace relate to eigenvalues?",
+      "back": "The trace equals the sum of the eigenvalues.\n\nFor a 2×2 matrix: λ₁ + λ₂ = trace(A)",
+      "tags": ["ch15", "trace", "eigenvalues"]
+    },
+    {
+      "uid": "15-003",
+      "front": "How does the determinant relate to eigenvalues?",
+      "back": "The determinant equals the product of the eigenvalues.\n\nFor a 2×2 matrix: λ₁ × λ₂ = det(A)",
+      "tags": ["ch15", "determinant", "eigenvalues"]
+    },
+    {
+      "uid": "15-004",
+      "front": "What is the quick formula for 2×2 eigenvalues using mean (m) and product (p)?",
+      "back": "If m = (a+d)/2 and p = ad - bc, then:\n\nλ = m ± √(m² - p)\n\nThe eigenvalues are: m + √(m² - p) and m - √(m² - p)",
+      "tags": ["ch15", "eigenvalues", "formula"]
+    },
+    {
+      "uid": "15-005",
+      "front": "Why is the mean-product formula useful?",
+      "back": "It bypasses expanding the characteristic polynomial.\n\nYou can read m directly from the diagonal average and p from the determinant, then immediately compute eigenvalues.",
+      "tags": ["ch15", "eigenvalues", "insight"]
+    }
+  ]
+}

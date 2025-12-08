@@ -1,0 +1,48 @@
+{
+  "id": "01",
+  "title": "Vectors",
+  "lesson_title": "Vectors, what even are they?",
+  "objectives": [
+    "Understand the three perspectives on vectors (physics, CS, math)",
+    "Perform vector addition geometrically and algebraically",
+    "Perform scalar multiplication"
+  ],
+  "cards": [
+    {
+      "uid": "01-001",
+      "front": "What are the three perspectives on vectors?",
+      "back": "1. Physics: Arrows in space defined by length and direction (position doesn't matter)\n2. Computer Science: Ordered lists of numbers\n3. Mathematics: Any object where vector addition and scalar multiplication are sensible operations",
+      "tags": ["ch01", "vectors", "definition"]
+    },
+    {
+      "uid": "01-002",
+      "front": "How do you add two vectors geometrically?",
+      "back": "Place the second vector's tail at the first vector's tip. Draw a new vector from the first vector's tail to the second vector's tip.\n\nThis represents combined movements or steps.",
+      "tags": ["ch01", "vectors", "addition"]
+    },
+    {
+      "uid": "01-003",
+      "front": "How do you add two vectors algebraically?\n\n[x₁, y₁] + [x₂, y₂] = ?",
+      "back": "[x₁ + x₂, y₁ + y₂]\n\nMatch up terms and add them together.",
+      "tags": ["ch01", "vectors", "addition"]
+    },
+    {
+      "uid": "01-004",
+      "front": "What does scalar multiplication do to a vector?",
+      "back": "It stretches, squishes, or reverses the vector.\n\n- Positive scalars: stretch or compress\n- Negative scalars: flip direction plus stretch/compress\n\nFormula: k·[x, y] = [kx, ky]",
+      "tags": ["ch01", "vectors", "scalar-multiplication"]
+    },
+    {
+      "uid": "01-005",
+      "front": "What is the origin in a coordinate system?",
+      "back": "The intersection point of all axes; the starting point for all vectors. In 2D, it's where the x-axis and y-axis meet. All position vectors are drawn from the origin.",
+      "tags": ["ch01", "vectors", "coordinates"]
+    },
+    {
+      "uid": "01-006",
+      "front": "Why is the ability to translate between geometric and numerical representations of vectors important?",
+      "back": "The usefulness of linear algebra comes from the ability to translate back and forth between geometric intuition (arrows, transformations) and numerical computation (coordinates, matrices).",
+      "tags": ["ch01", "vectors", "insight"]
+    }
+  ]
+}

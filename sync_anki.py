@@ -7,13 +7,12 @@ Requirements:
 - AnkiConnect exposes API on http://127.0.0.1:8765
 
 Usage:
-    python sync_anki.py [curriculum.json]
+    python sync_anki.py
 
-If no file is specified, defaults to content/curriculum.json
+Reads config.json and all lesson_*.json files from the content/ directory.
 """
 
 import json
-import sys
 from pathlib import Path
 
 import requests
@@ -58,9 +57,9 @@ def find_note_by_uid(uid_tag: str) -> int | None:
     return note_ids[0] if note_ids else None
 
 
-def get_all_uid_tags_in_deck(deck_name: str) -> set[str]:
-    """Get all uid:* tags from notes in the deck."""
-    query = f'deck:"{deck_name}"'
+def get_all_uid_tags_in_deck_tree(parent_deck: str) -> set[str]:
+    """Get all uid:* tags from notes in the deck and all subdecks."""
+    query = f'deck:"{parent_deck}*"'
     note_ids = invoke("findNotes", {"query": query})
 
     if not note_ids:
@@ -121,54 +120,38 @@ def upsert_note(deck: str, front: str, back: str, tags: list[str], uid_tag: str)
     return "added", note_id
 
 
-def delete_orphaned_notes(deck: str, current_uids: set[str]) -> int:
-    """Delete notes that are no longer in the curriculum."""
-    existing_uids = get_all_uid_tags_in_deck(deck)
-    orphaned_uids = existing_uids - current_uids
+def load_lessons(content_dir: Path) -> tuple[dict, list[dict]]:
+    """Load config and all lesson files from content directory."""
+    config_path = content_dir / "config.json"
+    if not config_path.exists():
+        raise FileNotFoundError(f"Config file not found: {config_path}")
 
-    deleted_count = 0
-    for uid_tag in orphaned_uids:
-        note_id = find_note_by_uid(uid_tag)
-        if note_id:
-            invoke("deleteNotes", {"notes": [note_id]})
-            print(f"  deleted: {uid_tag.replace('uid:', '')}")
-            deleted_count += 1
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
 
-    return deleted_count
+    # Find and sort lesson files
+    lesson_files = sorted(content_dir.glob("lesson_*.json"))
+    if not lesson_files:
+        raise FileNotFoundError(f"No lesson files found in {content_dir}")
 
+    lessons = []
+    for lesson_file in lesson_files:
+        with open(lesson_file, "r", encoding="utf-8") as f:
+            lessons.append(json.load(f))
 
-def get_all_uid_tags_in_deck_tree(parent_deck: str) -> set[str]:
-    """Get all uid:* tags from notes in the deck and all subdecks."""
-    # Use deck:* wildcard to match parent and all children
-    query = f'deck:"{parent_deck}*"'
-    note_ids = invoke("findNotes", {"query": query})
-
-    if not note_ids:
-        return set()
-
-    notes_info = invoke("notesInfo", {"notes": note_ids})
-    uid_tags = set()
-    for note in notes_info:
-        for tag in note.get("tags", []):
-            if tag.startswith("uid:"):
-                uid_tags.add(tag)
-    return uid_tags
+    return config, lessons
 
 
-def sync(curriculum_path: str) -> None:
-    """Sync curriculum JSON to Anki."""
-    path = Path(curriculum_path)
-    if not path.exists():
-        raise FileNotFoundError(f"Curriculum file not found: {curriculum_path}")
+def sync(content_dir: Path) -> None:
+    """Sync all lessons to Anki."""
+    config, lessons = load_lessons(content_dir)
 
-    with open(path, "r", encoding="utf-8") as f:
-        curriculum = json.load(f)
-
-    parent_deck = curriculum.get("deck", "Linear Algebra")
-    course = curriculum.get("course", "Unknown Course")
+    parent_deck = config.get("deck", "Linear Algebra")
+    course = config.get("course", "Unknown Course")
 
     print(f"Syncing: {course}")
     print(f"Parent deck: {parent_deck}")
+    print(f"Lessons: {len(lessons)}")
     print()
 
     # Ensure parent deck exists
@@ -182,41 +165,37 @@ def sync(curriculum_path: str) -> None:
     updated = 0
     unchanged = 0
 
-    for module in curriculum.get("modules", []):
-        module_id = module.get("id", "?")
-        module_title = module.get("title", "Untitled")
+    for lesson in lessons:
+        lesson_id = lesson.get("id", "?")
+        lesson_title = lesson.get("title", "Untitled")
 
-        # Create subdeck for each module: "Parent::Chapter Title"
-        module_deck = f"{parent_deck}::{module_title}"
-        ensure_deck(module_deck)
+        # Create subdeck for each lesson: "Parent::Lesson Title"
+        lesson_deck = f"{parent_deck}::{lesson_title}"
+        ensure_deck(lesson_deck)
 
-        print(f"Chapter {module_id}: {module_title}")
+        print(f"Lesson {lesson_id}: {lesson_title}")
 
-        for lesson in module.get("lessons", []):
-            lesson_id = lesson.get("id", "?")
-            lesson_title = lesson.get("title", "Untitled")
+        for card in lesson.get("cards", []):
+            uid = card["uid"]
+            uid_tag = f"uid:{uid}"
+            current_uids.add(uid_tag)
 
-            for card in lesson.get("cards", []):
-                uid = card["uid"]
-                uid_tag = f"uid:{uid}"
-                current_uids.add(uid_tag)
+            status, note_id = upsert_note(
+                deck=lesson_deck,
+                front=card["front"],
+                back=card["back"],
+                tags=card.get("tags", []),
+                uid_tag=uid_tag
+            )
 
-                status, note_id = upsert_note(
-                    deck=module_deck,
-                    front=card["front"],
-                    back=card["back"],
-                    tags=card.get("tags", []),
-                    uid_tag=uid_tag
-                )
-
-                if status == "added":
-                    print(f"  added: {uid}")
-                    added += 1
-                elif status == "updated":
-                    print(f"  updated: {uid}")
-                    updated += 1
-                else:
-                    unchanged += 1
+            if status == "added":
+                print(f"  added: {uid}")
+                added += 1
+            elif status == "updated":
+                print(f"  updated: {uid}")
+                updated += 1
+            else:
+                unchanged += 1
 
     print()
 
@@ -242,15 +221,13 @@ def sync(curriculum_path: str) -> None:
 
 
 def main():
-    if len(sys.argv) > 1:
-        curriculum_path = sys.argv[1]
-    else:
-        # Default path
-        script_dir = Path(__file__).parent
-        curriculum_path = script_dir / "content" / "curriculum.json"
+    import sys
+
+    script_dir = Path(__file__).parent
+    content_dir = script_dir / "content"
 
     try:
-        sync(str(curriculum_path))
+        sync(content_dir)
     except RuntimeError as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)

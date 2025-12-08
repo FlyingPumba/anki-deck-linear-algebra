@@ -1,0 +1,42 @@
+{
+  "id": "04",
+  "title": "Matrix Multiplication as Composition",
+  "lesson_title": "Matrix multiplication as composition",
+  "objectives": [
+    "Understand matrix multiplication as composition of transformations",
+    "Compute matrix products",
+    "Understand non-commutativity and associativity"
+  ],
+  "cards": [
+    {
+      "uid": "04-001",
+      "front": "What does matrix multiplication represent geometrically?",
+      "back": "Composition of linear transformations.\n\nMultiplying matrices M₂M₁ means: first apply M₁, then apply M₂. The result is a single matrix representing both transformations combined.",
+      "tags": ["ch04", "matrix-multiplication", "insight"]
+    },
+    {
+      "uid": "04-002",
+      "front": "In which order do you read matrix multiplication M₂M₁?",
+      "back": "Right to left.\n\nM₂M₁ means: first apply M₁ (right), then apply M₂ (left).\n\nThis follows function notation: f(g(x)) applies g first.",
+      "tags": ["ch04", "matrix-multiplication", "order"]
+    },
+    {
+      "uid": "04-003",
+      "front": "How do you compute the product of two 2×2 matrices?\n\n[a b][e f]\n[c d][g h]",
+      "back": "Track where basis vectors land after both transformations:\n\n[ae+bg  af+bh]\n[ce+dg  cf+dh]\n\nEach column shows where the corresponding basis vector ends up.",
+      "tags": ["ch04", "matrix-multiplication", "computation"]
+    },
+    {
+      "uid": "04-004",
+      "front": "Is matrix multiplication commutative?\n\nDoes AB = BA?",
+      "back": "No! Matrix multiplication is NOT commutative.\n\nAB ≠ BA in general.\n\nGeometrically: rotating then shearing gives a different result than shearing then rotating.",
+      "tags": ["ch04", "matrix-multiplication", "properties"]
+    },
+    {
+      "uid": "04-005",
+      "front": "Is matrix multiplication associative?\n\nDoes (AB)C = A(BC)?",
+      "back": "Yes! Matrix multiplication IS associative.\n\n(AB)C = A(BC)\n\nGeometrically obvious: applying three transformations in sequence gives the same result regardless of how you group them.",
+      "tags": ["ch04", "matrix-multiplication", "properties"]
+    }
+  ]
+}

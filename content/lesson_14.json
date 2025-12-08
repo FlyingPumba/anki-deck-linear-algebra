@@ -1,0 +1,60 @@
+{
+  "id": "14",
+  "title": "Eigenvectors and Eigenvalues",
+  "lesson_title": "Eigenvectors and eigenvalues",
+  "objectives": [
+    "Understand eigenvectors and eigenvalues",
+    "Find eigenvalues using the characteristic polynomial",
+    "Work with eigenbases"
+  ],
+  "cards": [
+    {
+      "uid": "14-001",
+      "front": "What is an eigenvector?",
+      "back": "A non-zero vector that stays on its own span (line through origin) when transformed.\n\nIt only gets stretched, squished, or flipped - never rotated off its line.",
+      "tags": ["ch14", "eigenvector", "definition"]
+    },
+    {
+      "uid": "14-002",
+      "front": "What is an eigenvalue?",
+      "back": "The scalar factor λ by which an eigenvector is stretched or squished during the transformation.\n\nIf v is an eigenvector: Av = λv",
+      "tags": ["ch14", "eigenvalue", "definition"]
+    },
+    {
+      "uid": "14-003",
+      "front": "What is the defining equation for eigenvectors and eigenvalues?",
+      "back": "Av = λv\n\nThe matrix A acting on eigenvector v gives the same result as simply scaling v by λ.",
+      "tags": ["ch14", "eigen", "equation"]
+    },
+    {
+      "uid": "14-004",
+      "front": "How do you find eigenvalues?",
+      "back": "Solve: det(A - λI) = 0\n\nThis is called the characteristic equation. Its solutions are the eigenvalues.",
+      "tags": ["ch14", "eigenvalue", "computation"]
+    },
+    {
+      "uid": "14-005",
+      "front": "What do different eigenvalue values mean geometrically?",
+      "back": "- λ > 1: eigenvector stretched\n- 0 < λ < 1: eigenvector squished\n- λ < 0: eigenvector flipped and scaled\n- λ = 1: eigenvector unchanged\n- λ = 0: eigenvector squished to origin",
+      "tags": ["ch14", "eigenvalue", "geometry"]
+    },
+    {
+      "uid": "14-006",
+      "front": "For a 3D rotation, what is special about the eigenvalue 1?",
+      "back": "The eigenvector with eigenvalue 1 is the axis of rotation.\n\nIt's the only direction that doesn't move during the rotation.",
+      "tags": ["ch14", "eigen", "rotation"]
+    },
+    {
+      "uid": "14-007",
+      "front": "What is an eigenbasis?",
+      "back": "A basis consisting entirely of eigenvectors.\n\nIn this basis, the transformation matrix becomes diagonal, with eigenvalues on the diagonal. This greatly simplifies calculations like matrix powers.",
+      "tags": ["ch14", "eigenbasis", "definition"]
+    },
+    {
+      "uid": "14-008",
+      "front": "Can every matrix be diagonalized (have an eigenbasis)?",
+      "back": "No. A matrix can be diagonalized only if it has enough linearly independent eigenvectors to form a basis.\n\nSome matrices (like shears) don't have enough eigenvectors.",
+      "tags": ["ch14", "diagonalization", "conditions"]
+    }
+  ]
+}

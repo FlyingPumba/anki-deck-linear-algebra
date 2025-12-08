@@ -1,0 +1,42 @@
+{
+  "id": "16",
+  "title": "Abstract Vector Spaces",
+  "lesson_title": "Abstract vector spaces",
+  "objectives": [
+    "Understand vectors as abstract objects",
+    "See functions as vectors",
+    "Recognize the derivative as a linear transformation"
+  ],
+  "cards": [
+    {
+      "uid": "16-001",
+      "front": "What makes something a vector in abstract linear algebra?",
+      "back": "Any object where vector addition and scalar multiplication are sensible operations that satisfy certain axioms.\n\nThe form doesn't matter - arrows, lists of numbers, functions, etc. Only the operations matter.",
+      "tags": ["ch16", "abstract", "definition"]
+    },
+    {
+      "uid": "16-002",
+      "front": "How can functions be viewed as vectors?",
+      "back": "Functions can be added: (f + g)(x) = f(x) + g(x)\nFunctions can be scaled: (cf)(x) = c·f(x)\n\nThese operations parallel coordinate-wise operations on traditional vectors.",
+      "tags": ["ch16", "functions", "vectors"]
+    },
+    {
+      "uid": "16-003",
+      "front": "Why is the derivative a linear transformation?",
+      "back": "It satisfies both properties of linearity:\n\n1. d/dx(f + g) = d/dx(f) + d/dx(g)\n2. d/dx(cf) = c·d/dx(f)\n\nThe derivative takes functions (vectors) to functions (vectors) in a linear way.",
+      "tags": ["ch16", "derivative", "linear-transformation"]
+    },
+    {
+      "uid": "16-004",
+      "front": "What are the vector space axioms for?",
+      "back": "They form a checklist ensuring that definitions of addition and scalar multiplication are \"reasonable.\"\n\nIf your objects satisfy the axioms, all of linear algebra's theorems apply to them automatically.",
+      "tags": ["ch16", "axioms", "purpose"]
+    },
+    {
+      "uid": "16-005",
+      "front": "Why is the abstract view of vectors powerful?",
+      "back": "It unifies diverse mathematical objects under one framework.\n\nResults proven for abstract vector spaces apply to arrows, coordinate lists, functions, polynomials, matrices, and more.",
+      "tags": ["ch16", "abstraction", "insight"]
+    }
+  ]
+}
