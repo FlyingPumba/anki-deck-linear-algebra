@@ -1,36 +1,834 @@
 {
   "course": "Linear Algebra",
-  "deck": "Linear Algebra :: 2025",
+  "deck": "Linear Algebra",
   "modules": [
     {
-      "id": "m1",
-      "title": "Vectors and Geometry",
+      "id": "01",
+      "title": "Vectors",
       "lessons": [
         {
-          "id": "l1",
-          "title": "Vector operations",
+          "id": "main",
+          "title": "Vectors, what even are they?",
           "objectives": [
-            "Add, scale, and interpret vectors geometrically",
-            "Compute dot products and lengths"
+            "Understand the three perspectives on vectors (physics, CS, math)",
+            "Perform vector addition geometrically and algebraically",
+            "Perform scalar multiplication"
           ],
           "cards": [
             {
-              "uid": "m1-l1-001",
-              "front": "What is a vector in R^n?",
-              "back": "An ordered n-tuple of real numbers (x₁, x₂, ..., xₙ), which can represent a point or a directed arrow from the origin.",
-              "tags": ["LA", "m1", "vectors", "definition"]
+              "uid": "01-001",
+              "front": "What are the three perspectives on vectors?",
+              "back": "1. Physics: Arrows in space defined by length and direction (position doesn't matter)\n2. Computer Science: Ordered lists of numbers\n3. Mathematics: Any object where vector addition and scalar multiplication are sensible operations",
+              "tags": ["ch01", "vectors", "definition"]
             },
             {
-              "uid": "m1-l1-002",
-              "front": "What is the geometric meaning of the dot product?",
-              "back": "It relates to lengths and the cosine of the angle between vectors: a·b = ||a|| ||b|| cos(θ).\n\nIf a·b = 0, the vectors are orthogonal (perpendicular).",
-              "tags": ["LA", "m1", "vectors", "dot-product"]
+              "uid": "01-002",
+              "front": "How do you add two vectors geometrically?",
+              "back": "Place the second vector's tail at the first vector's tip. Draw a new vector from the first vector's tail to the second vector's tip.\n\nThis represents combined movements or steps.",
+              "tags": ["ch01", "vectors", "addition"]
             },
             {
-              "uid": "m1-l1-003",
-              "front": "How do you compute the length (norm) of a vector v = (v₁, v₂, ..., vₙ)?",
-              "back": "||v|| = √(v₁² + v₂² + ... + vₙ²)\n\nThis is the Euclidean norm, derived from the dot product: ||v|| = √(v·v)",
-              "tags": ["LA", "m1", "vectors", "norm"]
+              "uid": "01-003",
+              "front": "How do you add two vectors algebraically?\n\n[x₁, y₁] + [x₂, y₂] = ?",
+              "back": "[x₁ + x₂, y₁ + y₂]\n\nMatch up terms and add them together.",
+              "tags": ["ch01", "vectors", "addition"]
+            },
+            {
+              "uid": "01-004",
+              "front": "What does scalar multiplication do to a vector?",
+              "back": "It stretches, squishes, or reverses the vector.\n\n- Positive scalars: stretch or compress\n- Negative scalars: flip direction plus stretch/compress\n\nFormula: k·[x, y] = [kx, ky]",
+              "tags": ["ch01", "vectors", "scalar-multiplication"]
+            },
+            {
+              "uid": "01-005",
+              "front": "What is the origin in a coordinate system?",
+              "back": "The intersection point of all axes; the starting point for all vectors. In 2D, it's where the x-axis and y-axis meet. All position vectors are drawn from the origin.",
+              "tags": ["ch01", "vectors", "coordinates"]
+            },
+            {
+              "uid": "01-006",
+              "front": "Why is the ability to translate between geometric and numerical representations of vectors important?",
+              "back": "The usefulness of linear algebra comes from the ability to translate back and forth between geometric intuition (arrows, transformations) and numerical computation (coordinates, matrices).",
+              "tags": ["ch01", "vectors", "insight"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Linear Combinations, Span, and Basis",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Linear combinations, span, and basis vectors",
+          "objectives": [
+            "Understand linear combinations",
+            "Define and visualize span",
+            "Understand basis vectors and linear independence"
+          ],
+          "cards": [
+            {
+              "uid": "02-001",
+              "front": "What is a linear combination of vectors v and w?",
+              "back": "Scaling two vectors by scalar values and adding them together:\n\nav + bw\n\nwhere a and b are any real numbers.",
+              "tags": ["ch02", "linear-combination", "definition"]
+            },
+            {
+              "uid": "02-002",
+              "front": "What is the span of a set of vectors?",
+              "back": "The collection of all possible vectors obtainable through linear combinations of those vectors.\n\nIt represents all reachable points using only vector addition and scalar multiplication.",
+              "tags": ["ch02", "span", "definition"]
+            },
+            {
+              "uid": "02-003",
+              "front": "What are the standard basis vectors in 2D?",
+              "back": "î (i-hat): unit vector in the x-direction [1, 0]\nĵ (j-hat): unit vector in the y-direction [0, 1]\n\nAny 2D vector can be written as a linear combination of î and ĵ.",
+              "tags": ["ch02", "basis", "definition"]
+            },
+            {
+              "uid": "02-004",
+              "front": "What does it mean for vectors to be linearly dependent?",
+              "back": "At least one vector can be expressed as a linear combination of the others.\n\nRemoving such a vector doesn't reduce the span. The vectors are \"redundant.\"",
+              "tags": ["ch02", "linear-dependence", "definition"]
+            },
+            {
+              "uid": "02-005",
+              "front": "What does it mean for vectors to be linearly independent?",
+              "back": "Each vector contributes something new to the span. No vector can be written as a linear combination of the others.\n\nRemoving any vector would reduce the span.",
+              "tags": ["ch02", "linear-independence", "definition"]
+            },
+            {
+              "uid": "02-006",
+              "front": "What is a basis of a vector space?",
+              "back": "A set of vectors that are:\n1. Linearly independent\n2. Span the entire space\n\nA basis provides a complete coordinate system with no redundancy.",
+              "tags": ["ch02", "basis", "definition"]
+            },
+            {
+              "uid": "02-007",
+              "front": "What is the span of two non-collinear vectors in 2D?",
+              "back": "The entire 2D plane.\n\nTwo vectors that don't lie on the same line can reach any point in the plane through linear combinations.",
+              "tags": ["ch02", "span", "insight"]
+            },
+            {
+              "uid": "02-008",
+              "front": "What do coordinates really represent?",
+              "back": "Coordinates are scalars applied to basis vectors, not absolute positions.\n\nThe vector [3, 2] means 3·î + 2·ĵ, which depends on your choice of basis.",
+              "tags": ["ch02", "coordinates", "insight"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Linear Transformations and Matrices",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Linear transformations and matrices",
+          "objectives": [
+            "Understand what makes a transformation linear",
+            "Connect matrices to linear transformations",
+            "Perform matrix-vector multiplication"
+          ],
+          "cards": [
+            {
+              "uid": "03-001",
+              "front": "What are the two key properties of a linear transformation?",
+              "back": "1. All lines remain lines (no curves)\n2. The origin remains fixed\n\nEquivalently: grid lines remain parallel and evenly spaced.",
+              "tags": ["ch03", "linear-transformation", "definition"]
+            },
+            {
+              "uid": "03-002",
+              "front": "What two algebraic properties must a linear transformation L satisfy?",
+              "back": "1. Additivity: L(v + w) = L(v) + L(w)\n2. Scaling: L(cv) = cL(v)\n\nThese can be combined: L(av + bw) = aL(v) + bL(w)",
+              "tags": ["ch03", "linear-transformation", "properties"]
+            },
+            {
+              "uid": "03-003",
+              "front": "How is a 2D linear transformation completely determined?",
+              "back": "By tracking where the two basis vectors î and ĵ land.\n\nOnce you know where î and ĵ go, you know where every vector goes (since every vector is a linear combination of î and ĵ).",
+              "tags": ["ch03", "linear-transformation", "insight"]
+            },
+            {
+              "uid": "03-004",
+              "front": "How do the columns of a 2×2 matrix relate to a linear transformation?",
+              "back": "The first column is where î lands.\nThe second column is where ĵ lands.\n\n[a  b]  means î→[a,c] and ĵ→[b,d]\n[c  d]",
+              "tags": ["ch03", "matrix", "definition"]
+            },
+            {
+              "uid": "03-005",
+              "front": "How do you compute the matrix-vector product?\n\n[a  b] [x]\n[c  d] [y]",
+              "back": "x·(first column) + y·(second column)\n\n= x·[a,c] + y·[b,d]\n= [ax + by, cx + dy]",
+              "tags": ["ch03", "matrix-multiplication", "computation"]
+            },
+            {
+              "uid": "03-006",
+              "front": "What is the matrix for a 90° counterclockwise rotation?",
+              "back": "[0  -1]\n[1   0]\n\nî lands at [0, 1]\nĵ lands at [-1, 0]",
+              "tags": ["ch03", "rotation", "example"]
+            },
+            {
+              "uid": "03-007",
+              "front": "What is a shear transformation?",
+              "back": "A transformation that keeps one basis vector fixed while tilting the other.\n\nExample (horizontal shear):\n[1  1]  keeps î fixed, moves ĵ to [1,1]\n[0  1]",
+              "tags": ["ch03", "shear", "example"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Matrix Multiplication as Composition",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Matrix multiplication as composition",
+          "objectives": [
+            "Understand matrix multiplication as composition of transformations",
+            "Compute matrix products",
+            "Understand non-commutativity and associativity"
+          ],
+          "cards": [
+            {
+              "uid": "04-001",
+              "front": "What does matrix multiplication represent geometrically?",
+              "back": "Composition of linear transformations.\n\nMultiplying matrices M₂M₁ means: first apply M₁, then apply M₂. The result is a single matrix representing both transformations combined.",
+              "tags": ["ch04", "matrix-multiplication", "insight"]
+            },
+            {
+              "uid": "04-002",
+              "front": "In which order do you read matrix multiplication M₂M₁?",
+              "back": "Right to left.\n\nM₂M₁ means: first apply M₁ (right), then apply M₂ (left).\n\nThis follows function notation: f(g(x)) applies g first.",
+              "tags": ["ch04", "matrix-multiplication", "order"]
+            },
+            {
+              "uid": "04-003",
+              "front": "How do you compute the product of two 2×2 matrices?\n\n[a b][e f]\n[c d][g h]",
+              "back": "Track where basis vectors land after both transformations:\n\n[ae+bg  af+bh]\n[ce+dg  cf+dh]\n\nEach column shows where the corresponding basis vector ends up.",
+              "tags": ["ch04", "matrix-multiplication", "computation"]
+            },
+            {
+              "uid": "04-004",
+              "front": "Is matrix multiplication commutative?\n\nDoes AB = BA?",
+              "back": "No! Matrix multiplication is NOT commutative.\n\nAB ≠ BA in general.\n\nGeometrically: rotating then shearing gives a different result than shearing then rotating.",
+              "tags": ["ch04", "matrix-multiplication", "properties"]
+            },
+            {
+              "uid": "04-005",
+              "front": "Is matrix multiplication associative?\n\nDoes (AB)C = A(BC)?",
+              "back": "Yes! Matrix multiplication IS associative.\n\n(AB)C = A(BC)\n\nGeometrically obvious: applying three transformations in sequence gives the same result regardless of how you group them.",
+              "tags": ["ch04", "matrix-multiplication", "properties"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "title": "Three-Dimensional Linear Transformations",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Three-dimensional linear transformations",
+          "objectives": [
+            "Extend linear transformations to 3D",
+            "Understand 3×3 matrices",
+            "Apply matrix-vector multiplication in 3D"
+          ],
+          "cards": [
+            {
+              "uid": "05-001",
+              "front": "What are the three standard basis vectors in 3D?",
+              "back": "î: [1, 0, 0] - unit vector in x-direction\nĵ: [0, 1, 0] - unit vector in y-direction\nk̂: [0, 0, 1] - unit vector in z-direction",
+              "tags": ["ch05", "3d", "basis"]
+            },
+            {
+              "uid": "05-002",
+              "front": "How is a 3D linear transformation represented as a matrix?",
+              "back": "A 3×3 matrix where:\n- Column 1: where î lands\n- Column 2: where ĵ lands\n- Column 3: where k̂ lands\n\nThese 9 numbers completely describe the transformation.",
+              "tags": ["ch05", "3d", "matrix"]
+            },
+            {
+              "uid": "05-003",
+              "front": "How do you apply a 3×3 matrix to a vector [x, y, z]?",
+              "back": "Multiply each coordinate by its corresponding column and sum:\n\nx·(column 1) + y·(column 2) + z·(column 3)\n\nSame pattern as 2D, extended to three terms.",
+              "tags": ["ch05", "3d", "computation"]
+            },
+            {
+              "uid": "05-004",
+              "front": "Why are 3D matrix transformations important in practice?",
+              "back": "They are essential for computer graphics and robotics.\n\nComplex 3D rotations can be decomposed into sequences of simpler transformations (matrix multiplication).",
+              "tags": ["ch05", "3d", "applications"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "title": "The Determinant",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "The determinant",
+          "objectives": [
+            "Understand the geometric meaning of the determinant",
+            "Compute 2×2 and 3×3 determinants",
+            "Interpret sign and zero determinants"
+          ],
+          "cards": [
+            {
+              "uid": "06-001",
+              "front": "What is the geometric meaning of the determinant?",
+              "back": "The factor by which a linear transformation changes areas (2D) or volumes (3D).\n\nA determinant of 3 means all areas are tripled. A determinant of 0.5 means all areas are halved.",
+              "tags": ["ch06", "determinant", "definition"]
+            },
+            {
+              "uid": "06-002",
+              "front": "How do you compute the determinant of a 2×2 matrix?\n\ndet([a  b])\n   ([c  d])",
+              "back": "det = ad - bc\n\nMultiply the diagonals: main diagonal (ad) minus anti-diagonal (bc).",
+              "tags": ["ch06", "determinant", "computation"]
+            },
+            {
+              "uid": "06-003",
+              "front": "What does a positive determinant mean?",
+              "back": "The transformation preserves orientation.\n\nSpace is scaled by that factor, but not \"flipped.\" The basis vectors maintain their relative handedness.",
+              "tags": ["ch06", "determinant", "sign"]
+            },
+            {
+              "uid": "06-004",
+              "front": "What does a negative determinant mean?",
+              "back": "The transformation inverts orientation (like flipping a sheet of paper).\n\nThe absolute value gives the area/volume scaling factor.",
+              "tags": ["ch06", "determinant", "sign"]
+            },
+            {
+              "uid": "06-005",
+              "front": "What does a determinant of zero mean?",
+              "back": "The transformation squishes space into a lower dimension (a line, plane, or point).\n\nThis indicates the matrix columns are linearly dependent. The transformation is not invertible.",
+              "tags": ["ch06", "determinant", "zero"]
+            },
+            {
+              "uid": "06-006",
+              "front": "What is the determinant of a product of matrices?\n\ndet(M₁M₂) = ?",
+              "back": "det(M₁M₂) = det(M₁) × det(M₂)\n\nThe scaling factors multiply. If M₁ triples area and M₂ doubles it, the composition multiplies area by 6.",
+              "tags": ["ch06", "determinant", "properties"]
+            },
+            {
+              "uid": "06-007",
+              "front": "How do you determine orientation in 3D using the right-hand rule?",
+              "back": "If the transformed basis vectors still follow the right-hand rule (index finger→î, middle→ĵ, thumb→k̂), the determinant is positive.\n\nOtherwise, the determinant is negative.",
+              "tags": ["ch06", "determinant", "3d"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "title": "Inverse Matrices, Column Space, and Null Space",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Inverse matrices, column space, and null space",
+          "objectives": [
+            "Understand and compute inverse matrices",
+            "Define rank, column space, and null space",
+            "Solve systems of linear equations"
+          ],
+          "cards": [
+            {
+              "uid": "07-001",
+              "front": "How can a system of linear equations be written in matrix form?",
+              "back": "Ax = v\n\nWhere A is the coefficient matrix, x is the vector of unknowns, and v is the output vector.\n\nSolving means finding which input x transforms to output v.",
+              "tags": ["ch07", "linear-systems", "definition"]
+            },
+            {
+              "uid": "07-002",
+              "front": "What is the inverse matrix A⁻¹?",
+              "back": "The unique transformation that undoes A.\n\nA⁻¹A = I (identity matrix)\n\nGeometrically: playing the transformation in reverse.",
+              "tags": ["ch07", "inverse", "definition"]
+            },
+            {
+              "uid": "07-003",
+              "front": "When does the inverse matrix A⁻¹ exist?",
+              "back": "When det(A) ≠ 0.\n\nThe transformation must not squish space to a lower dimension. If det(A) = 0, there's no inverse.",
+              "tags": ["ch07", "inverse", "existence"]
+            },
+            {
+              "uid": "07-004",
+              "front": "How do you solve Ax = v using the inverse?",
+              "back": "x = A⁻¹v\n\nMultiply both sides by A⁻¹ on the left:\nA⁻¹(Ax) = A⁻¹v\nIx = A⁻¹v\nx = A⁻¹v",
+              "tags": ["ch07", "linear-systems", "solving"]
+            },
+            {
+              "uid": "07-005",
+              "front": "What is the rank of a matrix?",
+              "back": "The number of dimensions in the transformation's output.\n\n- Rank 1: output is a line\n- Rank 2: output is a plane\n- Full rank: rank equals number of columns (det ≠ 0)",
+              "tags": ["ch07", "rank", "definition"]
+            },
+            {
+              "uid": "07-006",
+              "front": "What is the column space of a matrix?",
+              "back": "The set of all possible output vectors; the span of the columns of the matrix.\n\nIt represents where all vectors can land after the transformation.",
+              "tags": ["ch07", "column-space", "definition"]
+            },
+            {
+              "uid": "07-007",
+              "front": "What is the null space (kernel) of a matrix?",
+              "back": "The set of all vectors that land on the origin after the transformation.\n\nFor Ax = 0, the null space contains all solutions x.",
+              "tags": ["ch07", "null-space", "definition"]
+            },
+            {
+              "uid": "07-008",
+              "front": "When does Ax = v have a solution if det(A) = 0?",
+              "back": "Only if v lies within the column space of A.\n\nThe output v must be reachable by the transformation, even though the transformation squishes space.",
+              "tags": ["ch07", "linear-systems", "existence"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "title": "Nonsquare Matrices",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Nonsquare matrices as transformations between dimensions",
+          "objectives": [
+            "Understand nonsquare matrices as transformations between dimensions",
+            "Interpret matrix dimensions",
+            "Connect to full rank concept"
+          ],
+          "cards": [
+            {
+              "uid": "08-001",
+              "front": "What does an m×n matrix represent?",
+              "back": "A transformation from n-dimensional space to m-dimensional space.\n\n- n columns: n-dimensional input\n- m rows: m-dimensional output",
+              "tags": ["ch08", "nonsquare", "definition"]
+            },
+            {
+              "uid": "08-002",
+              "front": "What does a 3×2 matrix do?",
+              "back": "Transforms 2D vectors into 3D vectors.\n\nThe 2 columns indicate 2D input (2 basis vectors).\nThe 3 rows indicate each basis vector lands in 3D (3 coordinates).",
+              "tags": ["ch08", "nonsquare", "example"]
+            },
+            {
+              "uid": "08-003",
+              "front": "What does a 2×3 matrix do?",
+              "back": "Transforms 3D vectors into 2D vectors.\n\nCompresses information from a higher dimension to a lower dimension.",
+              "tags": ["ch08", "nonsquare", "example"]
+            },
+            {
+              "uid": "08-004",
+              "front": "What does a 1×2 matrix do?",
+              "back": "Transforms 2D vectors into numbers (1D).\n\nMaps vectors to points on a number line. This closely relates to the dot product.",
+              "tags": ["ch08", "nonsquare", "example"]
+            },
+            {
+              "uid": "08-005",
+              "front": "What is full rank for a nonsquare matrix?",
+              "back": "When the rank equals the smaller of the two dimensions.\n\nFor a 3×2 matrix: full rank means rank 2 (the column space is a 2D plane in 3D space, not collapsed to a line).",
+              "tags": ["ch08", "nonsquare", "rank"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "title": "Dot Products and Duality",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Dot products and duality",
+          "objectives": [
+            "Compute dot products numerically",
+            "Understand geometric interpretation",
+            "Connect dot products to linear transformations (duality)"
+          ],
+          "cards": [
+            {
+              "uid": "09-001",
+              "front": "How do you compute the dot product of two vectors?\n\n[a, b] · [c, d] = ?",
+              "back": "Pair coordinates, multiply, and sum:\n\na·c + b·d\n\nExample: [1, 2] · [3, 4] = 1(3) + 2(4) = 11",
+              "tags": ["ch09", "dot-product", "computation"]
+            },
+            {
+              "uid": "09-002",
+              "front": "What is the geometric interpretation of the dot product?",
+              "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.\n\nv · w = ||v|| ||w|| cos(θ)\n\nwhere θ is the angle between them.",
+              "tags": ["ch09", "dot-product", "geometry"]
+            },
+            {
+              "uid": "09-003",
+              "front": "What does the sign of a dot product tell you?",
+              "back": "- Positive: vectors point in similar directions (angle < 90°)\n- Zero: vectors are perpendicular (angle = 90°)\n- Negative: vectors point in opposing directions (angle > 90°)",
+              "tags": ["ch09", "dot-product", "sign"]
+            },
+            {
+              "uid": "09-004",
+              "front": "Is the dot product commutative?\n\nDoes v · w = w · v?",
+              "back": "Yes! Order doesn't matter.\n\nv · w = w · v\n\nProjecting w onto v then scaling gives the same result as the reverse.",
+              "tags": ["ch09", "dot-product", "properties"]
+            },
+            {
+              "uid": "09-005",
+              "front": "What does it mean to dot with a unit vector?",
+              "back": "It computes the projection of your vector onto the unit vector's direction.\n\nThe result is the signed length of the shadow cast onto that line.",
+              "tags": ["ch09", "dot-product", "projection"]
+            },
+            {
+              "uid": "09-006",
+              "front": "What is duality in the context of dot products?",
+              "back": "Every linear transformation from n-dimensional space to numbers corresponds to a unique vector in that space.\n\nComputing the transformation equals taking the dot product with that vector.\n\nA 1×n matrix [a, b, ...] acting on v gives the same result as [a, b, ...] · v.",
+              "tags": ["ch09", "duality", "insight"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Cross Products",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Cross products",
+          "objectives": [
+            "Understand cross products in 2D and 3D",
+            "Compute cross products",
+            "Apply the right-hand rule"
+          ],
+          "cards": [
+            {
+              "uid": "10-001",
+              "front": "What is the 2D cross product of two vectors?",
+              "back": "The signed area of the parallelogram they span.\n\nPositive: second vector is counterclockwise from first\nNegative: second vector is clockwise from first\n\nComputed as det([v₁ w₁; v₂ w₂])",
+              "tags": ["ch10", "cross-product", "2d"]
+            },
+            {
+              "uid": "10-002",
+              "front": "What is the 3D cross product v × w?",
+              "back": "A new vector that is:\n1. Perpendicular to both v and w\n2. Has magnitude equal to the area of the parallelogram formed by v and w\n3. Direction determined by the right-hand rule",
+              "tags": ["ch10", "cross-product", "3d"]
+            },
+            {
+              "uid": "10-003",
+              "front": "How do you apply the right-hand rule for cross products?",
+              "back": "Point your forefinger toward the first vector v.\nPoint your middle finger toward the second vector w.\nYour thumb points in the direction of v × w.",
+              "tags": ["ch10", "cross-product", "right-hand-rule"]
+            },
+            {
+              "uid": "10-004",
+              "front": "Is the cross product commutative?\n\nDoes v × w = w × v?",
+              "back": "No! The cross product is anti-commutative.\n\nv × w = -(w × v)\n\nSwapping the order flips the sign (reverses direction).",
+              "tags": ["ch10", "cross-product", "properties"]
+            },
+            {
+              "uid": "10-005",
+              "front": "What happens to the cross product when vectors are parallel or perpendicular?",
+              "back": "Parallel vectors: cross product is zero (no parallelogram area)\n\nPerpendicular vectors: cross product magnitude is maximal (||v|| × ||w||)",
+              "tags": ["ch10", "cross-product", "special-cases"]
+            },
+            {
+              "uid": "10-006",
+              "front": "How does scaling affect the cross product?\n\n(kv) × w = ?",
+              "back": "(kv) × w = k(v × w)\n\nScaling one vector by k scales the cross product by k (because it scales the parallelogram area by k).",
+              "tags": ["ch10", "cross-product", "properties"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Cross Products and Linear Transformations",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Cross products in the light of linear transformations",
+          "objectives": [
+            "Understand the determinant formula for cross products",
+            "Connect cross products to duality"
+          ],
+          "cards": [
+            {
+              "uid": "11-001",
+              "front": "How do you compute the 3D cross product using a determinant?",
+              "back": "v × w = det([î  v₁  w₁])\n              ([ĵ  v₂  w₂])\n              ([k̂  v₃  w₃])\n\nExpand along the first column with basis vectors î, ĵ, k̂.",
+              "tags": ["ch11", "cross-product", "computation"]
+            },
+            {
+              "uid": "11-002",
+              "front": "What is the formula for v × w in terms of components?",
+              "back": "v × w = î(v₂w₃ - v₃w₂) + ĵ(v₃w₁ - v₁w₃) + k̂(v₁w₂ - v₂w₁)\n\nOr as a vector:\n[v₂w₃ - v₃w₂]\n[v₃w₁ - v₁w₃]\n[v₁w₂ - v₂w₁]",
+              "tags": ["ch11", "cross-product", "formula"]
+            },
+            {
+              "uid": "11-003",
+              "front": "How does duality explain the cross product?",
+              "back": "Treating det([u, v, w]) as a linear function of u (with v, w fixed), there exists a dual vector p such that:\n\np · u = det([u, v, w])\n\nThis dual vector p is exactly v × w.",
+              "tags": ["ch11", "cross-product", "duality"]
+            },
+            {
+              "uid": "11-004",
+              "front": "Why does the determinant formula give a vector perpendicular to both inputs?",
+              "back": "The dual vector (cross product) must give zero when dotted with v or w (since det is zero when two columns are identical).\n\nZero dot product means perpendicular.",
+              "tags": ["ch11", "cross-product", "insight"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Cramer's Rule",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Cramer's rule, explained geometrically",
+          "objectives": [
+            "Understand Cramer's rule geometrically",
+            "Apply Cramer's rule to solve systems"
+          ],
+          "cards": [
+            {
+              "uid": "12-001",
+              "front": "What is Cramer's rule for solving Ax = b?",
+              "back": "For each variable xᵢ:\n\nxᵢ = det(Aᵢ) / det(A)\n\nwhere Aᵢ is matrix A with column i replaced by b.",
+              "tags": ["ch12", "cramers-rule", "formula"]
+            },
+            {
+              "uid": "12-002",
+              "front": "What is the geometric insight behind Cramer's rule?",
+              "back": "Coordinates can be represented using signed areas/volumes instead of dot products.\n\nThe y-coordinate equals the signed area of the parallelogram formed by î and the vector, divided by the unit parallelogram area.",
+              "tags": ["ch12", "cramers-rule", "geometry"]
+            },
+            {
+              "uid": "12-003",
+              "front": "Why does Cramer's rule use determinant ratios?",
+              "back": "When a matrix transforms space, all parallelograms scale by det(A).\n\nSo: transformed area = det(A) × original area\n\nSolving for original coordinates: divide the transformed area by det(A).",
+              "tags": ["ch12", "cramers-rule", "insight"]
+            },
+            {
+              "uid": "12-004",
+              "front": "When does Cramer's rule work?",
+              "back": "Only when det(A) ≠ 0.\n\nThe matrix must be invertible, guaranteeing exactly one solution exists.",
+              "tags": ["ch12", "cramers-rule", "conditions"]
+            },
+            {
+              "uid": "12-005",
+              "front": "Is Cramer's rule computationally efficient?",
+              "back": "No. Gaussian elimination is faster for large systems.\n\nCramer's rule is valuable for understanding the geometric relationship between determinants and coordinates, not for practical computation.",
+              "tags": ["ch12", "cramers-rule", "practicality"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Change of Basis",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Change of basis",
+          "objectives": [
+            "Understand different coordinate systems",
+            "Translate vectors between bases",
+            "Transform matrices between bases"
+          ],
+          "cards": [
+            {
+              "uid": "13-001",
+              "front": "What is a change of basis?",
+              "back": "Converting how a vector is described between two different coordinate systems with different basis vectors.\n\nThe same geometric vector can have different numerical coordinates depending on your choice of basis.",
+              "tags": ["ch13", "change-of-basis", "definition"]
+            },
+            {
+              "uid": "13-002",
+              "front": "How do you translate coordinates from \"their\" basis to \"your\" basis?",
+              "back": "Create a matrix P whose columns are their basis vectors expressed in your coordinates.\n\nMultiply: (your coordinates) = P × (their coordinates)",
+              "tags": ["ch13", "change-of-basis", "translation"]
+            },
+            {
+              "uid": "13-003",
+              "front": "How do you translate from \"your\" basis to \"their\" basis?",
+              "back": "Use the inverse matrix P⁻¹.\n\n(their coordinates) = P⁻¹ × (your coordinates)",
+              "tags": ["ch13", "change-of-basis", "translation"]
+            },
+            {
+              "uid": "13-004",
+              "front": "What does the expression A⁻¹MA represent?",
+              "back": "The same transformation M expressed in a different coordinate system.\n\n1. A⁻¹: translate input to your coordinates\n2. M: apply transformation in your coordinates\n3. A: translate output to their coordinates\n\nThis is called a similarity transformation or conjugation.",
+              "tags": ["ch13", "change-of-basis", "similarity"]
+            },
+            {
+              "uid": "13-005",
+              "front": "Why is change of basis useful?",
+              "back": "Some bases make certain transformations simpler.\n\nFor example, choosing eigenvectors as a basis can turn a complex matrix into a simple diagonal matrix.",
+              "tags": ["ch13", "change-of-basis", "insight"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Eigenvectors and Eigenvalues",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Eigenvectors and eigenvalues",
+          "objectives": [
+            "Understand eigenvectors and eigenvalues",
+            "Find eigenvalues using the characteristic polynomial",
+            "Work with eigenbases"
+          ],
+          "cards": [
+            {
+              "uid": "14-001",
+              "front": "What is an eigenvector?",
+              "back": "A non-zero vector that stays on its own span (line through origin) when transformed.\n\nIt only gets stretched, squished, or flipped - never rotated off its line.",
+              "tags": ["ch14", "eigenvector", "definition"]
+            },
+            {
+              "uid": "14-002",
+              "front": "What is an eigenvalue?",
+              "back": "The scalar factor λ by which an eigenvector is stretched or squished during the transformation.\n\nIf v is an eigenvector: Av = λv",
+              "tags": ["ch14", "eigenvalue", "definition"]
+            },
+            {
+              "uid": "14-003",
+              "front": "What is the defining equation for eigenvectors and eigenvalues?",
+              "back": "Av = λv\n\nThe matrix A acting on eigenvector v gives the same result as simply scaling v by λ.",
+              "tags": ["ch14", "eigen", "equation"]
+            },
+            {
+              "uid": "14-004",
+              "front": "How do you find eigenvalues?",
+              "back": "Solve: det(A - λI) = 0\n\nThis is called the characteristic equation. Its solutions are the eigenvalues.",
+              "tags": ["ch14", "eigenvalue", "computation"]
+            },
+            {
+              "uid": "14-005",
+              "front": "What do different eigenvalue values mean geometrically?",
+              "back": "- λ > 1: eigenvector stretched\n- 0 < λ < 1: eigenvector squished\n- λ < 0: eigenvector flipped and scaled\n- λ = 1: eigenvector unchanged\n- λ = 0: eigenvector squished to origin",
+              "tags": ["ch14", "eigenvalue", "geometry"]
+            },
+            {
+              "uid": "14-006",
+              "front": "For a 3D rotation, what is special about the eigenvalue 1?",
+              "back": "The eigenvector with eigenvalue 1 is the axis of rotation.\n\nIt's the only direction that doesn't move during the rotation.",
+              "tags": ["ch14", "eigen", "rotation"]
+            },
+            {
+              "uid": "14-007",
+              "front": "What is an eigenbasis?",
+              "back": "A basis consisting entirely of eigenvectors.\n\nIn this basis, the transformation matrix becomes diagonal, with eigenvalues on the diagonal. This greatly simplifies calculations like matrix powers.",
+              "tags": ["ch14", "eigenbasis", "definition"]
+            },
+            {
+              "uid": "14-008",
+              "front": "Can every matrix be diagonalized (have an eigenbasis)?",
+              "back": "No. A matrix can be diagonalized only if it has enough linearly independent eigenvectors to form a basis.\n\nSome matrices (like shears) don't have enough eigenvectors.",
+              "tags": ["ch14", "diagonalization", "conditions"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Quick Eigenvalue Computation",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "A quick trick for computing eigenvalues",
+          "objectives": [
+            "Use trace and determinant to find 2×2 eigenvalues quickly"
+          ],
+          "cards": [
+            {
+              "uid": "15-001",
+              "front": "What is the trace of a matrix?",
+              "back": "The sum of the diagonal entries.\n\nFor a 2×2 matrix [a b; c d]: trace = a + d",
+              "tags": ["ch15", "trace", "definition"]
+            },
+            {
+              "uid": "15-002",
+              "front": "How does the trace relate to eigenvalues?",
+              "back": "The trace equals the sum of the eigenvalues.\n\nFor a 2×2 matrix: λ₁ + λ₂ = trace(A)",
+              "tags": ["ch15", "trace", "eigenvalues"]
+            },
+            {
+              "uid": "15-003",
+              "front": "How does the determinant relate to eigenvalues?",
+              "back": "The determinant equals the product of the eigenvalues.\n\nFor a 2×2 matrix: λ₁ × λ₂ = det(A)",
+              "tags": ["ch15", "determinant", "eigenvalues"]
+            },
+            {
+              "uid": "15-004",
+              "front": "What is the quick formula for 2×2 eigenvalues using mean (m) and product (p)?",
+              "back": "If m = (a+d)/2 and p = ad - bc, then:\n\nλ = m ± √(m² - p)\n\nThe eigenvalues are: m + √(m² - p) and m - √(m² - p)",
+              "tags": ["ch15", "eigenvalues", "formula"]
+            },
+            {
+              "uid": "15-005",
+              "front": "Why is the mean-product formula useful?",
+              "back": "It bypasses expanding the characteristic polynomial.\n\nYou can read m directly from the diagonal average and p from the determinant, then immediately compute eigenvalues.",
+              "tags": ["ch15", "eigenvalues", "insight"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Abstract Vector Spaces",
+      "lessons": [
+        {
+          "id": "main",
+          "title": "Abstract vector spaces",
+          "objectives": [
+            "Understand vectors as abstract objects",
+            "See functions as vectors",
+            "Recognize the derivative as a linear transformation"
+          ],
+          "cards": [
+            {
+              "uid": "16-001",
+              "front": "What makes something a vector in abstract linear algebra?",
+              "back": "Any object where vector addition and scalar multiplication are sensible operations that satisfy certain axioms.\n\nThe form doesn't matter - arrows, lists of numbers, functions, etc. Only the operations matter.",
+              "tags": ["ch16", "abstract", "definition"]
+            },
+            {
+              "uid": "16-002",
+              "front": "How can functions be viewed as vectors?",
+              "back": "Functions can be added: (f + g)(x) = f(x) + g(x)\nFunctions can be scaled: (cf)(x) = c·f(x)\n\nThese operations parallel coordinate-wise operations on traditional vectors.",
+              "tags": ["ch16", "functions", "vectors"]
+            },
+            {
+              "uid": "16-003",
+              "front": "Why is the derivative a linear transformation?",
+              "back": "It satisfies both properties of linearity:\n\n1. d/dx(f + g) = d/dx(f) + d/dx(g)\n2. d/dx(cf) = c·d/dx(f)\n\nThe derivative takes functions (vectors) to functions (vectors) in a linear way.",
+              "tags": ["ch16", "derivative", "linear-transformation"]
+            },
+            {
+              "uid": "16-004",
+              "front": "What are the vector space axioms for?",
+              "back": "They form a checklist ensuring that definitions of addition and scalar multiplication are \"reasonable.\"\n\nIf your objects satisfy the axioms, all of linear algebra's theorems apply to them automatically.",
+              "tags": ["ch16", "axioms", "purpose"]
+            },
+            {
+              "uid": "16-005",
+              "front": "Why is the abstract view of vectors powerful?",
+              "back": "It unifies diverse mathematical objects under one framework.\n\nResults proven for abstract vector spaces apply to arrows, coordinate lists, functions, polynomials, matrices, and more.",
+              "tags": ["ch16", "abstraction", "insight"]
             }
           ]
         }

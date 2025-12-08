@@ -137,6 +137,24 @@ def delete_orphaned_notes(deck: str, current_uids: set[str]) -> int:
     return deleted_count
 
 
+def get_all_uid_tags_in_deck_tree(parent_deck: str) -> set[str]:
+    """Get all uid:* tags from notes in the deck and all subdecks."""
+    # Use deck:* wildcard to match parent and all children
+    query = f'deck:"{parent_deck}*"'
+    note_ids = invoke("findNotes", {"query": query})
+
+    if not note_ids:
+        return set()
+
+    notes_info = invoke("notesInfo", {"notes": note_ids})
+    uid_tags = set()
+    for note in notes_info:
+        for tag in note.get("tags", []):
+            if tag.startswith("uid:"):
+                uid_tags.add(tag)
+    return uid_tags
+
+
 def sync(curriculum_path: str) -> None:
     """Sync curriculum JSON to Anki."""
     path = Path(curriculum_path)
@@ -146,15 +164,15 @@ def sync(curriculum_path: str) -> None:
     with open(path, "r", encoding="utf-8") as f:
         curriculum = json.load(f)
 
-    deck = curriculum.get("deck", "Linear Algebra")
+    parent_deck = curriculum.get("deck", "Linear Algebra")
     course = curriculum.get("course", "Unknown Course")
 
     print(f"Syncing: {course}")
-    print(f"Deck: {deck}")
+    print(f"Parent deck: {parent_deck}")
     print()
 
-    # Ensure deck exists
-    ensure_deck(deck)
+    # Ensure parent deck exists
+    ensure_deck(parent_deck)
 
     # Track all UIDs we process
     current_uids: set[str] = set()
@@ -167,7 +185,12 @@ def sync(curriculum_path: str) -> None:
     for module in curriculum.get("modules", []):
         module_id = module.get("id", "?")
         module_title = module.get("title", "Untitled")
-        print(f"Module {module_id}: {module_title}")
+
+        # Create subdeck for each module: "Parent::Chapter Title"
+        module_deck = f"{parent_deck}::{module_title}"
+        ensure_deck(module_deck)
+
+        print(f"Chapter {module_id}: {module_title}")
 
         for lesson in module.get("lessons", []):
             lesson_id = lesson.get("id", "?")
@@ -179,7 +202,7 @@ def sync(curriculum_path: str) -> None:
                 current_uids.add(uid_tag)
 
                 status, note_id = upsert_note(
-                    deck=deck,
+                    deck=module_deck,
                     front=card["front"],
                     back=card["back"],
                     tags=card.get("tags", []),
@@ -197,8 +220,17 @@ def sync(curriculum_path: str) -> None:
 
     print()
 
-    # Delete orphaned notes (cards removed from curriculum)
-    deleted = delete_orphaned_notes(deck, current_uids)
+    # Delete orphaned notes (cards removed from curriculum) across all subdecks
+    existing_uids = get_all_uid_tags_in_deck_tree(parent_deck)
+    orphaned_uids = existing_uids - current_uids
+
+    deleted = 0
+    for uid_tag in orphaned_uids:
+        note_id = find_note_by_uid(uid_tag)
+        if note_id:
+            invoke("deleteNotes", {"notes": [note_id]})
+            print(f"  deleted: {uid_tag.replace('uid:', '')}")
+            deleted += 1
 
     # Summary
     print("=" * 40)
