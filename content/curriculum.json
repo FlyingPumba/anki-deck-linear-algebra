@@ -1,0 +1,40 @@
+{
+  "course": "Linear Algebra",
+  "deck": "Linear Algebra :: 2025",
+  "modules": [
+    {
+      "id": "m1",
+      "title": "Vectors and Geometry",
+      "lessons": [
+        {
+          "id": "l1",
+          "title": "Vector operations",
+          "objectives": [
+            "Add, scale, and interpret vectors geometrically",
+            "Compute dot products and lengths"
+          ],
+          "cards": [
+            {
+              "uid": "m1-l1-001",
+              "front": "What is a vector in R^n?",
+              "back": "An ordered n-tuple of real numbers (x₁, x₂, ..., xₙ), which can represent a point or a directed arrow from the origin.",
+              "tags": ["LA", "m1", "vectors", "definition"]
+            },
+            {
+              "uid": "m1-l1-002",
+              "front": "What is the geometric meaning of the dot product?",
+              "back": "It relates to lengths and the cosine of the angle between vectors: a·b = ||a|| ||b|| cos(θ).\n\nIf a·b = 0, the vectors are orthogonal (perpendicular).",
+              "tags": ["LA", "m1", "vectors", "dot-product"]
+            },
+            {
+              "uid": "m1-l1-003",
+              "front": "How do you compute the length (norm) of a vector v = (v₁, v₂, ..., vₙ)?",
+              "back": "||v|| = √(v₁² + v₂² + ... + vₙ²)\n\nThis is the Euclidean norm, derived from the dot product: ||v|| = √(v·v)",
+              "tags": ["LA", "m1", "vectors", "norm"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[project]
+name = "anki-deck-linear-algebra"
+version = "0.1.0"
+description = "Linear Algebra curriculum synced to Anki"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.32.5",
+]
