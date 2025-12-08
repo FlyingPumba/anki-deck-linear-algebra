@@ -1,6 +1,6 @@
 {
   "id": "15",
-  "title": "Quick Eigenvalue Computation",
+  "title": "Lesson 15: Quick Eigenvalue Computation",
   "lesson_title": "A quick trick for computing eigenvalues",
   "objectives": [
     "Use trace and determinant to find 2×2 eigenvalues quickly"
