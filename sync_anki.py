@@ -97,15 +97,20 @@ def find_note_in_deck_by_front(deck: str, front: str) -> int | None:
     return None
 
 
-def get_all_uid_tags_in_deck_tree(parent_deck: str) -> set[str]:
-    """Get all uid:* tags from notes in the deck and all subdecks."""
+def get_all_notes_in_deck_tree(parent_deck: str) -> list[dict]:
+    """Get all notes from the deck and all subdecks."""
     query = f'deck:"{parent_deck}*"'
     note_ids = invoke("findNotes", {"query": query})
 
     if not note_ids:
-        return set()
+        return []
 
-    notes_info = invoke("notesInfo", {"notes": note_ids})
+    return invoke("notesInfo", {"notes": note_ids})
+
+
+def get_all_uid_tags_in_deck_tree(parent_deck: str) -> set[str]:
+    """Get all uid:* tags from notes in the deck and all subdecks."""
+    notes_info = get_all_notes_in_deck_tree(parent_deck)
     uid_tags = set()
     for note in notes_info:
         for tag in note.get("tags", []):
@@ -202,8 +207,9 @@ def sync(content_dir: Path) -> None:
     # Ensure parent deck exists
     ensure_deck(parent_deck)
 
-    # Track all UIDs we process
+    # Track all UIDs and front texts we process
     current_uids: set[str] = set()
+    current_fronts: set[str] = set()
 
     # Counters
     added = 0
@@ -224,6 +230,7 @@ def sync(content_dir: Path) -> None:
             uid = card["uid"]
             uid_tag = f"uid:{uid}"
             current_uids.add(uid_tag)
+            current_fronts.add(card["front"].strip())
 
             status, note_id = upsert_note(
                 deck=lesson_deck,
@@ -254,6 +261,23 @@ def sync(content_dir: Path) -> None:
         if note_id:
             invoke("deleteNotes", {"notes": [note_id]})
             print(f"  deleted: {uid_tag.replace('uid:', '')}")
+            deleted += 1
+
+    # Also delete notes without uid tags that don't match any current card's front
+    all_notes = get_all_notes_in_deck_tree(parent_deck)
+    for note in all_notes:
+        has_uid = any(tag.startswith("uid:") for tag in note.get("tags", []))
+        if has_uid:
+            continue
+        note_id = note.get("noteId")
+        if not note_id:
+            continue
+        current_front = note.get("fields", {}).get("Front", {}).get("value", "")
+        canon_front = _canonicalize_front(current_front)
+        if canon_front not in current_fronts:
+            invoke("deleteNotes", {"notes": [note_id]})
+            preview = canon_front[:50] + "..." if len(canon_front) > 50 else canon_front
+            print(f"  deleted (no uid): {preview}")
             deleted += 1
 
     # Summary
