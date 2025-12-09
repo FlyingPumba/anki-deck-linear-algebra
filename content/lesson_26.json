@@ -35,7 +35,7 @@
     {
       "uid": "26-005",
       "front": "What is the spectral norm (operator norm) of a matrix?",
-      "back": "\\( ||A||_2 = \\max_{\\vec{x} \\neq 0} \\frac{||A\\vec{x}||_2}{||\\vec{x}||_2} = \\sigma_{\\max}(A) \\)\n\nThe largest singular value. Measures the maximum \"stretching\" the matrix can do.",
+      "back": "The operator norm induced by the \\( \\ell_2 \\) vector norm is:\n\n\\( ||A||_2 = \\max_{\\vec{x} \\neq 0} \\frac{||A\\vec{x}||_2}{||\\vec{x}||_2} = \\sigma_{\\max}(A) \\)\n\nIt is the largest singular value and measures the maximum \"stretching\" the matrix can do in any direction.",
       "tags": ["ch26", "spectral-norm", "definition"]
     },
     {
@@ -67,6 +67,12 @@
       "front": "Why are norms important in mechanistic interpretability?",
       "back": "They let us:\n\n- Bound amplification across layers (spectral norm)\n- Measure \"total weight\" of matrices (Frobenius)\n- Reason about which directions matter most\n- Compare magnitudes meaningfully across components",
       "tags": ["ch26", "norms", "mi-application"]
+    },
+    {
+      "uid": "26-011",
+      "front": "What are some quick mental bounds for \\( ||A||_2 \\)?",
+      "back": "Easy upper bounds:\n\n- \\( ||A||_2 \\leq ||A||_F = \\sqrt{\\sum_{i,j} a_{ij}^2} \\)\n- \\( ||A||_2 \\leq \\sqrt{||A||_1 \\, ||A||_\\infty} \\), where \\( ||A||_1 \\) is max column sum and \\( ||A||_\\infty \\) is max row sum\n\nRule of thumb: if every row sums to at most \\( c \\) in absolute value, then \\( ||A||_2 \\lesssim c \\).",
+      "tags": ["ch26", "spectral-norm", "bounds"]
     }
   ]
 }

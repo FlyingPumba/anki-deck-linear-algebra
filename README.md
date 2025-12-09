@@ -1,6 +1,6 @@
 # Linear Algebra Anki Deck
 
-A comprehensive Linear Algebra curriculum synced to Anki. Lessons 1-16 are based on 3Blue1Brown's "Essence of Linear Algebra" video series. Lessons 17-24 cover additional computational topics. Lessons 25-33 focus on concepts essential for mechanistic interpretability.
+A comprehensive Linear Algebra curriculum synced to Anki. Lessons 1-16 are based on 3Blue1Brown's "Essence of Linear Algebra" video series. Lessons 17-24 cover additional computational topics. Lessons 25-33 focus on concepts essential for mechanistic interpretability, with an optional Lesson 34 bridging to large-scale methods.
 
 ## Prerequisites
 
@@ -51,9 +51,9 @@ The script will:
 | 07 | Inverse Matrices, Column Space, and Null Space |
 | 08 | Nonsquare Matrices |
 | 09 | Dot Products and Duality |
-| 10 | Cross Products |
-| 11 | Cross Products and Linear Transformations |
-| 12 | Cramer's Rule |
+| 10 | Cross Products (optional) |
+| 11 | Cross Products and Linear Transformations (optional) |
+| 12 | Cramer's Rule (optional) |
 | 13 | Change of Basis and Similar Matrices |
 | 14 | Eigenvectors, Eigenvalues, and Diagonalization |
 | 15 | Quick Eigenvalue Computation |
@@ -65,7 +65,7 @@ The script will:
 |--------|-------|
 | 17 | Row Reduction and Echelon Forms |
 | 18 | Matrix Operations (Transpose, Block Matrices) |
-| 19 | Dimension and Subspaces |
+| 19 | Dimension, Subspaces, and the Four Fundamental Subspaces |
 | 20 | Orthogonality |
 | 21 | Gram-Schmidt Process |
 | 22 | Least Squares |
@@ -85,6 +85,27 @@ The script will:
 | 31 | Conditioning and Perturbation Theory |
 | 32 | Kronecker Products and Tensors |
 | 33 | Matrix Calculus for ML |
+
+| 34 | Iterative and Randomized Methods (Optional) |
+
+### Recommended Order for Lessons 20–31 (MI-Aligned)
+
+To emphasize geometry-first intuition and make least squares/PCA feel like inevitable consequences rather than isolated tricks, a good study order for the computational + MI core is:
+
+| Position | Lesson | Topic |
+|----------|--------|-------|
+| 1 | 20 | Orthogonality |
+| 2 | 25 | Projections and Projection Matrices |
+| 3 | 21 | Gram-Schmidt Process |
+| 4 | 29 | QR Decomposition and Numerical Stability |
+| 5 | 22 | Least Squares |
+| 6 | 24 | Singular Value Decomposition |
+| 7 | 28 | Pseudoinverse and Rank-Deficient Systems |
+| 8 | 30 | Low-Rank Approximation and PCA |
+| 9 | 26 | Norms and Operator Norms |
+| 10 | 31 | Conditioning and Perturbation Theory |
+
+For a strictly MI-focused path when time is limited, Lessons 10–12 in Part 1 and Lesson 34 in Part 3 can be treated as optional on a first pass.
 
 ## File Structure
 

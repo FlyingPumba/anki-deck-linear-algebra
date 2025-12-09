@@ -67,6 +67,12 @@
       "front": "Why is matrix calculus important for MI?",
       "back": "Understanding gradients helps:\n\n- Interpret what the model \"wants\" to change\n- Analyze linearized behavior around points\n- Understand optimization dynamics\n- Compute influence functions and attributions\n\nGradients are linear maps; linear algebra applies.",
       "tags": ["ch33", "matrix-calculus", "mi-application"]
+    },
+    {
+      "uid": "33-011",
+      "front": "How do you \"shape-check\" matrix calculus expressions?",
+      "back": "Discipline for avoiding mistakes:\n\n- Always write down shapes (e.g., \\( A \\in \\mathbb{R}^{m \\times n} \\), \\( X \\in \\mathbb{R}^{m \\times n} \\))\n- Gradients have the same shape as the variable you differentiate with respect to\n- Any trace expression \\( \\text{tr}(AXB) \\) must be scalar: inner dimensions must match and result be \\( 1 \\times 1 \\)\n\nIf a gradient or trace has the wrong shape, the formula is wrong.",
+      "tags": ["ch33", "matrix-calculus", "shape-checking"]
     }
   ]
 }

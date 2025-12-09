@@ -65,7 +65,7 @@
     {
       "uid": "20-010",
       "front": "What is the orthogonal complement of a subspace \\( W \\)?",
-      "back": "The set of all vectors orthogonal to every vector in \\( W \\):\n\n\\( W^\\perp = \\{\\vec{v} : \\vec{v} \\cdot \\vec{w} = 0 \\text{ for all } \\vec{w} \\in W\\} \\)\n\nFor a matrix \\( A \\): \\( (\\text{Row space})^\\perp = \\text{Null space} \\)",
+      "back": "The set of all vectors orthogonal to every vector in \\( W \\):\n\n\\( W^\\perp = \\{\\vec{v} : \\vec{v} \\cdot \\vec{w} = 0 \\text{ for all } \\vec{w} \\in W\\} \\)\n\nFor a matrix \\( A \\):\n\n- \\( (\\text{Row}(A))^\\perp = \\text{Null}(A) \\)\n- \\( (\\text{Col}(A))^\\perp = \\text{Null}(A^T) \\)\n\nTogether with rank-nullity, these four spaces give the core \"mental schema\" of linear algebra.",
       "tags": ["ch20", "orthogonal-complement", "definition"]
     }
   ]

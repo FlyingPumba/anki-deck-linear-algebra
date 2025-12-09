@@ -67,6 +67,12 @@
       "front": "What are applications of SVD?",
       "back": "1. Image compression (low-rank approximation)\n\n2. Noise reduction in data\n\n3. Principal Component Analysis (PCA)\n\n4. Recommender systems\n\n5. Solving least-squares problems\n\n6. Computing matrix rank numerically",
       "tags": ["ch24", "svd", "applications"]
+    },
+    {
+      "uid": "24-011",
+      "front": "How does SVD help interpret feature subspaces in mechanistic interpretability?",
+      "back": "Think of \\( A \\) as a weight or activation matrix:\n\n- Columns of \\( V \\) are \"feature directions\" in input space\n- Columns of \\( U \\) show how those features appear across data points or layers\n- Large singular values pick out dominant, stable directions; tiny ones often correspond to noise or superposed features\n\nSVD on activations or weights reveals low-dimensional feature subspaces and superposition structure.",
+      "tags": ["ch24", "svd", "mi-application"]
     }
   ]
 }
