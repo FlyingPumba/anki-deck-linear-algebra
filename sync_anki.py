@@ -14,6 +14,7 @@ Reads config.json and all lesson_*.json files from the content/ directory.
 
 import json
 from pathlib import Path
+import re
 
 import requests
 
@@ -57,21 +58,39 @@ def find_note_by_uid(uid_tag: str) -> int | None:
     return note_ids[0] if note_ids else None
 
 
+def _canonicalize_front(value: str) -> str:
+    """
+    Put Anki's HTML-formatted Front field into a rough text form so we can
+    match it against the plain-text `front` we send when creating notes.
+
+    This is intentionally minimal: handle <br> and remove other tags.
+    """
+    text = value.replace("<br>", "\n").replace("<br />", "\n")
+    text = re.sub(r"<[^>]*>", "", text)
+    text = text.replace("&nbsp;", " ")
+    return text.strip()
+
+
 def find_note_in_deck_by_front(deck: str, front: str) -> int | None:
     """
-    Find a note in a given deck whose Front field matches exactly.
+    Find a note in the course's deck tree whose Front field matches (up to simple HTML formatting).
 
     This is used to upgrade existing notes that predate uid:* tags,
     so we do not create duplicate notes when the content already exists.
     """
-    note_ids = invoke("findNotes", {"query": f'deck:"{deck}"'})
+    # Search across the whole parent deck tree (e.g., "Linear Algebra::*"),
+    # since earlier experiments may have created notes in a slightly different subdeck.
+    parent = deck.split("::", 1)[0]
+    note_ids = invoke("findNotes", {"query": f'deck:"{parent}*"'})
     if not note_ids:
         return None
 
     notes_info = invoke("notesInfo", {"notes": note_ids})
+    target = front.strip()
     for note in notes_info:
         current_front = note.get("fields", {}).get("Front", {}).get("value", "")
-        if current_front == front:
+        canon = _canonicalize_front(current_front)
+        if canon == target:
             # AnkiConnect uses the key "noteId" for the identifier in notesInfo
             return note.get("noteId")
 
@@ -105,7 +124,8 @@ def upsert_note(deck: str, front: str, back: str, tags: list[str], uid_tag: str)
     existing_id = find_note_by_uid(uid_tag)
     if existing_id is None:
         # Handle pre-existing notes that do not yet have a uid:* tag but
-        # already contain the same Front content in this deck.
+        # already contain (up to HTML formatting) the same Front content
+        # somewhere in the course's deck tree.
         existing_id = find_note_in_deck_by_front(deck, front)
     all_tags = tags + [uid_tag]
 
