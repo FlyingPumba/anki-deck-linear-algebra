@@ -4,8 +4,7 @@
   "lesson_title": "Cross products",
   "objectives": [
     "Understand cross products in 2D and 3D",
-    "Compute cross products",
-    "Apply the right-hand rule"
+    "Compute cross products"
   ],
   "cards": [
     {
@@ -17,14 +16,8 @@
     {
       "uid": "10-002",
       "front": "What is the 3D cross product \\( \\vec{v} \\times \\vec{w} \\)?",
-      "back": "A new vector that is:\n\n1. Perpendicular to both \\( \\vec{v} \\) and \\( \\vec{w} \\)\n2. Has magnitude equal to the area of the parallelogram formed by \\( \\vec{v} \\) and \\( \\vec{w} \\)\n3. Direction determined by the right-hand rule",
+      "back": "A new vector that is:\n\n1. Perpendicular to both \\( \\vec{v} \\) and \\( \\vec{w} \\)\n2. Has magnitude equal to the area of the parallelogram formed by \\( \\vec{v} \\) and \\( \\vec{w} \\)\n3. Direction follows an orientation convention (swapping order reverses direction)",
       "tags": ["ch10", "cross-product", "3d"]
-    },
-    {
-      "uid": "10-003",
-      "front": "How do you apply the right-hand rule for cross products?",
-      "back": "Point your forefinger toward the first vector \\( \\vec{v} \\).\nPoint your middle finger toward the second vector \\( \\vec{w} \\).\nYour thumb points in the direction of \\( \\vec{v} \\times \\vec{w} \\).",
-      "tags": ["ch10", "cross-product", "right-hand-rule"]
     },
     {
       "uid": "10-004",
