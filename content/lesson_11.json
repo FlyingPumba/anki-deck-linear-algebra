@@ -10,25 +10,25 @@
     {
       "uid": "11-001",
       "front": "How do you compute the 3D cross product using a determinant?",
-      "back": "v × w = det([î  v₁  w₁])\n              ([ĵ  v₂  w₂])\n              ([k̂  v₃  w₃])\n\nExpand along the first column with basis vectors î, ĵ, k̂.",
+      "back": "\\( \\vec{v} \\times \\vec{w} = \\det \\begin{pmatrix} \\hat{i} & v_1 & w_1 \\\\ \\hat{j} & v_2 & w_2 \\\\ \\hat{k} & v_3 & w_3 \\end{pmatrix} \\)\n\nExpand along the first column with basis vectors \\( \\hat{i}, \\hat{j}, \\hat{k} \\).",
       "tags": ["ch11", "cross-product", "computation"]
     },
     {
       "uid": "11-002",
-      "front": "What is the formula for v × w in terms of components?",
-      "back": "v × w = î(v₂w₃ - v₃w₂) + ĵ(v₃w₁ - v₁w₃) + k̂(v₁w₂ - v₂w₁)\n\nOr as a vector:\n[v₂w₃ - v₃w₂]\n[v₃w₁ - v₁w₃]\n[v₁w₂ - v₂w₁]",
+      "front": "What is the formula for \\( \\vec{v} \\times \\vec{w} \\) in terms of components?",
+      "back": "\\( \\vec{v} \\times \\vec{w} = \\hat{i}(v_2 w_3 - v_3 w_2) + \\hat{j}(v_3 w_1 - v_1 w_3) + \\hat{k}(v_1 w_2 - v_2 w_1) \\)\n\nOr as a vector:\n\\( \\begin{bmatrix} v_2 w_3 - v_3 w_2 \\\\ v_3 w_1 - v_1 w_3 \\\\ v_1 w_2 - v_2 w_1 \\end{bmatrix} \\)",
       "tags": ["ch11", "cross-product", "formula"]
     },
     {
       "uid": "11-003",
       "front": "How does duality explain the cross product?",
-      "back": "Treating det([u, v, w]) as a linear function of u (with v, w fixed), there exists a dual vector p such that:\n\np · u = det([u, v, w])\n\nThis dual vector p is exactly v × w.",
+      "back": "Treating \\( \\det([\\vec{u}, \\vec{v}, \\vec{w}]) \\) as a linear function of \\( \\vec{u} \\) (with \\( \\vec{v}, \\vec{w} \\) fixed), there exists a dual vector \\( \\vec{p} \\) such that:\n\n\\( \\vec{p} \\cdot \\vec{u} = \\det([\\vec{u}, \\vec{v}, \\vec{w}]) \\)\n\nThis dual vector \\( \\vec{p} \\) is exactly \\( \\vec{v} \\times \\vec{w} \\).",
       "tags": ["ch11", "cross-product", "duality"]
     },
     {
       "uid": "11-004",
       "front": "Why does the determinant formula give a vector perpendicular to both inputs?",
-      "back": "The dual vector (cross product) must give zero when dotted with v or w (since det is zero when two columns are identical).\n\nZero dot product means perpendicular.",
+      "back": "The dual vector (cross product) must give zero when dotted with \\( \\vec{v} \\) or \\( \\vec{w} \\) (since det is zero when two columns are identical).\n\nZero dot product means perpendicular.",
       "tags": ["ch11", "cross-product", "insight"]
     }
   ]

@@ -17,13 +17,13 @@
     {
       "uid": "16-002",
       "front": "How can functions be viewed as vectors?",
-      "back": "Functions can be added: (f + g)(x) = f(x) + g(x)\nFunctions can be scaled: (cf)(x) = c·f(x)\n\nThese operations parallel coordinate-wise operations on traditional vectors.",
+      "back": "Functions can be added: \\( (f + g)(x) = f(x) + g(x) \\)\n\nFunctions can be scaled: \\( (cf)(x) = c \\cdot f(x) \\)\n\nThese operations parallel coordinate-wise operations on traditional vectors.",
       "tags": ["ch16", "functions", "vectors"]
     },
     {
       "uid": "16-003",
       "front": "Why is the derivative a linear transformation?",
-      "back": "It satisfies both properties of linearity:\n\n1. d/dx(f + g) = d/dx(f) + d/dx(g)\n2. d/dx(cf) = c·d/dx(f)\n\nThe derivative takes functions (vectors) to functions (vectors) in a linear way.",
+      "back": "It satisfies both properties of linearity:\n\n1. \\( \\frac{d}{dx}(f + g) = \\frac{d}{dx}(f) + \\frac{d}{dx}(g) \\)\n\n2. \\( \\frac{d}{dx}(cf) = c \\cdot \\frac{d}{dx}(f) \\)\n\nThe derivative takes functions (vectors) to functions (vectors) in a linear way.",
       "tags": ["ch16", "derivative", "linear-transformation"]
     },
     {

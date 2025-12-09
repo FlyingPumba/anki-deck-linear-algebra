@@ -16,38 +16,38 @@
     },
     {
       "uid": "03-002",
-      "front": "What two algebraic properties must a linear transformation L satisfy?",
-      "back": "1. Additivity: L(v + w) = L(v) + L(w)\n2. Scaling: L(cv) = cL(v)\n\nThese can be combined: L(av + bw) = aL(v) + bL(w)",
+      "front": "What two algebraic properties must a linear transformation \\( L \\) satisfy?",
+      "back": "1. Additivity: \\( L(\\vec{v} + \\vec{w}) = L(\\vec{v}) + L(\\vec{w}) \\)\n2. Scaling: \\( L(c\\vec{v}) = cL(\\vec{v}) \\)\n\nThese can be combined: \\( L(a\\vec{v} + b\\vec{w}) = aL(\\vec{v}) + bL(\\vec{w}) \\)",
       "tags": ["ch03", "linear-transformation", "properties"]
     },
     {
       "uid": "03-003",
       "front": "How is a 2D linear transformation completely determined?",
-      "back": "By tracking where the two basis vectors î and ĵ land.\n\nOnce you know where î and ĵ go, you know where every vector goes (since every vector is a linear combination of î and ĵ).",
+      "back": "By tracking where the two basis vectors \\( \\hat{i} \\) and \\( \\hat{j} \\) land.\n\nOnce you know where \\( \\hat{i} \\) and \\( \\hat{j} \\) go, you know where every vector goes (since every vector is a linear combination of \\( \\hat{i} \\) and \\( \\hat{j} \\)).",
       "tags": ["ch03", "linear-transformation", "insight"]
     },
     {
       "uid": "03-004",
-      "front": "How do the columns of a 2×2 matrix relate to a linear transformation?",
-      "back": "The first column is where î lands.\nThe second column is where ĵ lands.\n\n[a  b]  means î→[a,c] and ĵ→[b,d]\n[c  d]",
+      "front": "How do the columns of a 2x2 matrix relate to a linear transformation?",
+      "back": "The first column is where \\( \\hat{i} \\) lands.\nThe second column is where \\( \\hat{j} \\) lands.\n\n\\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\) means \\( \\hat{i} \\to [a,c] \\) and \\( \\hat{j} \\to [b,d] \\)",
       "tags": ["ch03", "matrix", "definition"]
     },
     {
       "uid": "03-005",
-      "front": "How do you compute the matrix-vector product?\n\n[a  b] [x]\n[c  d] [y]",
-      "back": "x·(first column) + y·(second column)\n\n= x·[a,c] + y·[b,d]\n= [ax + by, cx + dy]",
+      "front": "How do you compute the matrix-vector product?\n\n\\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} \\)",
+      "back": "\\( x \\cdot (\\text{first column}) + y \\cdot (\\text{second column}) \\)\n\n\\( = x \\cdot [a,c] + y \\cdot [b,d] \\)\n\\( = [ax + by, cx + dy] \\)",
       "tags": ["ch03", "matrix-multiplication", "computation"]
     },
     {
       "uid": "03-006",
       "front": "What is the matrix for a 90° counterclockwise rotation?",
-      "back": "[0  -1]\n[1   0]\n\nî lands at [0, 1]\nĵ lands at [-1, 0]",
+      "back": "\\( \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix} \\)\n\n\\( \\hat{i} \\) lands at \\( [0, 1] \\)\n\\( \\hat{j} \\) lands at \\( [-1, 0] \\)",
       "tags": ["ch03", "rotation", "example"]
     },
     {
       "uid": "03-007",
       "front": "What is a shear transformation?",
-      "back": "A transformation that keeps one basis vector fixed while tilting the other.\n\nExample (horizontal shear):\n[1  1]  keeps î fixed, moves ĵ to [1,1]\n[0  1]",
+      "back": "A transformation that keeps one basis vector fixed while tilting the other.\n\nExample (horizontal shear):\n\\( \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix} \\) keeps \\( \\hat{i} \\) fixed, moves \\( \\hat{j} \\) to \\( [1,1] \\)",
       "tags": ["ch03", "shear", "example"]
     }
   ]

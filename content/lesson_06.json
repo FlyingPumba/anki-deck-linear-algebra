@@ -4,7 +4,7 @@
   "lesson_title": "The determinant",
   "objectives": [
     "Understand the geometric meaning of the determinant",
-    "Compute 2×2 and 3×3 determinants",
+    "Compute 2x2 and 3x3 determinants",
     "Interpret sign and zero determinants"
   ],
   "cards": [
@@ -16,8 +16,8 @@
     },
     {
       "uid": "06-002",
-      "front": "How do you compute the determinant of a 2×2 matrix?\n\ndet([a  b])\n   ([c  d])",
-      "back": "det = ad - bc\n\nMultiply the diagonals: main diagonal (ad) minus anti-diagonal (bc).",
+      "front": "How do you compute the determinant of a 2x2 matrix?\n\n\\( \\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} \\)",
+      "back": "\\( \\det = ad - bc \\)\n\nMultiply the diagonals: main diagonal \\( (ad) \\) minus anti-diagonal \\( (bc) \\).",
       "tags": ["ch06", "determinant", "computation"]
     },
     {
@@ -40,14 +40,14 @@
     },
     {
       "uid": "06-006",
-      "front": "What is the determinant of a product of matrices?\n\ndet(M₁M₂) = ?",
-      "back": "det(M₁M₂) = det(M₁) × det(M₂)\n\nThe scaling factors multiply. If M₁ triples area and M₂ doubles it, the composition multiplies area by 6.",
+      "front": "What is the determinant of a product of matrices?\n\n\\( \\det(M_1 M_2) = ? \\)",
+      "back": "\\( \\det(M_1 M_2) = \\det(M_1) \\times \\det(M_2) \\)\n\nThe scaling factors multiply. If \\( M_1 \\) triples area and \\( M_2 \\) doubles it, the composition multiplies area by 6.",
       "tags": ["ch06", "determinant", "properties"]
     },
     {
       "uid": "06-007",
       "front": "How do you determine orientation in 3D using the right-hand rule?",
-      "back": "If the transformed basis vectors still follow the right-hand rule (index finger→î, middle→ĵ, thumb→k̂), the determinant is positive.\n\nOtherwise, the determinant is negative.",
+      "back": "If the transformed basis vectors still follow the right-hand rule (index finger \\( \\to \\hat{i} \\), middle \\( \\to \\hat{j} \\), thumb \\( \\to \\hat{k} \\)), the determinant is positive.\n\nOtherwise, the determinant is negative.",
       "tags": ["ch06", "determinant", "3d"]
     }
   ]

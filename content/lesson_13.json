@@ -17,19 +17,19 @@
     {
       "uid": "13-002",
       "front": "How do you translate coordinates from \"their\" basis to \"your\" basis?",
-      "back": "Create a matrix P whose columns are their basis vectors expressed in your coordinates.\n\nMultiply: (your coordinates) = P × (their coordinates)",
+      "back": "Create a matrix \\( P \\) whose columns are their basis vectors expressed in your coordinates.\n\nMultiply: \\( \\text{(your coordinates)} = P \\times \\text{(their coordinates)} \\)",
       "tags": ["ch13", "change-of-basis", "translation"]
     },
     {
       "uid": "13-003",
       "front": "How do you translate from \"your\" basis to \"their\" basis?",
-      "back": "Use the inverse matrix P⁻¹.\n\n(their coordinates) = P⁻¹ × (your coordinates)",
+      "back": "Use the inverse matrix \\( P^{-1} \\).\n\n\\( \\text{(their coordinates)} = P^{-1} \\times \\text{(your coordinates)} \\)",
       "tags": ["ch13", "change-of-basis", "translation"]
     },
     {
       "uid": "13-004",
-      "front": "What does the expression A⁻¹MA represent?",
-      "back": "The same transformation M expressed in a different coordinate system.\n\n1. A⁻¹: translate input to your coordinates\n2. M: apply transformation in your coordinates\n3. A: translate output to their coordinates\n\nThis is called a similarity transformation or conjugation.",
+      "front": "What does the expression \\( A^{-1}MA \\) represent?",
+      "back": "The same transformation \\( M \\) expressed in a different coordinate system.\n\n1. \\( A^{-1} \\): translate input to your coordinates\n2. \\( M \\): apply transformation in your coordinates\n3. \\( A \\): translate output to their coordinates\n\nThis is called a similarity transformation or conjugation.",
       "tags": ["ch13", "change-of-basis", "similarity"]
     },
     {

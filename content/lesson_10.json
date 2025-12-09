@@ -11,37 +11,37 @@
     {
       "uid": "10-001",
       "front": "What is the 2D cross product of two vectors?",
-      "back": "The signed area of the parallelogram they span.\n\nPositive: second vector is counterclockwise from first\nNegative: second vector is clockwise from first\n\nComputed as det([v₁ w₁; v₂ w₂])",
+      "back": "The signed area of the parallelogram they span.\n\nPositive: second vector is counterclockwise from first\nNegative: second vector is clockwise from first\n\nComputed as \\( \\det \\begin{pmatrix} v_1 & w_1 \\\\ v_2 & w_2 \\end{pmatrix} \\)",
       "tags": ["ch10", "cross-product", "2d"]
     },
     {
       "uid": "10-002",
-      "front": "What is the 3D cross product v × w?",
-      "back": "A new vector that is:\n1. Perpendicular to both v and w\n2. Has magnitude equal to the area of the parallelogram formed by v and w\n3. Direction determined by the right-hand rule",
+      "front": "What is the 3D cross product \\( \\vec{v} \\times \\vec{w} \\)?",
+      "back": "A new vector that is:\n\n1. Perpendicular to both \\( \\vec{v} \\) and \\( \\vec{w} \\)\n2. Has magnitude equal to the area of the parallelogram formed by \\( \\vec{v} \\) and \\( \\vec{w} \\)\n3. Direction determined by the right-hand rule",
       "tags": ["ch10", "cross-product", "3d"]
     },
     {
       "uid": "10-003",
       "front": "How do you apply the right-hand rule for cross products?",
-      "back": "Point your forefinger toward the first vector v.\nPoint your middle finger toward the second vector w.\nYour thumb points in the direction of v × w.",
+      "back": "Point your forefinger toward the first vector \\( \\vec{v} \\).\nPoint your middle finger toward the second vector \\( \\vec{w} \\).\nYour thumb points in the direction of \\( \\vec{v} \\times \\vec{w} \\).",
       "tags": ["ch10", "cross-product", "right-hand-rule"]
     },
     {
       "uid": "10-004",
-      "front": "Is the cross product commutative?\n\nDoes v × w = w × v?",
-      "back": "No! The cross product is anti-commutative.\n\nv × w = -(w × v)\n\nSwapping the order flips the sign (reverses direction).",
+      "front": "Is the cross product commutative?\n\nDoes \\( \\vec{v} \\times \\vec{w} = \\vec{w} \\times \\vec{v} \\)?",
+      "back": "No! The cross product is anti-commutative.\n\n\\( \\vec{v} \\times \\vec{w} = -(\\vec{w} \\times \\vec{v}) \\)\n\nSwapping the order flips the sign (reverses direction).",
       "tags": ["ch10", "cross-product", "properties"]
     },
     {
       "uid": "10-005",
       "front": "What happens to the cross product when vectors are parallel or perpendicular?",
-      "back": "Parallel vectors: cross product is zero (no parallelogram area)\n\nPerpendicular vectors: cross product magnitude is maximal (||v|| × ||w||)",
+      "back": "Parallel vectors: cross product is zero (no parallelogram area)\n\nPerpendicular vectors: cross product magnitude is maximal \\( (||\\vec{v}|| \\times ||\\vec{w}||) \\)",
       "tags": ["ch10", "cross-product", "special-cases"]
     },
     {
       "uid": "10-006",
-      "front": "How does scaling affect the cross product?\n\n(kv) × w = ?",
-      "back": "(kv) × w = k(v × w)\n\nScaling one vector by k scales the cross product by k (because it scales the parallelogram area by k).",
+      "front": "How does scaling affect the cross product?\n\n\\( (k\\vec{v}) \\times \\vec{w} = ? \\)",
+      "back": "\\( (k\\vec{v}) \\times \\vec{w} = k(\\vec{v} \\times \\vec{w}) \\)\n\nScaling one vector by \\( k \\) scales the cross product by \\( k \\) (because it scales the parallelogram area by \\( k \\)).",
       "tags": ["ch10", "cross-product", "properties"]
     }
   ]

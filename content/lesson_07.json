@@ -11,31 +11,31 @@
     {
       "uid": "07-001",
       "front": "How can a system of linear equations be written in matrix form?",
-      "back": "Ax = v\n\nWhere A is the coefficient matrix, x is the vector of unknowns, and v is the output vector.\n\nSolving means finding which input x transforms to output v.",
+      "back": "\\( A\\vec{x} = \\vec{v} \\)\n\nWhere \\( A \\) is the coefficient matrix, \\( \\vec{x} \\) is the vector of unknowns, and \\( \\vec{v} \\) is the output vector.\n\nSolving means finding which input \\( \\vec{x} \\) transforms to output \\( \\vec{v} \\).",
       "tags": ["ch07", "linear-systems", "definition"]
     },
     {
       "uid": "07-002",
-      "front": "What is the inverse matrix A⁻¹?",
-      "back": "The unique transformation that undoes A.\n\nA⁻¹A = I (identity matrix)\n\nGeometrically: playing the transformation in reverse.",
+      "front": "What is the inverse matrix \\( A^{-1} \\)?",
+      "back": "The unique transformation that undoes \\( A \\).\n\n\\( A^{-1}A = I \\) (identity matrix)\n\nGeometrically: playing the transformation in reverse.",
       "tags": ["ch07", "inverse", "definition"]
     },
     {
       "uid": "07-003",
-      "front": "When does the inverse matrix A⁻¹ exist?",
-      "back": "When det(A) ≠ 0.\n\nThe transformation must not squish space to a lower dimension. If det(A) = 0, there's no inverse.",
+      "front": "When does the inverse matrix \\( A^{-1} \\) exist?",
+      "back": "When \\( \\det(A) \\neq 0 \\).\n\nThe transformation must not squish space to a lower dimension. If \\( \\det(A) = 0 \\), there's no inverse.",
       "tags": ["ch07", "inverse", "existence"]
     },
     {
       "uid": "07-004",
-      "front": "How do you solve Ax = v using the inverse?",
-      "back": "x = A⁻¹v\n\nMultiply both sides by A⁻¹ on the left:\nA⁻¹(Ax) = A⁻¹v\nIx = A⁻¹v\nx = A⁻¹v",
+      "front": "How do you solve \\( A\\vec{x} = \\vec{v} \\) using the inverse?",
+      "back": "\\( \\vec{x} = A^{-1}\\vec{v} \\)\n\nMultiply both sides by \\( A^{-1} \\) on the left:\n\\( A^{-1}(A\\vec{x}) = A^{-1}\\vec{v} \\)\n\\( I\\vec{x} = A^{-1}\\vec{v} \\)\n\\( \\vec{x} = A^{-1}\\vec{v} \\)",
       "tags": ["ch07", "linear-systems", "solving"]
     },
     {
       "uid": "07-005",
       "front": "What is the rank of a matrix?",
-      "back": "The number of dimensions in the transformation's output.\n\n- Rank 1: output is a line\n- Rank 2: output is a plane\n- Full rank: rank equals number of columns (det ≠ 0)",
+      "back": "The number of dimensions in the transformation's output.\n\n- Rank 1: output is a line\n- Rank 2: output is a plane\n- Full rank: rank equals number of columns (\\( \\det \\neq 0 \\))",
       "tags": ["ch07", "rank", "definition"]
     },
     {
@@ -47,13 +47,13 @@
     {
       "uid": "07-007",
       "front": "What is the null space (kernel) of a matrix?",
-      "back": "The set of all vectors that land on the origin after the transformation.\n\nFor Ax = 0, the null space contains all solutions x.",
+      "back": "The set of all vectors that land on the origin after the transformation.\n\nFor \\( A\\vec{x} = \\vec{0} \\), the null space contains all solutions \\( \\vec{x} \\).",
       "tags": ["ch07", "null-space", "definition"]
     },
     {
       "uid": "07-008",
-      "front": "When does Ax = v have a solution if det(A) = 0?",
-      "back": "Only if v lies within the column space of A.\n\nThe output v must be reachable by the transformation, even though the transformation squishes space.",
+      "front": "When does \\( A\\vec{x} = \\vec{v} \\) have a solution if \\( \\det(A) = 0 \\)?",
+      "back": "Only if \\( \\vec{v} \\) lies within the column space of \\( A \\).\n\nThe output \\( \\vec{v} \\) must be reachable by the transformation, even though the transformation squishes space.",
       "tags": ["ch07", "linear-systems", "existence"]
     }
   ]

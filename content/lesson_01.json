@@ -22,14 +22,14 @@
     },
     {
       "uid": "01-003",
-      "front": "How do you add two vectors algebraically?\n\n[x₁, y₁] + [x₂, y₂] = ?",
-      "back": "[x₁ + x₂, y₁ + y₂]\n\nMatch up terms and add them together.",
+      "front": "How do you add two vectors algebraically?\n\n\\( [x_1, y_1] + [x_2, y_2] = ? \\)",
+      "back": "\\( [x_1 + x_2, y_1 + y_2] \\)\n\nMatch up terms and add them together.",
       "tags": ["ch01", "vectors", "addition"]
     },
     {
       "uid": "01-004",
       "front": "What does scalar multiplication do to a vector?",
-      "back": "It stretches, squishes, or reverses the vector.\n\n- Positive scalars: stretch or compress\n- Negative scalars: flip direction plus stretch/compress\n\nFormula: k·[x, y] = [kx, ky]",
+      "back": "It stretches, squishes, or reverses the vector.\n\n- Positive scalars: stretch or compress\n- Negative scalars: flip direction plus stretch/compress\n\nFormula: \\( k \\cdot [x, y] = [kx, ky] \\)",
       "tags": ["ch01", "vectors", "scalar-multiplication"]
     },
     {

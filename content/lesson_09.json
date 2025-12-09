@@ -10,14 +10,14 @@
   "cards": [
     {
       "uid": "09-001",
-      "front": "How do you compute the dot product of two vectors?\n\n[a, b] · [c, d] = ?",
-      "back": "Pair coordinates, multiply, and sum:\n\na·c + b·d\n\nExample: [1, 2] · [3, 4] = 1(3) + 2(4) = 11",
+      "front": "How do you compute the dot product of two vectors?\n\n\\( [a, b] \\cdot [c, d] = ? \\)",
+      "back": "Pair coordinates, multiply, and sum:\n\n\\( a \\cdot c + b \\cdot d \\)\n\nExample: \\( [1, 2] \\cdot [3, 4] = 1(3) + 2(4) = 11 \\)",
       "tags": ["ch09", "dot-product", "computation"]
     },
     {
       "uid": "09-002",
       "front": "What is the geometric interpretation of the dot product?",
-      "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.\n\nv · w = ||v|| ||w|| cos(θ)\n\nwhere θ is the angle between them.",
+      "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.\n\n\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)\n\nwhere \\( \\theta \\) is the angle between them.",
       "tags": ["ch09", "dot-product", "geometry"]
     },
     {
@@ -28,8 +28,8 @@
     },
     {
       "uid": "09-004",
-      "front": "Is the dot product commutative?\n\nDoes v · w = w · v?",
-      "back": "Yes! Order doesn't matter.\n\nv · w = w · v\n\nProjecting w onto v then scaling gives the same result as the reverse.",
+      "front": "Is the dot product commutative?\n\nDoes \\( \\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v} \\)?",
+      "back": "Yes! Order doesn't matter.\n\n\\( \\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v} \\)\n\nProjecting \\( \\vec{w} \\) onto \\( \\vec{v} \\) then scaling gives the same result as the reverse.",
       "tags": ["ch09", "dot-product", "properties"]
     },
     {
@@ -41,7 +41,7 @@
     {
       "uid": "09-006",
       "front": "What is duality in the context of dot products?",
-      "back": "Every linear transformation from n-dimensional space to numbers corresponds to a unique vector in that space.\n\nComputing the transformation equals taking the dot product with that vector.\n\nA 1×n matrix [a, b, ...] acting on v gives the same result as [a, b, ...] · v.",
+      "back": "Every linear transformation from n-dimensional space to numbers corresponds to a unique vector in that space.\n\nComputing the transformation equals taking the dot product with that vector.\n\nA \\( 1 \\times n \\) matrix \\( [a, b, ...] \\) acting on \\( \\vec{v} \\) gives the same result as \\( [a, b, ...] \\cdot \\vec{v} \\).",
       "tags": ["ch09", "duality", "insight"]
     }
   ]

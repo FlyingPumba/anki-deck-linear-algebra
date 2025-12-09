@@ -10,32 +10,32 @@
   "cards": [
     {
       "uid": "08-001",
-      "front": "What does an m×n matrix represent?",
-      "back": "A transformation from n-dimensional space to m-dimensional space.\n\n- n columns: n-dimensional input\n- m rows: m-dimensional output",
+      "front": "What does an \\( m \\times n \\) matrix represent?",
+      "back": "A transformation from n-dimensional space to m-dimensional space.\n\n- \\( n \\) columns: n-dimensional input\n- \\( m \\) rows: m-dimensional output",
       "tags": ["ch08", "nonsquare", "definition"]
     },
     {
       "uid": "08-002",
-      "front": "What does a 3×2 matrix do?",
+      "front": "What does a \\( 3 \\times 2 \\) matrix do?",
       "back": "Transforms 2D vectors into 3D vectors.\n\nThe 2 columns indicate 2D input (2 basis vectors).\nThe 3 rows indicate each basis vector lands in 3D (3 coordinates).",
       "tags": ["ch08", "nonsquare", "example"]
     },
     {
       "uid": "08-003",
-      "front": "What does a 2×3 matrix do?",
+      "front": "What does a \\( 2 \\times 3 \\) matrix do?",
       "back": "Transforms 3D vectors into 2D vectors.\n\nCompresses information from a higher dimension to a lower dimension.",
       "tags": ["ch08", "nonsquare", "example"]
     },
     {
       "uid": "08-004",
-      "front": "What does a 1×2 matrix do?",
+      "front": "What does a \\( 1 \\times 2 \\) matrix do?",
       "back": "Transforms 2D vectors into numbers (1D).\n\nMaps vectors to points on a number line. This closely relates to the dot product.",
       "tags": ["ch08", "nonsquare", "example"]
     },
     {
       "uid": "08-005",
       "front": "What is full rank for a nonsquare matrix?",
-      "back": "When the rank equals the smaller of the two dimensions.\n\nFor a 3×2 matrix: full rank means rank 2 (the column space is a 2D plane in 3D space, not collapsed to a line).",
+      "back": "When the rank equals the smaller of the two dimensions.\n\nFor a \\( 3 \\times 2 \\) matrix: full rank means rank 2 (the column space is a 2D plane in 3D space, not collapsed to a line).",
       "tags": ["ch08", "nonsquare", "rank"]
     }
   ]

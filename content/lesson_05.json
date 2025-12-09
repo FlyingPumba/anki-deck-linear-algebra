@@ -4,26 +4,26 @@
   "lesson_title": "Three-dimensional linear transformations",
   "objectives": [
     "Extend linear transformations to 3D",
-    "Understand 3×3 matrices",
+    "Understand 3x3 matrices",
     "Apply matrix-vector multiplication in 3D"
   ],
   "cards": [
     {
       "uid": "05-001",
       "front": "What are the three standard basis vectors in 3D?",
-      "back": "î: [1, 0, 0] - unit vector in x-direction\nĵ: [0, 1, 0] - unit vector in y-direction\nk̂: [0, 0, 1] - unit vector in z-direction",
+      "back": "\\( \\hat{i} \\): \\( [1, 0, 0] \\) - unit vector in x-direction\n\\( \\hat{j} \\): \\( [0, 1, 0] \\) - unit vector in y-direction\n\\( \\hat{k} \\): \\( [0, 0, 1] \\) - unit vector in z-direction",
       "tags": ["ch05", "3d", "basis"]
     },
     {
       "uid": "05-002",
       "front": "How is a 3D linear transformation represented as a matrix?",
-      "back": "A 3×3 matrix where:\n- Column 1: where î lands\n- Column 2: where ĵ lands\n- Column 3: where k̂ lands\n\nThese 9 numbers completely describe the transformation.",
+      "back": "A 3x3 matrix where:\n\n- Column 1: where \\( \\hat{i} \\) lands\n- Column 2: where \\( \\hat{j} \\) lands\n- Column 3: where \\( \\hat{k} \\) lands\n\nThese 9 numbers completely describe the transformation.",
       "tags": ["ch05", "3d", "matrix"]
     },
     {
       "uid": "05-003",
-      "front": "How do you apply a 3×3 matrix to a vector [x, y, z]?",
-      "back": "Multiply each coordinate by its corresponding column and sum:\n\nx·(column 1) + y·(column 2) + z·(column 3)\n\nSame pattern as 2D, extended to three terms.",
+      "front": "How do you apply a 3x3 matrix to a vector \\( [x, y, z] \\)?",
+      "back": "Multiply each coordinate by its corresponding column and sum:\n\n\\( x \\cdot (\\text{column 1}) + y \\cdot (\\text{column 2}) + z \\cdot (\\text{column 3}) \\)\n\nSame pattern as 2D, extended to three terms.",
       "tags": ["ch05", "3d", "computation"]
     },
     {

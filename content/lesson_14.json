@@ -17,25 +17,25 @@
     {
       "uid": "14-002",
       "front": "What is an eigenvalue?",
-      "back": "The scalar factor λ by which an eigenvector is stretched or squished during the transformation.\n\nIf v is an eigenvector: Av = λv",
+      "back": "The scalar factor \\( \\lambda \\) by which an eigenvector is stretched or squished during the transformation.\n\nIf \\( \\vec{v} \\) is an eigenvector: \\( A\\vec{v} = \\lambda\\vec{v} \\)",
       "tags": ["ch14", "eigenvalue", "definition"]
     },
     {
       "uid": "14-003",
       "front": "What is the defining equation for eigenvectors and eigenvalues?",
-      "back": "Av = λv\n\nThe matrix A acting on eigenvector v gives the same result as simply scaling v by λ.",
+      "back": "\\( A\\vec{v} = \\lambda\\vec{v} \\)\n\nThe matrix \\( A \\) acting on eigenvector \\( \\vec{v} \\) gives the same result as simply scaling \\( \\vec{v} \\) by \\( \\lambda \\).",
       "tags": ["ch14", "eigen", "equation"]
     },
     {
       "uid": "14-004",
       "front": "How do you find eigenvalues?",
-      "back": "Solve: det(A - λI) = 0\n\nThis is called the characteristic equation. Its solutions are the eigenvalues.",
+      "back": "Solve: \\( \\det(A - \\lambda I) = 0 \\)\n\nThis is called the characteristic equation. Its solutions are the eigenvalues.",
       "tags": ["ch14", "eigenvalue", "computation"]
     },
     {
       "uid": "14-005",
       "front": "What do different eigenvalue values mean geometrically?",
-      "back": "- λ > 1: eigenvector stretched\n- 0 < λ < 1: eigenvector squished\n- λ < 0: eigenvector flipped and scaled\n- λ = 1: eigenvector unchanged\n- λ = 0: eigenvector squished to origin",
+      "back": "\\( \\lambda > 1 \\): eigenvector stretched\n\n\\( 0 < \\lambda < 1 \\): eigenvector squished\n\n\\( \\lambda < 0 \\): eigenvector flipped and scaled\n\n\\( \\lambda = 1 \\): eigenvector unchanged\n\n\\( \\lambda = 0 \\): eigenvector squished to origin",
       "tags": ["ch14", "eigenvalue", "geometry"]
     },
     {

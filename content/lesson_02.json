@@ -10,8 +10,8 @@
   "cards": [
     {
       "uid": "02-001",
-      "front": "What is a linear combination of vectors v and w?",
-      "back": "Scaling two vectors by scalar values and adding them together:\n\nav + bw\n\nwhere a and b are any real numbers.",
+      "front": "What is a linear combination of vectors \\( \\vec{v} \\) and \\( \\vec{w} \\)?",
+      "back": "Scaling two vectors by scalar values and adding them together:\n\n\\( a\\vec{v} + b\\vec{w} \\)\n\nwhere \\( a \\) and \\( b \\) are any real numbers.",
       "tags": ["ch02", "linear-combination", "definition"]
     },
     {
@@ -23,7 +23,7 @@
     {
       "uid": "02-003",
       "front": "What are the standard basis vectors in 2D?",
-      "back": "î (i-hat): unit vector in the x-direction [1, 0]\nĵ (j-hat): unit vector in the y-direction [0, 1]\n\nAny 2D vector can be written as a linear combination of î and ĵ.",
+      "back": "\\( \\hat{i} \\) (i-hat): unit vector in the x-direction \\( [1, 0] \\)\n\\( \\hat{j} \\) (j-hat): unit vector in the y-direction \\( [0, 1] \\)\n\nAny 2D vector can be written as a linear combination of \\( \\hat{i} \\) and \\( \\hat{j} \\).",
       "tags": ["ch02", "basis", "definition"]
     },
     {
@@ -41,7 +41,7 @@
     {
       "uid": "02-006",
       "front": "What is a basis of a vector space?",
-      "back": "A set of vectors that are:\n1. Linearly independent\n2. Span the entire space\n\nA basis provides a complete coordinate system with no redundancy.",
+      "back": "A set of vectors that are:\n\n1. Linearly independent\n2. Span the entire space\n\nA basis provides a complete coordinate system with no redundancy.",
       "tags": ["ch02", "basis", "definition"]
     },
     {
@@ -53,7 +53,7 @@
     {
       "uid": "02-008",
       "front": "What do coordinates really represent?",
-      "back": "Coordinates are scalars applied to basis vectors, not absolute positions.\n\nThe vector [3, 2] means 3·î + 2·ĵ, which depends on your choice of basis.",
+      "back": "Coordinates are scalars applied to basis vectors, not absolute positions.\n\nThe vector \\( [3, 2] \\) means \\( 3\\hat{i} + 2\\hat{j} \\), which depends on your choice of basis.",
       "tags": ["ch02", "coordinates", "insight"]
     }
   ]
