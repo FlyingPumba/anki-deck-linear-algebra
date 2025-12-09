@@ -1,0 +1,72 @@
+{
+  "id": "29",
+  "title": "Lesson 29: QR Decomposition and Numerical Stability",
+  "lesson_title": "QR decomposition and numerical stability",
+  "objectives": [
+    "Understand QR decomposition deeply",
+    "Compare QR vs SVD vs eigendecomposition",
+    "Appreciate numerical stability"
+  ],
+  "cards": [
+    {
+      "uid": "29-001",
+      "front": "What is the QR decomposition?",
+      "back": "Any \\( m \\times n \\) matrix \\( A \\) (\\( m \\geq n \\)) can be written as:\n\n\\( A = QR \\)\n\nWhere:\n\n- \\( Q \\) is \\( m \\times n \\) with orthonormal columns\n- \\( R \\) is \\( n \\times n \\) upper triangular",
+      "tags": ["ch29", "qr", "definition"]
+    },
+    {
+      "uid": "29-002",
+      "front": "How does QR relate to Gram-Schmidt?",
+      "back": "Gram-Schmidt orthogonalizes columns of \\( A \\) to get columns of \\( Q \\).\n\n\\( R \\) contains the coefficients: \\( r_{ij} = \\vec{q}_i^T \\vec{a}_j \\)\n\nClassical Gram-Schmidt is numerically unstable; use modified Gram-Schmidt or Householder.",
+      "tags": ["ch29", "qr", "gram-schmidt"]
+    },
+    {
+      "uid": "29-003",
+      "front": "What is the Householder QR algorithm?",
+      "back": "Uses Householder reflections to zero out below-diagonal entries column by column.\n\n\\( A \\to H_1 A \\to H_2 H_1 A \\to ... \\to R \\)\n\nThen \\( Q = H_1 H_2 ... H_{n-1} \\).\n\nNumerically stable and preferred in practice.",
+      "tags": ["ch29", "householder", "algorithm"]
+    },
+    {
+      "uid": "29-004",
+      "front": "Why is QR more numerically stable than normal equations for least squares?",
+      "back": "Normal equations form \\( A^T A \\), which squares the condition number.\n\nQR solves \\( R\\hat{x} = Q^T \\vec{b} \\) directly, preserving the original condition number.\n\nRule of thumb: if \\( A \\) has condition number \\( \\kappa \\), \\( A^T A \\) has \\( \\kappa^2 \\).",
+      "tags": ["ch29", "numerical-stability", "least-squares"]
+    },
+    {
+      "uid": "29-005",
+      "front": "When should you use QR vs SVD vs eigendecomposition?",
+      "back": "QR: solving least squares, finding orthonormal bases (fast)\n\nSVD: rank determination, pseudoinverse, low-rank approximation (robust)\n\nEigendecomposition: only for square matrices; symmetric case for spectral analysis",
+      "tags": ["ch29", "comparison", "use-cases"]
+    },
+    {
+      "uid": "29-006",
+      "front": "What is the computational cost of QR vs SVD?",
+      "back": "For \\( m \\times n \\) matrix (\\( m \\geq n \\)):\n\nQR: \\( O(mn^2) \\)\n\nSVD: \\( O(mn^2 + n^3) \\) or \\( O(m^2n + n^3) \\)\n\nQR is cheaper; use SVD when you need singular values/vectors.",
+      "tags": ["ch29", "complexity", "comparison"]
+    },
+    {
+      "uid": "29-007",
+      "front": "What is the thin QR vs full QR decomposition?",
+      "back": "Thin (reduced): \\( A = Q_1 R_1 \\) where \\( Q_1 \\) is \\( m \\times n \\), \\( R_1 \\) is \\( n \\times n \\)\n\nFull: \\( A = Q R \\) where \\( Q \\) is \\( m \\times m \\) orthogonal, \\( R \\) is \\( m \\times n \\)\n\nThin is more efficient and usually sufficient.",
+      "tags": ["ch29", "qr", "variants"]
+    },
+    {
+      "uid": "29-008",
+      "front": "How does QR help with eigenvalue computation?",
+      "back": "The QR algorithm iterates:\n\n\\( A_k = Q_k R_k \\), then \\( A_{k+1} = R_k Q_k \\)\n\n\\( A_k \\) converges to upper triangular with eigenvalues on diagonal.\n\nThis is how eigenvalues are computed in practice.",
+      "tags": ["ch29", "qr-algorithm", "eigenvalues"]
+    },
+    {
+      "uid": "29-009",
+      "front": "What is backward stability in numerical linear algebra?",
+      "back": "An algorithm is backward stable if the computed answer is the exact answer to a slightly perturbed problem.\n\nHouseholder QR is backward stable: computed \\( \\hat{Q}\\hat{R} = A + E \\) where \\( ||E|| \\) is small.\n\nThis is the gold standard for numerical algorithms.",
+      "tags": ["ch29", "backward-stability", "numerical"]
+    },
+    {
+      "uid": "29-010",
+      "front": "Why does numerical stability matter for MI?",
+      "back": "Model weights are already imprecise (float32/float16).\n\nUnstable algorithms amplify errors:\n\n- Decompositions of large weight matrices\n- Extracting small singular values\n- Computing in ill-conditioned regimes\n\nUse QR or SVD rather than naive methods.",
+      "tags": ["ch29", "numerical-stability", "mi-application"]
+    }
+  ]
+}

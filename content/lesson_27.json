@@ -1,0 +1,72 @@
+{
+  "id": "27",
+  "title": "Lesson 27: Spectral Theorem and Quadratic Forms",
+  "lesson_title": "Spectral theorem and quadratic forms",
+  "objectives": [
+    "Master the spectral theorem for symmetric matrices",
+    "Understand quadratic forms geometrically",
+    "Connect to optimization and curvature"
+  ],
+  "cards": [
+    {
+      "uid": "27-001",
+      "front": "State the Spectral Theorem for real symmetric matrices.",
+      "back": "Every real symmetric matrix \\( A \\) can be written as:\n\n\\( A = Q \\Lambda Q^T \\)\n\nWhere:\n\n- \\( Q \\) is orthogonal (\\( Q^T Q = I \\))\n- \\( \\Lambda \\) is diagonal with real eigenvalues\n- Columns of \\( Q \\) are orthonormal eigenvectors",
+      "tags": ["ch27", "spectral-theorem", "statement"]
+    },
+    {
+      "uid": "27-002",
+      "front": "Why can symmetric matrices always be orthogonally diagonalized?",
+      "back": "Eigenvectors of distinct eigenvalues are automatically orthogonal for symmetric matrices.\n\nFor repeated eigenvalues, we can always find an orthonormal basis within each eigenspace.\n\nThis fails for non-symmetric matrices.",
+      "tags": ["ch27", "spectral-theorem", "insight"]
+    },
+    {
+      "uid": "27-003",
+      "front": "What is a quadratic form?",
+      "back": "A function \\( q(\\vec{x}) = \\vec{x}^T A \\vec{x} \\) where \\( A \\) is symmetric.\n\nIn 2D: \\( q(x,y) = ax^2 + 2bxy + cy^2 \\)\n\nfor \\( A = \\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix} \\)",
+      "tags": ["ch27", "quadratic-form", "definition"]
+    },
+    {
+      "uid": "27-004",
+      "front": "How does the spectral theorem simplify quadratic forms?",
+      "back": "If \\( A = Q\\Lambda Q^T \\) and \\( \\vec{y} = Q^T \\vec{x} \\), then:\n\n\\( \\vec{x}^T A \\vec{x} = \\vec{y}^T \\Lambda \\vec{y} = \\lambda_1 y_1^2 + \\lambda_2 y_2^2 + ... \\)\n\nIn eigenvector coordinates, the quadratic form is a weighted sum of squares.",
+      "tags": ["ch27", "quadratic-form", "simplification"]
+    },
+    {
+      "uid": "27-005",
+      "front": "What do the level sets of a quadratic form look like?",
+      "back": "Ellipsoids (or hyperboloids) aligned with eigenvector directions.\n\n- Eigenvalues determine axis lengths (\\( 1/\\sqrt{|\\lambda_i|} \\))\n- Eigenvectors determine axis directions\n- Signs determine ellipsoid vs hyperboloid",
+      "tags": ["ch27", "quadratic-form", "geometry"]
+    },
+    {
+      "uid": "27-006",
+      "front": "How does the spectral theorem relate to the Hessian in optimization?",
+      "back": "The Hessian \\( H \\) (matrix of second derivatives) is symmetric.\n\nAt a critical point:\n\n- All eigenvalues > 0: local minimum\n- All eigenvalues < 0: local maximum\n- Mixed signs: saddle point\n\nEigenvectors are principal curvature directions.",
+      "tags": ["ch27", "hessian", "optimization"]
+    },
+    {
+      "uid": "27-007",
+      "front": "What is Rayleigh quotient?",
+      "back": "\\( R(\\vec{x}) = \\frac{\\vec{x}^T A \\vec{x}}{\\vec{x}^T \\vec{x}} \\)\n\nFor symmetric \\( A \\):\n\n- Maximum value is \\( \\lambda_{\\max} \\) (achieved at top eigenvector)\n- Minimum value is \\( \\lambda_{\\min} \\) (achieved at bottom eigenvector)",
+      "tags": ["ch27", "rayleigh-quotient", "definition"]
+    },
+    {
+      "uid": "27-008",
+      "front": "What is the variational characterization of eigenvalues?",
+      "back": "\\( \\lambda_k = \\min_{\\dim(V)=k} \\max_{\\vec{x} \\in V, ||\\vec{x}||=1} \\vec{x}^T A \\vec{x} \\)\n\nThe \\( k \\)-th eigenvalue is the min-max of the Rayleigh quotient over \\( k \\)-dimensional subspaces.\n\nUseful for proving eigenvalue inequalities.",
+      "tags": ["ch27", "variational", "eigenvalues"]
+    },
+    {
+      "uid": "27-009",
+      "front": "How do you write \\( A \\) as a sum of rank-1 matrices using the spectral theorem?",
+      "back": "\\( A = \\sum_{i=1}^{n} \\lambda_i \\vec{q}_i \\vec{q}_i^T \\)\n\nEach term is a rank-1 projection scaled by its eigenvalue.\n\nThis is the spectral decomposition or eigendecomposition.",
+      "tags": ["ch27", "spectral-decomposition", "formula"]
+    },
+    {
+      "uid": "27-010",
+      "front": "Why is the spectral theorem important for MI?",
+      "back": "It helps interpret:\n\n- Covariance structure of activations\n- Hessians for understanding loss landscapes\n- Energy/variance in different directions\n- Symmetric components like \\( A^T A \\) or \\( AA^T \\)",
+      "tags": ["ch27", "spectral-theorem", "mi-application"]
+    }
+  ]
+}

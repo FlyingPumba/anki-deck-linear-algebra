@@ -1,0 +1,72 @@
+{
+  "id": "33",
+  "title": "Lesson 33: Matrix Calculus for ML",
+  "lesson_title": "Matrix calculus for ML",
+  "objectives": [
+    "Compute gradients of common matrix expressions",
+    "Use the trace trick",
+    "Understand Jacobians as linear maps"
+  ],
+  "cards": [
+    {
+      "uid": "33-001",
+      "front": "What is \\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{a}^T \\vec{x}) \\)?",
+      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{a}^T \\vec{x}) = \\vec{a} \\)\n\nThe gradient of a linear function is the coefficient vector.",
+      "tags": ["ch33", "gradient", "linear"]
+    },
+    {
+      "uid": "33-002",
+      "front": "What is \\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{x}^T A \\vec{x}) \\)?",
+      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{x}^T A \\vec{x}) = (A + A^T) \\vec{x} \\)\n\nIf \\( A \\) is symmetric: \\( = 2A\\vec{x} \\)\n\nThis is the gradient of a quadratic form.",
+      "tags": ["ch33", "gradient", "quadratic"]
+    },
+    {
+      "uid": "33-003",
+      "front": "What is \\( \\frac{\\partial}{\\partial \\vec{x}} ||A\\vec{x} - \\vec{b}||^2 \\)?",
+      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} ||A\\vec{x} - \\vec{b}||^2 = 2A^T(A\\vec{x} - \\vec{b}) \\)\n\nSetting to zero gives normal equations: \\( A^T A \\vec{x} = A^T \\vec{b} \\)\n\nThis is the gradient for least squares.",
+      "tags": ["ch33", "gradient", "least-squares"]
+    },
+    {
+      "uid": "33-004",
+      "front": "What is the trace trick for matrix derivatives?",
+      "back": "Many scalar functions can be written as traces:\n\n\\( ||A||_F^2 = \\text{tr}(A^T A) \\)\n\\( \\vec{x}^T A \\vec{y} = \\text{tr}(\\vec{y} \\vec{x}^T A) \\)\n\nThen use: \\( \\frac{\\partial}{\\partial X} \\text{tr}(AXB) = A^T B^T \\)",
+      "tags": ["ch33", "trace-trick", "technique"]
+    },
+    {
+      "uid": "33-005",
+      "front": "What is \\( \\frac{\\partial}{\\partial X} \\text{tr}(AX) \\)?",
+      "back": "\\( \\frac{\\partial}{\\partial X} \\text{tr}(AX) = A^T \\)\n\nMore generally:\n\n\\( \\frac{\\partial}{\\partial X} \\text{tr}(X^T A) = A \\)",
+      "tags": ["ch33", "gradient", "trace"]
+    },
+    {
+      "uid": "33-006",
+      "front": "What is the Jacobian of a vector-valued function?",
+      "back": "For \\( f: \\mathbb{R}^n \\to \\mathbb{R}^m \\), the Jacobian is:\n\n\\( J_{ij} = \\frac{\\partial f_i}{\\partial x_j} \\)\n\nAn \\( m \\times n \\) matrix. It's the best linear approximation to \\( f \\) at a point.",
+      "tags": ["ch33", "jacobian", "definition"]
+    },
+    {
+      "uid": "33-007",
+      "front": "How does the chain rule work with Jacobians?",
+      "back": "For \\( f \\circ g \\):\n\n\\( J_{f \\circ g} = J_f \\cdot J_g \\)\n\nJacobians multiply like matrices.\n\nThis is backpropagation: multiply Jacobians backward through the computation graph.",
+      "tags": ["ch33", "jacobian", "chain-rule"]
+    },
+    {
+      "uid": "33-008",
+      "front": "What is \\( \\frac{\\partial}{\\partial A} \\det(A) \\)?",
+      "back": "\\( \\frac{\\partial}{\\partial A} \\det(A) = \\det(A) \\cdot A^{-T} = \\text{adj}(A)^T \\)\n\nwhere \\( \\text{adj}(A) \\) is the adjugate matrix.\n\nUseful for log-determinant: \\( \\frac{\\partial}{\\partial A} \\log \\det(A) = A^{-T} \\)",
+      "tags": ["ch33", "gradient", "determinant"]
+    },
+    {
+      "uid": "33-009",
+      "front": "What is \\( \\frac{\\partial}{\\partial A} ||A||_F^2 \\)?",
+      "back": "\\( \\frac{\\partial}{\\partial A} ||A||_F^2 = 2A \\)\n\nFrobenius norm squared is just sum of squared entries, so gradient is straightforward.",
+      "tags": ["ch33", "gradient", "frobenius"]
+    },
+    {
+      "uid": "33-010",
+      "front": "Why is matrix calculus important for MI?",
+      "back": "Understanding gradients helps:\n\n- Interpret what the model \"wants\" to change\n- Analyze linearized behavior around points\n- Understand optimization dynamics\n- Compute influence functions and attributions\n\nGradients are linear maps; linear algebra applies.",
+      "tags": ["ch33", "matrix-calculus", "mi-application"]
+    }
+  ]
+}

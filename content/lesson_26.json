@@ -1,0 +1,72 @@
+{
+  "id": "26",
+  "title": "Lesson 26: Norms and Operator Norms",
+  "lesson_title": "Norms, operator norms, and high-dimensional geometry",
+  "objectives": [
+    "Understand vector norms and their geometry",
+    "Compute matrix norms",
+    "Apply norms to bound transformations"
+  ],
+  "cards": [
+    {
+      "uid": "26-001",
+      "front": "What is a norm?",
+      "back": "A function \\( ||\\cdot|| \\) measuring \"size\" that satisfies:\n\n1. \\( ||\\vec{x}|| \\geq 0 \\), with equality iff \\( \\vec{x} = \\vec{0} \\)\n2. \\( ||c\\vec{x}|| = |c| \\cdot ||\\vec{x}|| \\) (scaling)\n3. \\( ||\\vec{x} + \\vec{y}|| \\leq ||\\vec{x}|| + ||\\vec{y}|| \\) (triangle inequality)",
+      "tags": ["ch26", "norm", "definition"]
+    },
+    {
+      "uid": "26-002",
+      "front": "What are the \\( \\ell_1 \\), \\( \\ell_2 \\), and \\( \\ell_\\infty \\) vector norms?",
+      "back": "\\( ||\\vec{x}||_1 = \\sum_i |x_i| \\) (Manhattan distance)\n\n\\( ||\\vec{x}||_2 = \\sqrt{\\sum_i x_i^2} \\) (Euclidean distance)\n\n\\( ||\\vec{x}||_\\infty = \\max_i |x_i| \\) (max absolute value)",
+      "tags": ["ch26", "vector-norm", "formulas"]
+    },
+    {
+      "uid": "26-003",
+      "front": "What do the unit balls look like for \\( \\ell_1 \\), \\( \\ell_2 \\), \\( \\ell_\\infty \\) in 2D?",
+      "back": "\\( \\ell_1 \\): diamond (rotated square)\n\n\\( \\ell_2 \\): circle\n\n\\( \\ell_\\infty \\): square aligned with axes\n\nIn high dimensions, most volume of \\( \\ell_2 \\) ball concentrates near the surface.",
+      "tags": ["ch26", "unit-ball", "geometry"]
+    },
+    {
+      "uid": "26-004",
+      "front": "What is the Frobenius norm of a matrix?",
+      "back": "\\( ||A||_F = \\sqrt{\\sum_{i,j} a_{ij}^2} = \\sqrt{\\text{trace}(A^T A)} \\)\n\nTreats the matrix as a long vector and takes its \\( \\ell_2 \\) norm.\n\nAlso equals \\( \\sqrt{\\sum_i \\sigma_i^2} \\) (sum of squared singular values).",
+      "tags": ["ch26", "frobenius", "definition"]
+    },
+    {
+      "uid": "26-005",
+      "front": "What is the spectral norm (operator norm) of a matrix?",
+      "back": "\\( ||A||_2 = \\max_{\\vec{x} \\neq 0} \\frac{||A\\vec{x}||_2}{||\\vec{x}||_2} = \\sigma_{\\max}(A) \\)\n\nThe largest singular value. Measures the maximum \"stretching\" the matrix can do.",
+      "tags": ["ch26", "spectral-norm", "definition"]
+    },
+    {
+      "uid": "26-006",
+      "front": "What is submultiplicativity of matrix norms?",
+      "back": "\\( ||AB|| \\leq ||A|| \\cdot ||B|| \\)\n\nThe norm of a product is at most the product of norms.\n\nThis lets us bound how transformations compound across layers.",
+      "tags": ["ch26", "submultiplicativity", "property"]
+    },
+    {
+      "uid": "26-007",
+      "front": "How do you interpret \\( ||A||_2 \\) as a Lipschitz constant?",
+      "back": "The linear map \\( \\vec{x} \\mapsto A\\vec{x} \\) satisfies:\n\n\\( ||A\\vec{x} - A\\vec{y}||_2 \\leq ||A||_2 \\cdot ||\\vec{x} - \\vec{y}||_2 \\)\n\nThe spectral norm bounds how much distances can be amplified.",
+      "tags": ["ch26", "lipschitz", "interpretation"]
+    },
+    {
+      "uid": "26-008",
+      "front": "What is the relationship between Frobenius and spectral norms?",
+      "back": "\\( ||A||_2 \\leq ||A||_F \\leq \\sqrt{r} \\cdot ||A||_2 \\)\n\nwhere \\( r = \\text{rank}(A) \\).\n\nFrobenius is easier to compute; spectral is tighter for operator bounds.",
+      "tags": ["ch26", "norm-comparison", "inequality"]
+    },
+    {
+      "uid": "26-009",
+      "front": "What is the nuclear norm (trace norm)?",
+      "back": "\\( ||A||_* = \\sum_i \\sigma_i \\)\n\nThe sum of singular values.\n\nUsed as a convex surrogate for rank in optimization (encourages low-rank solutions).",
+      "tags": ["ch26", "nuclear-norm", "definition"]
+    },
+    {
+      "uid": "26-010",
+      "front": "Why are norms important in mechanistic interpretability?",
+      "back": "They let us:\n\n- Bound amplification across layers (spectral norm)\n- Measure \"total weight\" of matrices (Frobenius)\n- Reason about which directions matter most\n- Compare magnitudes meaningfully across components",
+      "tags": ["ch26", "norms", "mi-application"]
+    }
+  ]
+}

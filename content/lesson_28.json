@@ -1,0 +1,72 @@
+{
+  "id": "28",
+  "title": "Lesson 28: Pseudoinverse and Rank-Deficient Systems",
+  "lesson_title": "Moore-Penrose pseudoinverse",
+  "objectives": [
+    "Understand the pseudoinverse for any matrix",
+    "Solve rank-deficient least squares problems",
+    "Connect pseudoinverse to SVD"
+  ],
+  "cards": [
+    {
+      "uid": "28-001",
+      "front": "What is the Moore-Penrose pseudoinverse \\( A^+ \\)?",
+      "back": "The unique matrix satisfying four conditions:\n\n1. \\( AA^+A = A \\)\n2. \\( A^+AA^+ = A^+ \\)\n3. \\( (AA^+)^T = AA^+ \\)\n4. \\( (A^+A)^T = A^+A \\)\n\nGeneralizes the inverse to any matrix (including non-square and singular).",
+      "tags": ["ch28", "pseudoinverse", "definition"]
+    },
+    {
+      "uid": "28-002",
+      "front": "How do you compute the pseudoinverse using SVD?",
+      "back": "If \\( A = U\\Sigma V^T \\), then:\n\n\\( A^+ = V\\Sigma^+ U^T \\)\n\nWhere \\( \\Sigma^+ \\) inverts non-zero singular values:\n\n\\( \\sigma_i^+ = \\begin{cases} 1/\\sigma_i & \\sigma_i > 0 \\\\ 0 & \\sigma_i = 0 \\end{cases} \\)",
+      "tags": ["ch28", "pseudoinverse", "svd"]
+    },
+    {
+      "uid": "28-003",
+      "front": "What does \\( A^+ \\) give for an overdetermined system \\( A\\vec{x} = \\vec{b} \\)?",
+      "back": "\\( \\hat{x} = A^+ \\vec{b} \\) is the least-squares solution.\n\nIt minimizes \\( ||A\\vec{x} - \\vec{b}||_2 \\).\n\nFor full column rank: \\( A^+ = (A^T A)^{-1} A^T \\)",
+      "tags": ["ch28", "pseudoinverse", "overdetermined"]
+    },
+    {
+      "uid": "28-004",
+      "front": "What does \\( A^+ \\) give for an underdetermined system?",
+      "back": "\\( \\hat{x} = A^+ \\vec{b} \\) is the minimum-norm solution.\n\nAmong all solutions to \\( A\\vec{x} = \\vec{b} \\), it has the smallest \\( ||\\vec{x}||_2 \\).\n\nFor full row rank: \\( A^+ = A^T(AA^T)^{-1} \\)",
+      "tags": ["ch28", "pseudoinverse", "underdetermined"]
+    },
+    {
+      "uid": "28-005",
+      "front": "What is the minimum-norm least-squares solution?",
+      "back": "For any system \\( A\\vec{x} = \\vec{b} \\), \\( A^+ \\vec{b} \\) gives the solution that:\n\n1. Minimizes \\( ||A\\vec{x} - \\vec{b}||_2 \\) (closest to \\( \\vec{b} \\))\n2. Among those, minimizes \\( ||\\vec{x}||_2 \\) (smallest solution)\n\nThis handles all cases: overdetermined, underdetermined, rank-deficient.",
+      "tags": ["ch28", "minimum-norm", "definition"]
+    },
+    {
+      "uid": "28-006",
+      "front": "What is the relationship between \\( AA^+ \\) and \\( A^+A \\)?",
+      "back": "\\( AA^+ \\) = projection onto \\( \\text{Col}(A) \\)\n\n\\( A^+A \\) = projection onto \\( \\text{Row}(A) \\)\n\nBoth are orthogonal projection matrices (symmetric and idempotent).",
+      "tags": ["ch28", "pseudoinverse", "projections"]
+    },
+    {
+      "uid": "28-007",
+      "front": "What happens when a matrix is rank-deficient?",
+      "back": "The least-squares problem has infinitely many solutions (non-unique).\n\nThe pseudoinverse picks the unique minimum-norm solution.\n\nGeometrically: project onto column space, then pick the shortest preimage.",
+      "tags": ["ch28", "rank-deficient", "insight"]
+    },
+    {
+      "uid": "28-008",
+      "front": "How do you handle near-zero singular values in practice?",
+      "back": "Use truncated pseudoinverse: set \\( \\sigma_i^+ = 0 \\) for \\( \\sigma_i < \\epsilon \\).\n\nThis is regularization against numerical instability.\n\nSmall singular values cause large, unreliable components in \\( A^+ \\).",
+      "tags": ["ch28", "truncated", "numerical"]
+    },
+    {
+      "uid": "28-009",
+      "front": "What is the pseudoinverse of a diagonal matrix?",
+      "back": "Invert non-zero diagonal entries, leave zeros as zeros:\n\n\\( D = \\text{diag}(\\sigma_1, ..., \\sigma_r, 0, ..., 0) \\)\n\n\\( D^+ = \\text{diag}(1/\\sigma_1, ..., 1/\\sigma_r, 0, ..., 0) \\)\n\nTranspose the shape if \\( D \\) is not square.",
+      "tags": ["ch28", "pseudoinverse", "diagonal"]
+    },
+    {
+      "uid": "28-010",
+      "front": "Why is the pseudoinverse important for MI?",
+      "back": "It enables:\n\n- Solving linear probes even with rank-deficient features\n- Interpreting linear readouts robustly\n- Finding minimal interventions/edits\n- Handling cases where exact solutions don't exist",
+      "tags": ["ch28", "pseudoinverse", "mi-application"]
+    }
+  ]
+}

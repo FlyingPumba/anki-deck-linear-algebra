@@ -1,6 +1,6 @@
 # Linear Algebra Anki Deck
 
-A comprehensive Linear Algebra curriculum synced to Anki. Lessons 1-16 are based on 3Blue1Brown's "Essence of Linear Algebra" video series. Lessons 17-24 cover additional topics for a complete undergraduate linear algebra course.
+A comprehensive Linear Algebra curriculum synced to Anki. Lessons 1-16 are based on 3Blue1Brown's "Essence of Linear Algebra" video series. Lessons 17-24 cover additional computational topics. Lessons 25-33 focus on concepts essential for mechanistic interpretability.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ The script will:
 
 ## Curriculum Structure
 
-24 lessons covering:
+33 lessons covering:
 
 ### Part 1: Geometric Intuition (3Blue1Brown)
 
@@ -59,7 +59,7 @@ The script will:
 | 15 | Quick Eigenvalue Computation |
 | 16 | Abstract Vector Spaces |
 
-### Part 2: Computational Methods and Advanced Topics
+### Part 2: Computational Methods
 
 | Lesson | Topic |
 |--------|-------|
@@ -71,6 +71,20 @@ The script will:
 | 22 | Least Squares |
 | 23 | Symmetric and Positive Definite Matrices |
 | 24 | Singular Value Decomposition |
+
+### Part 3: MI-Focused Essentials
+
+| Lesson | Topic |
+|--------|-------|
+| 25 | Projections and Projection Matrices |
+| 26 | Norms and Operator Norms |
+| 27 | Spectral Theorem and Quadratic Forms |
+| 28 | Pseudoinverse and Rank-Deficient Systems |
+| 29 | QR Decomposition and Numerical Stability |
+| 30 | Low-Rank Approximation and PCA |
+| 31 | Conditioning and Perturbation Theory |
+| 32 | Kronecker Products and Tensors |
+| 33 | Matrix Calculus for ML |
 
 ## File Structure
 

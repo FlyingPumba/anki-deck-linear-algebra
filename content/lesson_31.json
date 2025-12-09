@@ -1,0 +1,72 @@
+{
+  "id": "31",
+  "title": "Lesson 31: Conditioning and Perturbation",
+  "lesson_title": "Conditioning and perturbation theory",
+  "objectives": [
+    "Understand condition numbers",
+    "Analyze sensitivity of solutions",
+    "Recognize ill-conditioned problems"
+  ],
+  "cards": [
+    {
+      "uid": "31-001",
+      "front": "What is the condition number of a matrix?",
+      "back": "\\( \\kappa(A) = ||A|| \\cdot ||A^{-1}|| = \\frac{\\sigma_{\\max}}{\\sigma_{\\min}} \\)\n\nMeasures sensitivity of \\( A\\vec{x} = \\vec{b} \\) to perturbations.\n\nLarger \\( \\kappa \\) = more sensitive = \"ill-conditioned.\"",
+      "tags": ["ch31", "condition-number", "definition"]
+    },
+    {
+      "uid": "31-002",
+      "front": "How does condition number affect solution accuracy?",
+      "back": "Relative error in solution can be \\( \\kappa \\) times relative error in input:\n\n\\( \\frac{||\\delta \\vec{x}||}{||\\vec{x}||} \\leq \\kappa(A) \\cdot \\frac{||\\delta \\vec{b}||}{||\\vec{b}||} \\)\n\nWith \\( \\kappa = 10^6 \\), a \\( 10^{-8} \\) relative error becomes \\( 10^{-2} \\).",
+      "tags": ["ch31", "condition-number", "error-bound"]
+    },
+    {
+      "uid": "31-003",
+      "front": "What is a well-conditioned vs ill-conditioned matrix?",
+      "back": "Well-conditioned: \\( \\kappa \\) close to 1 (orthogonal matrices have \\( \\kappa = 1 \\))\n\nIll-conditioned: \\( \\kappa \\gg 1 \\) (near-singular, some directions nearly collapsed)\n\nRule of thumb: lose \\( \\log_{10}(\\kappa) \\) digits of precision.",
+      "tags": ["ch31", "conditioning", "interpretation"]
+    },
+    {
+      "uid": "31-004",
+      "front": "How does conditioning relate to singular values?",
+      "back": "\\( \\kappa = \\sigma_1 / \\sigma_r \\) (ratio of largest to smallest non-zero singular value)\n\nLarge gap between singular values = ill-conditioning.\n\nGeometrically: the transformation stretches some directions much more than others.",
+      "tags": ["ch31", "condition-number", "svd"]
+    },
+    {
+      "uid": "31-005",
+      "front": "What is the condition number of \\( A^T A \\)?",
+      "back": "\\( \\kappa(A^T A) = \\kappa(A)^2 \\)\n\nThis is why solving normal equations is less stable than QR.\n\nSquaring the matrix squares the condition number.",
+      "tags": ["ch31", "conditioning", "normal-equations"]
+    },
+    {
+      "uid": "31-006",
+      "front": "How sensitive are eigenvalues to perturbations?",
+      "back": "For symmetric matrices: eigenvalues are very stable.\n\nWeyl's theorem: \\( |\\lambda_i(A+E) - \\lambda_i(A)| \\leq ||E||_2 \\)\n\nFor non-symmetric matrices: eigenvalues can be very sensitive (especially with repeated eigenvalues).",
+      "tags": ["ch31", "eigenvalue-sensitivity", "perturbation"]
+    },
+    {
+      "uid": "31-007",
+      "front": "What is pseudospectrum?",
+      "back": "The set of \\( z \\) where \\( ||(A - zI)^{-1}|| > 1/\\epsilon \\).\n\nShows where eigenvalues of \\( A + E \\) could be for \\( ||E|| < \\epsilon \\).\n\nReveals eigenvalue sensitivity even when the eigenvalues themselves look fine.",
+      "tags": ["ch31", "pseudospectrum", "definition"]
+    },
+    {
+      "uid": "31-008",
+      "front": "How do you improve conditioning?",
+      "back": "Preconditioning: replace \\( A\\vec{x} = \\vec{b} \\) with \\( M^{-1}A\\vec{x} = M^{-1}\\vec{b} \\)\n\nChoose \\( M \\approx A \\) so \\( M^{-1}A \\approx I \\).\n\nOr: regularization (add \\( \\lambda I \\) to \\( A^T A \\)).",
+      "tags": ["ch31", "preconditioning", "remedy"]
+    },
+    {
+      "uid": "31-009",
+      "front": "What is the effective rank of a matrix?",
+      "back": "The number of singular values above a threshold (e.g., \\( \\sigma_i > \\epsilon \\cdot \\sigma_1 \\)).\n\nNumerical rank can be less than mathematical rank due to:\n\n- Small singular values from noise\n- Near-dependencies in the columns",
+      "tags": ["ch31", "effective-rank", "numerical"]
+    },
+    {
+      "uid": "31-010",
+      "front": "Why does conditioning matter for MI?",
+      "back": "Model weights are noisy (training, quantization).\n\nIll-conditioned decompositions:\n\n- Amplify numerical errors\n- Give unstable \"features\"\n- Make small singular directions unreliable\n\nCheck condition numbers before trusting fine structure.",
+      "tags": ["ch31", "conditioning", "mi-application"]
+    }
+  ]
+}

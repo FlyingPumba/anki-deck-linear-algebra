@@ -1,0 +1,72 @@
+{
+  "id": "25",
+  "title": "Lesson 25: Projections and Projection Matrices",
+  "lesson_title": "Projections and projection matrices",
+  "objectives": [
+    "Understand projection matrices and their properties",
+    "Decompose vectors into parallel and perpendicular components",
+    "Connect projections to least squares geometrically"
+  ],
+  "cards": [
+    {
+      "uid": "25-001",
+      "front": "What is a projection matrix?",
+      "back": "A matrix \\( P \\) that projects vectors onto a subspace.\n\nApplying \\( P \\) twice has no additional effect: \\( P^2 = P \\)\n\nThis property is called idempotence.",
+      "tags": ["ch25", "projection-matrix", "definition"]
+    },
+    {
+      "uid": "25-002",
+      "front": "What are the two defining properties of an orthogonal projection matrix?",
+      "back": "1. Idempotent: \\( P^2 = P \\)\n\n2. Symmetric: \\( P = P^T \\)\n\nAny matrix satisfying both is an orthogonal projection onto some subspace.",
+      "tags": ["ch25", "projection-matrix", "properties"]
+    },
+    {
+      "uid": "25-003",
+      "front": "What is the projection matrix onto the column space of \\( A \\)?",
+      "back": "\\( P = A(A^T A)^{-1} A^T \\)\n\nThis projects any vector onto \\( \\text{Col}(A) \\).\n\nRequires \\( A \\) to have linearly independent columns.",
+      "tags": ["ch25", "projection-matrix", "formula"]
+    },
+    {
+      "uid": "25-004",
+      "front": "How do you decompose a vector \\( \\vec{x} \\) using a projection?",
+      "back": "\\( \\vec{x} = \\vec{x}_\\parallel + \\vec{x}_\\perp \\)\n\nWhere:\n\n- \\( \\vec{x}_\\parallel = P\\vec{x} \\) is in the subspace\n- \\( \\vec{x}_\\perp = (I - P)\\vec{x} \\) is orthogonal to the subspace\n\nThe two components are perpendicular.",
+      "tags": ["ch25", "decomposition", "formula"]
+    },
+    {
+      "uid": "25-005",
+      "front": "If \\( P \\) projects onto subspace \\( W \\), what does \\( I - P \\) do?",
+      "back": "\\( I - P \\) projects onto \\( W^\\perp \\), the orthogonal complement of \\( W \\).\n\n\\( (I - P) \\) is also a projection matrix: it's idempotent and symmetric.",
+      "tags": ["ch25", "projection-matrix", "complement"]
+    },
+    {
+      "uid": "25-006",
+      "front": "What is the projection matrix onto a single vector \\( \\vec{u} \\)?",
+      "back": "\\( P = \\frac{\\vec{u}\\vec{u}^T}{\\vec{u}^T\\vec{u}} \\)\n\nThis is a rank-1 matrix that projects onto the line spanned by \\( \\vec{u} \\).\n\nIf \\( \\vec{u} \\) is a unit vector: \\( P = \\vec{u}\\vec{u}^T \\)",
+      "tags": ["ch25", "projection-matrix", "rank-1"]
+    },
+    {
+      "uid": "25-007",
+      "front": "How does least squares relate to projection geometrically?",
+      "back": "The least-squares solution \\( \\hat{x} \\) makes \\( A\\hat{x} \\) the projection of \\( \\vec{b} \\) onto \\( \\text{Col}(A) \\).\n\n\\( A\\hat{x} = P\\vec{b} \\) where \\( P = A(A^T A)^{-1}A^T \\)\n\nThe residual \\( \\vec{b} - A\\hat{x} \\) is orthogonal to \\( \\text{Col}(A) \\).",
+      "tags": ["ch25", "least-squares", "geometry"]
+    },
+    {
+      "uid": "25-008",
+      "front": "What are the eigenvalues of a projection matrix?",
+      "back": "Only 0 and 1.\n\n- Eigenvalue 1: vectors in the subspace (unchanged by projection)\n- Eigenvalue 0: vectors in the orthogonal complement (mapped to zero)\n\nThe rank equals the number of 1-eigenvalues.",
+      "tags": ["ch25", "projection-matrix", "eigenvalues"]
+    },
+    {
+      "uid": "25-009",
+      "front": "What is the trace of a projection matrix \\( P \\)?",
+      "back": "\\( \\text{trace}(P) = \\text{rank}(P) = \\dim(\\text{subspace}) \\)\n\nSince eigenvalues are 0 and 1, and trace = sum of eigenvalues, the trace counts the dimension being projected onto.",
+      "tags": ["ch25", "projection-matrix", "trace"]
+    },
+    {
+      "uid": "25-010",
+      "front": "Why are projections important in mechanistic interpretability?",
+      "back": "They let us:\n\n- Decompose activations into \"explained\" vs \"unexplained\" parts\n- Analyze feature subspaces in residual streams\n- Understand linear probes as projections\n- Interpret variance explained by directions",
+      "tags": ["ch25", "projection", "mi-application"]
+    }
+  ]
+}
