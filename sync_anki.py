@@ -57,6 +57,27 @@ def find_note_by_uid(uid_tag: str) -> int | None:
     return note_ids[0] if note_ids else None
 
 
+def find_note_in_deck_by_front(deck: str, front: str) -> int | None:
+    """
+    Find a note in a given deck whose Front field matches exactly.
+
+    This is used to upgrade existing notes that predate uid:* tags,
+    so we do not create duplicate notes when the content already exists.
+    """
+    note_ids = invoke("findNotes", {"query": f'deck:"{deck}"'})
+    if not note_ids:
+        return None
+
+    notes_info = invoke("notesInfo", {"notes": note_ids})
+    for note in notes_info:
+        current_front = note.get("fields", {}).get("Front", {}).get("value", "")
+        if current_front == front:
+            # AnkiConnect uses the key "noteId" for the identifier in notesInfo
+            return note.get("noteId")
+
+    return None
+
+
 def get_all_uid_tags_in_deck_tree(parent_deck: str) -> set[str]:
     """Get all uid:* tags from notes in the deck and all subdecks."""
     query = f'deck:"{parent_deck}*"'
@@ -82,6 +103,10 @@ def upsert_note(deck: str, front: str, back: str, tags: list[str], uid_tag: str)
     Returns (status, note_id) where status is 'added', 'updated', or 'unchanged'.
     """
     existing_id = find_note_by_uid(uid_tag)
+    if existing_id is None:
+        # Handle pre-existing notes that do not yet have a uid:* tag but
+        # already contain the same Front content in this deck.
+        existing_id = find_note_in_deck_by_front(deck, front)
     all_tags = tags + [uid_tag]
 
     if existing_id:
