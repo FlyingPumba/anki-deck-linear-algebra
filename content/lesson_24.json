@@ -1,0 +1,72 @@
+{
+  "id": "24",
+  "title": "Lesson 24: Singular Value Decomposition",
+  "lesson_title": "Singular Value Decomposition (SVD)",
+  "objectives": [
+    "Understand the SVD factorization",
+    "Compute singular values",
+    "Apply SVD to various problems"
+  ],
+  "cards": [
+    {
+      "uid": "24-001",
+      "front": "What is the Singular Value Decomposition (SVD)?",
+      "back": "Any \\( m \\times n \\) matrix \\( A \\) can be factored as:\n\n\\( A = U \\Sigma V^T \\)\n\nWhere:\n\n- \\( U \\) is \\( m \\times m \\) orthogonal\n- \\( \\Sigma \\) is \\( m \\times n \\) diagonal (singular values)\n- \\( V \\) is \\( n \\times n \\) orthogonal",
+      "tags": ["ch24", "svd", "definition"]
+    },
+    {
+      "uid": "24-002",
+      "front": "What are singular values?",
+      "back": "The diagonal entries \\( \\sigma_1, \\sigma_2, ... \\) of \\( \\Sigma \\), arranged in decreasing order.\n\nThey are the square roots of the eigenvalues of \\( A^T A \\) (or \\( AA^T \\)):\n\n\\( \\sigma_i = \\sqrt{\\lambda_i} \\)\n\nSingular values are always non-negative.",
+      "tags": ["ch24", "singular-values", "definition"]
+    },
+    {
+      "uid": "24-003",
+      "front": "How do you find \\( V \\) in the SVD?",
+      "back": "The columns of \\( V \\) are the eigenvectors of \\( A^T A \\), called right singular vectors.\n\nCompute the eigendecomposition of \\( A^T A = V \\Lambda V^T \\).",
+      "tags": ["ch24", "svd", "computation"]
+    },
+    {
+      "uid": "24-004",
+      "front": "How do you find \\( U \\) in the SVD?",
+      "back": "The columns of \\( U \\) are the eigenvectors of \\( AA^T \\), called left singular vectors.\n\nAlternatively: \\( \\vec{u}_i = \\frac{1}{\\sigma_i} A \\vec{v}_i \\) for non-zero singular values.",
+      "tags": ["ch24", "svd", "computation"]
+    },
+    {
+      "uid": "24-005",
+      "front": "What is the geometric interpretation of SVD?",
+      "back": "Every matrix transformation can be decomposed into:\n\n1. \\( V^T \\): rotate/reflect in the domain\n2. \\( \\Sigma \\): scale along coordinate axes\n3. \\( U \\): rotate/reflect in the codomain\n\nAny transformation is rotation-scaling-rotation.",
+      "tags": ["ch24", "svd", "geometry"]
+    },
+    {
+      "uid": "24-006",
+      "front": "How does SVD relate to matrix rank?",
+      "back": "The rank of \\( A \\) equals the number of non-zero singular values.\n\nThe non-zero singular values correspond to the \"important\" dimensions of the transformation.",
+      "tags": ["ch24", "svd", "rank"]
+    },
+    {
+      "uid": "24-007",
+      "front": "What is the low-rank approximation using SVD?",
+      "back": "The best rank-\\( k \\) approximation to \\( A \\) is:\n\n\\( A_k = \\sum_{i=1}^{k} \\sigma_i \\vec{u}_i \\vec{v}_i^T \\)\n\nKeep only the \\( k \\) largest singular values. This minimizes \\( ||A - A_k|| \\).",
+      "tags": ["ch24", "low-rank", "approximation"]
+    },
+    {
+      "uid": "24-008",
+      "front": "How does SVD express the pseudoinverse?",
+      "back": "\\( A^+ = V \\Sigma^+ U^T \\)\n\nWhere \\( \\Sigma^+ \\) inverts non-zero singular values and transposes the shape:\n\n\\( \\sigma_i^+ = \\begin{cases} 1/\\sigma_i & \\sigma_i \\neq 0 \\\\ 0 & \\sigma_i = 0 \\end{cases} \\)",
+      "tags": ["ch24", "svd", "pseudoinverse"]
+    },
+    {
+      "uid": "24-009",
+      "front": "What is the condition number of a matrix?",
+      "back": "\\( \\kappa(A) = \\frac{\\sigma_{\\max}}{\\sigma_{\\min}} = \\frac{\\sigma_1}{\\sigma_r} \\)\n\nMeasures sensitivity to numerical errors. Large condition number means the matrix is \"nearly singular\" and computations are unstable.",
+      "tags": ["ch24", "condition-number", "numerical"]
+    },
+    {
+      "uid": "24-010",
+      "front": "What are applications of SVD?",
+      "back": "1. Image compression (low-rank approximation)\n\n2. Noise reduction in data\n\n3. Principal Component Analysis (PCA)\n\n4. Recommender systems\n\n5. Solving least-squares problems\n\n6. Computing matrix rank numerically",
+      "tags": ["ch24", "svd", "applications"]
+    }
+  ]
+}

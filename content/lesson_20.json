@@ -1,0 +1,72 @@
+{
+  "id": "20",
+  "title": "Lesson 20: Orthogonality",
+  "lesson_title": "Orthogonal bases and projections",
+  "objectives": [
+    "Understand orthogonal and orthonormal sets",
+    "Compute orthogonal projections",
+    "Work with orthogonal matrices"
+  ],
+  "cards": [
+    {
+      "uid": "20-001",
+      "front": "What does it mean for two vectors to be orthogonal?",
+      "back": "Their dot product is zero: \\( \\vec{u} \\cdot \\vec{v} = 0 \\)\n\nGeometrically, they are perpendicular (meet at a 90° angle).",
+      "tags": ["ch20", "orthogonal", "definition"]
+    },
+    {
+      "uid": "20-002",
+      "front": "What is an orthogonal set of vectors?",
+      "back": "A set where every pair of distinct vectors is orthogonal.\n\nFor all \\( i \\neq j \\): \\( \\vec{u}_i \\cdot \\vec{u}_j = 0 \\)",
+      "tags": ["ch20", "orthogonal-set", "definition"]
+    },
+    {
+      "uid": "20-003",
+      "front": "What is an orthonormal set?",
+      "back": "An orthogonal set where every vector is a unit vector (length 1).\n\n\\( \\vec{u}_i \\cdot \\vec{u}_j = \\begin{cases} 1 & i = j \\\\ 0 & i \\neq j \\end{cases} \\)",
+      "tags": ["ch20", "orthonormal", "definition"]
+    },
+    {
+      "uid": "20-004",
+      "front": "Why are orthogonal bases useful?",
+      "back": "Coordinates are easy to compute using dot products:\n\nIf \\( \\{\\vec{u}_1, ..., \\vec{u}_n\\} \\) is orthogonal, then for any \\( \\vec{v} \\) in the span:\n\n\\( c_i = \\frac{\\vec{v} \\cdot \\vec{u}_i}{\\vec{u}_i \\cdot \\vec{u}_i} \\)\n\nNo need to solve systems of equations.",
+      "tags": ["ch20", "orthogonal-basis", "advantage"]
+    },
+    {
+      "uid": "20-005",
+      "front": "What is the orthogonal projection of \\( \\vec{v} \\) onto \\( \\vec{u} \\)?",
+      "back": "\\( \\text{proj}_{\\vec{u}} \\vec{v} = \\frac{\\vec{v} \\cdot \\vec{u}}{\\vec{u} \\cdot \\vec{u}} \\vec{u} \\)\n\nThis is the component of \\( \\vec{v} \\) in the direction of \\( \\vec{u} \\).",
+      "tags": ["ch20", "projection", "formula"]
+    },
+    {
+      "uid": "20-006",
+      "front": "What is the orthogonal projection onto a subspace?",
+      "back": "The closest point in the subspace to a given vector.\n\nIf \\( W \\) has orthonormal basis \\( \\{\\vec{u}_1, ..., \\vec{u}_k\\} \\):\n\n\\( \\text{proj}_W \\vec{v} = (\\vec{v} \\cdot \\vec{u}_1)\\vec{u}_1 + ... + (\\vec{v} \\cdot \\vec{u}_k)\\vec{u}_k \\)",
+      "tags": ["ch20", "projection", "subspace"]
+    },
+    {
+      "uid": "20-007",
+      "front": "What is an orthogonal matrix?",
+      "back": "A square matrix \\( Q \\) whose columns form an orthonormal set.\n\nEquivalently: \\( Q^T Q = I \\), so \\( Q^{-1} = Q^T \\)",
+      "tags": ["ch20", "orthogonal-matrix", "definition"]
+    },
+    {
+      "uid": "20-008",
+      "front": "What transformations do orthogonal matrices represent?",
+      "back": "Transformations that preserve lengths and angles:\n\n- Rotations\n- Reflections\n- Combinations of rotations and reflections\n\n\\( ||Q\\vec{x}|| = ||\\vec{x}|| \\) for all \\( \\vec{x} \\)",
+      "tags": ["ch20", "orthogonal-matrix", "geometry"]
+    },
+    {
+      "uid": "20-009",
+      "front": "What is the determinant of an orthogonal matrix?",
+      "back": "Either \\( +1 \\) or \\( -1 \\).\n\n\\( \\det(Q) = +1 \\): rotation (proper orthogonal)\n\\( \\det(Q) = -1 \\): reflection (improper orthogonal)",
+      "tags": ["ch20", "orthogonal-matrix", "determinant"]
+    },
+    {
+      "uid": "20-010",
+      "front": "What is the orthogonal complement of a subspace \\( W \\)?",
+      "back": "The set of all vectors orthogonal to every vector in \\( W \\):\n\n\\( W^\\perp = \\{\\vec{v} : \\vec{v} \\cdot \\vec{w} = 0 \\text{ for all } \\vec{w} \\in W\\} \\)\n\nFor a matrix \\( A \\): \\( (\\text{Row space})^\\perp = \\text{Null space} \\)",
+      "tags": ["ch20", "orthogonal-complement", "definition"]
+    }
+  ]
+}

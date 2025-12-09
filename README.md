@@ -1,6 +1,6 @@
 # Linear Algebra Anki Deck
 
-A Linear Algebra curriculum synced to Anki, based on 3Blue1Brown's "Essence of Linear Algebra" video series.
+A comprehensive Linear Algebra curriculum synced to Anki. Lessons 1-16 are based on 3Blue1Brown's "Essence of Linear Algebra" video series. Lessons 17-24 cover additional topics for a complete undergraduate linear algebra course.
 
 ## Prerequisites
 
@@ -36,7 +36,9 @@ The script will:
 
 ## Curriculum Structure
 
-16 lessons covering:
+24 lessons covering:
+
+### Part 1: Geometric Intuition (3Blue1Brown)
 
 | Lesson | Topic |
 |--------|-------|
@@ -52,10 +54,23 @@ The script will:
 | 10 | Cross Products |
 | 11 | Cross Products and Linear Transformations |
 | 12 | Cramer's Rule |
-| 13 | Change of Basis |
-| 14 | Eigenvectors and Eigenvalues |
+| 13 | Change of Basis and Similar Matrices |
+| 14 | Eigenvectors, Eigenvalues, and Diagonalization |
 | 15 | Quick Eigenvalue Computation |
 | 16 | Abstract Vector Spaces |
+
+### Part 2: Computational Methods and Advanced Topics
+
+| Lesson | Topic |
+|--------|-------|
+| 17 | Row Reduction and Echelon Forms |
+| 18 | Matrix Operations (Transpose, Block Matrices) |
+| 19 | Dimension and Subspaces |
+| 20 | Orthogonality |
+| 21 | Gram-Schmidt Process |
+| 22 | Least Squares |
+| 23 | Symmetric and Positive Definite Matrices |
+| 24 | Singular Value Decomposition |
 
 ## File Structure
 

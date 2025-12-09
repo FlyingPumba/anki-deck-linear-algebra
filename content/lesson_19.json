@@ -1,0 +1,72 @@
+{
+  "id": "19",
+  "title": "Lesson 19: Dimension and Subspaces",
+  "lesson_title": "Dimension and subspaces",
+  "objectives": [
+    "Understand subspaces formally",
+    "Compute dimension of a subspace",
+    "Apply the rank-nullity theorem"
+  ],
+  "cards": [
+    {
+      "uid": "19-001",
+      "front": "What is a subspace of \\( \\mathbb{R}^n \\)?",
+      "back": "A subset \\( H \\) of \\( \\mathbb{R}^n \\) that satisfies:\n\n1. Contains the zero vector: \\( \\vec{0} \\in H \\)\n2. Closed under addition: \\( \\vec{u}, \\vec{v} \\in H \\Rightarrow \\vec{u} + \\vec{v} \\in H \\)\n3. Closed under scalar multiplication: \\( \\vec{u} \\in H, c \\in \\mathbb{R} \\Rightarrow c\\vec{u} \\in H \\)",
+      "tags": ["ch19", "subspace", "definition"]
+    },
+    {
+      "uid": "19-002",
+      "front": "What is the dimension of a subspace?",
+      "back": "The number of vectors in any basis for the subspace.\n\nAll bases for a given subspace have the same number of vectors.",
+      "tags": ["ch19", "dimension", "definition"]
+    },
+    {
+      "uid": "19-003",
+      "front": "What is the dimension of the column space of an \\( m \\times n \\) matrix?",
+      "back": "The rank of the matrix.\n\nThis equals the number of pivot columns, which is the number of linearly independent columns.",
+      "tags": ["ch19", "column-space", "dimension"]
+    },
+    {
+      "uid": "19-004",
+      "front": "What is the dimension of the null space of an \\( m \\times n \\) matrix?",
+      "back": "The number of free variables, which equals \\( n - \\text{rank}(A) \\).\n\nThis is called the nullity of \\( A \\).",
+      "tags": ["ch19", "null-space", "dimension"]
+    },
+    {
+      "uid": "19-005",
+      "front": "What is the Rank-Nullity Theorem?",
+      "back": "For an \\( m \\times n \\) matrix \\( A \\):\n\n\\( \\text{rank}(A) + \\text{nullity}(A) = n \\)\n\nThe dimension of the column space plus the dimension of the null space equals the number of columns.",
+      "tags": ["ch19", "rank-nullity", "theorem"]
+    },
+    {
+      "uid": "19-006",
+      "front": "What is the row space of a matrix?",
+      "back": "The span of the row vectors.\n\nEquivalently, the column space of \\( A^T \\).\n\nThe dimension of the row space equals the rank (same as column space dimension).",
+      "tags": ["ch19", "row-space", "definition"]
+    },
+    {
+      "uid": "19-007",
+      "front": "How do you find a basis for the column space?",
+      "back": "Row reduce and identify pivot columns.\n\nThe corresponding columns of the original matrix (not the reduced matrix) form a basis for the column space.",
+      "tags": ["ch19", "column-space", "basis"]
+    },
+    {
+      "uid": "19-008",
+      "front": "How do you find a basis for the null space?",
+      "back": "1. Solve \\( A\\vec{x} = \\vec{0} \\) using row reduction\n\n2. Express basic variables in terms of free variables\n\n3. Write the general solution as a linear combination of vectors, one per free variable\n\nThese vectors form a basis for the null space.",
+      "tags": ["ch19", "null-space", "basis"]
+    },
+    {
+      "uid": "19-009",
+      "front": "What is the relationship between row operations and column space?",
+      "back": "Row operations change the column space but preserve which columns are linearly independent.\n\nThe pivot columns of \\( A \\) correspond to a basis, but you must use the original columns of \\( A \\), not the reduced form.",
+      "tags": ["ch19", "row-operations", "insight"]
+    },
+    {
+      "uid": "19-010",
+      "front": "What are the four fundamental subspaces of a matrix \\( A \\)?",
+      "back": "1. Column space of \\( A \\) (in \\( \\mathbb{R}^m \\))\n\n2. Null space of \\( A \\) (in \\( \\mathbb{R}^n \\))\n\n3. Row space of \\( A \\) (in \\( \\mathbb{R}^n \\))\n\n4. Left null space of \\( A \\) (null space of \\( A^T \\), in \\( \\mathbb{R}^m \\))",
+      "tags": ["ch19", "fundamental-subspaces", "definition"]
+    }
+  ]
+}

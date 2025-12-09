@@ -5,7 +5,8 @@
   "objectives": [
     "Understand different coordinate systems",
     "Translate vectors between bases",
-    "Transform matrices between bases"
+    "Transform matrices between bases",
+    "Understand similar matrices"
   ],
   "cards": [
     {
@@ -28,8 +29,8 @@
     },
     {
       "uid": "13-004",
-      "front": "What does the expression \\( A^{-1}MA \\) represent?",
-      "back": "The same transformation \\( M \\) expressed in a different coordinate system.\n\n1. \\( A^{-1} \\): translate input to your coordinates\n2. \\( M \\): apply transformation in your coordinates\n3. \\( A \\): translate output to their coordinates\n\nThis is called a similarity transformation or conjugation.",
+      "front": "What does the expression \\( P^{-1}AP \\) represent?",
+      "back": "The same transformation \\( A \\) expressed in a different coordinate system defined by \\( P \\).\n\n1. \\( P \\): convert from new basis to standard basis\n2. \\( A \\): apply transformation in standard basis\n3. \\( P^{-1} \\): convert result back to new basis\n\nThis is called a similarity transformation.",
       "tags": ["ch13", "change-of-basis", "similarity"]
     },
     {
@@ -37,6 +38,30 @@
       "front": "Why is change of basis useful?",
       "back": "Some bases make certain transformations simpler.\n\nFor example, choosing eigenvectors as a basis can turn a complex matrix into a simple diagonal matrix.",
       "tags": ["ch13", "change-of-basis", "insight"]
+    },
+    {
+      "uid": "13-006",
+      "front": "What are similar matrices?",
+      "back": "Two matrices \\( A \\) and \\( B \\) are similar if there exists an invertible matrix \\( P \\) such that:\n\n\\( B = P^{-1}AP \\)\n\nSimilar matrices represent the same linear transformation in different bases.",
+      "tags": ["ch13", "similar-matrices", "definition"]
+    },
+    {
+      "uid": "13-007",
+      "front": "What properties do similar matrices share?",
+      "back": "Similar matrices have the same:\n\n- Determinant\n- Trace\n- Eigenvalues\n- Rank\n- Characteristic polynomial\n\nThese are called similarity invariants.",
+      "tags": ["ch13", "similar-matrices", "properties"]
+    },
+    {
+      "uid": "13-008",
+      "front": "If \\( A \\) and \\( B \\) are similar, what can you say about \\( A^n \\) and \\( B^n \\)?",
+      "back": "They are also similar.\n\nIf \\( B = P^{-1}AP \\), then \\( B^n = P^{-1}A^nP \\).\n\nThis makes similar matrices useful for computing powers.",
+      "tags": ["ch13", "similar-matrices", "powers"]
+    },
+    {
+      "uid": "13-009",
+      "front": "When is a matrix similar to a diagonal matrix?",
+      "back": "When the matrix is diagonalizable, i.e., when it has \\( n \\) linearly independent eigenvectors for an \\( n \\times n \\) matrix.\n\nThe diagonal matrix has the eigenvalues on its diagonal.",
+      "tags": ["ch13", "similar-matrices", "diagonalization"]
     }
   ]
 }
