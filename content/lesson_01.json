@@ -37,12 +37,6 @@
       "front": "What is the origin in a coordinate system?",
       "back": "The intersection point of all axes; the starting point for all vectors. In 2D, it's where the x-axis and y-axis meet. All position vectors are drawn from the origin.",
       "tags": ["ch01", "vectors", "coordinates"]
-    },
-    {
-      "uid": "01-006",
-      "front": "Why is the ability to translate between geometric and numerical representations of vectors important?",
-      "back": "The usefulness of linear algebra comes from the ability to translate back and forth between geometric intuition (arrows, transformations) and numerical computation (coordinates, matrices).",
-      "tags": ["ch01", "vectors", "insight"]
     }
   ]
 }

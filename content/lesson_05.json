@@ -25,12 +25,6 @@
       "front": "How do you apply a 3x3 matrix to a vector \\( [x, y, z] \\)?",
       "back": "Multiply each coordinate by its corresponding column and sum:\n\n\\( x \\cdot (\\text{column 1}) + y \\cdot (\\text{column 2}) + z \\cdot (\\text{column 3}) \\)\n\nSame pattern as 2D, extended to three terms.",
       "tags": ["ch05", "3d", "computation"]
-    },
-    {
-      "uid": "05-004",
-      "front": "Why are 3D matrix transformations important in practice?",
-      "back": "They are essential for computer graphics and robotics.\n\nComplex 3D rotations can be decomposed into sequences of simpler transformations (matrix multiplication).",
-      "tags": ["ch05", "3d", "applications"]
     }
   ]
 }
