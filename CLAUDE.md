@@ -31,8 +31,9 @@
 - Title format: `"Lesson XX: {title}"` (for proper Anki sorting)
 
 ### Card UIDs
-- Format: `XX-YYY` where XX is lesson number, YYY is card number
-- Example: `01-001`, `14-005`
+- Format: `linear-algebra-XX-YYY` where XX is lesson number, YYY is card number
+- Example: `linear-algebra-01-001`, `linear-algebra-14-005`
+- The prefix is configured in `content/config.json` as `uid_prefix`
 
 ### Tags
 - Always include chapter tag: `chXX`

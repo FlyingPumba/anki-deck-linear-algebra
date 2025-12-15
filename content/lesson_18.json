@@ -9,64 +9,104 @@
   ],
   "cards": [
     {
-      "uid": "18-001",
+      "uid": "linear-algebra-18-001",
       "front": "What is the transpose of a matrix \\( A \\)?",
       "back": "The matrix \\( A^T \\) obtained by interchanging rows and columns.\n\nIf \\( A \\) is \\( m \\times n \\), then \\( A^T \\) is \\( n \\times m \\).\n\n\\( (A^T)_{ij} = A_{ji} \\)",
-      "tags": ["ch18", "transpose", "definition"]
+      "tags": [
+        "ch18",
+        "transpose",
+        "definition"
+      ]
     },
     {
-      "uid": "18-002",
+      "uid": "linear-algebra-18-002",
       "front": "What is \\( (A^T)^T \\)?",
       "back": "\\( (A^T)^T = A \\)\n\nTransposing twice returns the original matrix.",
-      "tags": ["ch18", "transpose", "properties"]
+      "tags": [
+        "ch18",
+        "transpose",
+        "properties"
+      ]
     },
     {
-      "uid": "18-003",
+      "uid": "linear-algebra-18-003",
       "front": "What is \\( (A + B)^T \\)?",
       "back": "\\( (A + B)^T = A^T + B^T \\)\n\nThe transpose of a sum is the sum of transposes.",
-      "tags": ["ch18", "transpose", "properties"]
+      "tags": [
+        "ch18",
+        "transpose",
+        "properties"
+      ]
     },
     {
-      "uid": "18-004",
+      "uid": "linear-algebra-18-004",
       "front": "What is \\( (AB)^T \\)?",
       "back": "\\( (AB)^T = B^T A^T \\)\n\nThe transpose of a product reverses the order.",
-      "tags": ["ch18", "transpose", "properties"]
+      "tags": [
+        "ch18",
+        "transpose",
+        "properties"
+      ]
     },
     {
-      "uid": "18-005",
+      "uid": "linear-algebra-18-005",
       "front": "What is \\( (cA)^T \\) for scalar \\( c \\)?",
       "back": "\\( (cA)^T = cA^T \\)\n\nScalars pass through the transpose.",
-      "tags": ["ch18", "transpose", "properties"]
+      "tags": [
+        "ch18",
+        "transpose",
+        "properties"
+      ]
     },
     {
-      "uid": "18-006",
+      "uid": "linear-algebra-18-006",
       "front": "What is a block matrix?",
       "back": "A matrix partitioned into smaller matrices (blocks or submatrices).\n\nExample:\n\\( \\begin{bmatrix} A & B \\\\ C & D \\end{bmatrix} \\)\n\nwhere \\( A, B, C, D \\) are matrices of compatible dimensions.",
-      "tags": ["ch18", "block-matrix", "definition"]
+      "tags": [
+        "ch18",
+        "block-matrix",
+        "definition"
+      ]
     },
     {
-      "uid": "18-007",
+      "uid": "linear-algebra-18-007",
       "front": "How do you multiply block matrices?",
       "back": "Treat blocks like scalar entries, but preserve order (matrix multiplication isn't commutative).\n\n\\( \\begin{bmatrix} A & B \\\\ C & D \\end{bmatrix} \\begin{bmatrix} E \\\\ F \\end{bmatrix} = \\begin{bmatrix} AE + BF \\\\ CE + DF \\end{bmatrix} \\)\n\nBlocks must have compatible dimensions.",
-      "tags": ["ch18", "block-matrix", "multiplication"]
+      "tags": [
+        "ch18",
+        "block-matrix",
+        "multiplication"
+      ]
     },
     {
-      "uid": "18-008",
+      "uid": "linear-algebra-18-008",
       "front": "What is a block diagonal matrix?",
       "back": "A block matrix where all off-diagonal blocks are zero:\n\n\\( \\begin{bmatrix} A_1 & 0 & 0 \\\\ 0 & A_2 & 0 \\\\ 0 & 0 & A_3 \\end{bmatrix} \\)\n\nEach diagonal block can be analyzed independently.",
-      "tags": ["ch18", "block-matrix", "diagonal"]
+      "tags": [
+        "ch18",
+        "block-matrix",
+        "diagonal"
+      ]
     },
     {
-      "uid": "18-009",
+      "uid": "linear-algebra-18-009",
       "front": "What is \\( (A^{-1})^T \\) if \\( A \\) is invertible?",
       "back": "\\( (A^{-1})^T = (A^T)^{-1} \\)\n\nThe transpose of the inverse equals the inverse of the transpose. Often written \\( A^{-T} \\).",
-      "tags": ["ch18", "transpose", "inverse"]
+      "tags": [
+        "ch18",
+        "transpose",
+        "inverse"
+      ]
     },
     {
-      "uid": "18-010",
+      "uid": "linear-algebra-18-010",
       "front": "What is the determinant of a block diagonal matrix?",
       "back": "The product of the determinants of the diagonal blocks:\n\n\\( \\det \\begin{bmatrix} A & 0 \\\\ 0 & B \\end{bmatrix} = \\det(A) \\cdot \\det(B) \\)",
-      "tags": ["ch18", "block-matrix", "determinant"]
+      "tags": [
+        "ch18",
+        "block-matrix",
+        "determinant"
+      ]
     }
   ]
 }

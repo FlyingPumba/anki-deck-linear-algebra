@@ -9,70 +9,114 @@
   ],
   "cards": [
     {
-      "uid": "26-001",
+      "uid": "linear-algebra-26-001",
       "front": "What is a norm?",
       "back": "A function \\( ||\\cdot|| \\) measuring \"size\" that satisfies:\n\n1. \\( ||\\vec{x}|| \\geq 0 \\), with equality iff \\( \\vec{x} = \\vec{0} \\)\n2. \\( ||c\\vec{x}|| = |c| \\cdot ||\\vec{x}|| \\) (scaling)\n3. \\( ||\\vec{x} + \\vec{y}|| \\leq ||\\vec{x}|| + ||\\vec{y}|| \\) (triangle inequality)",
-      "tags": ["ch26", "norm", "definition"]
+      "tags": [
+        "ch26",
+        "norm",
+        "definition"
+      ]
     },
     {
-      "uid": "26-002",
+      "uid": "linear-algebra-26-002",
       "front": "What are the \\( \\ell_1 \\), \\( \\ell_2 \\), and \\( \\ell_\\infty \\) vector norms?",
       "back": "\\( ||\\vec{x}||_1 = \\sum_i |x_i| \\) (Manhattan distance)\n\n\\( ||\\vec{x}||_2 = \\sqrt{\\sum_i x_i^2} \\) (Euclidean distance)\n\n\\( ||\\vec{x}||_\\infty = \\max_i |x_i| \\) (max absolute value)",
-      "tags": ["ch26", "vector-norm", "formulas"]
+      "tags": [
+        "ch26",
+        "vector-norm",
+        "formulas"
+      ]
     },
     {
-      "uid": "26-003",
+      "uid": "linear-algebra-26-003",
       "front": "What do the unit balls look like for \\( \\ell_1 \\), \\( \\ell_2 \\), \\( \\ell_\\infty \\) in 2D?",
       "back": "\\( \\ell_1 \\): diamond (rotated square)\n\n\\( \\ell_2 \\): circle\n\n\\( \\ell_\\infty \\): square aligned with axes\n\nIn high dimensions, most volume of \\( \\ell_2 \\) ball concentrates near the surface.",
-      "tags": ["ch26", "unit-ball", "geometry"]
+      "tags": [
+        "ch26",
+        "unit-ball",
+        "geometry"
+      ]
     },
     {
-      "uid": "26-004",
+      "uid": "linear-algebra-26-004",
       "front": "What is the Frobenius norm of a matrix?",
       "back": "\\( ||A||_F = \\sqrt{\\sum_{i,j} a_{ij}^2} = \\sqrt{\\text{trace}(A^T A)} \\)\n\nTreats the matrix as a long vector and takes its \\( \\ell_2 \\) norm.\n\nAlso equals \\( \\sqrt{\\sum_i \\sigma_i^2} \\) (sum of squared singular values).",
-      "tags": ["ch26", "frobenius", "definition"]
+      "tags": [
+        "ch26",
+        "frobenius",
+        "definition"
+      ]
     },
     {
-      "uid": "26-005",
+      "uid": "linear-algebra-26-005",
       "front": "What is the spectral norm (operator norm) of a matrix?",
       "back": "The operator norm induced by the \\( \\ell_2 \\) vector norm is:\n\n\\( ||A||_2 = \\max_{\\vec{x} \\neq 0} \\frac{||A\\vec{x}||_2}{||\\vec{x}||_2} = \\sigma_{\\max}(A) \\)\n\nIt is the largest singular value and measures the maximum \"stretching\" the matrix can do in any direction.",
-      "tags": ["ch26", "spectral-norm", "definition"]
+      "tags": [
+        "ch26",
+        "spectral-norm",
+        "definition"
+      ]
     },
     {
-      "uid": "26-006",
+      "uid": "linear-algebra-26-006",
       "front": "What is submultiplicativity of matrix norms?",
       "back": "\\( ||AB|| \\leq ||A|| \\cdot ||B|| \\)\n\nThe norm of a product is at most the product of norms.\n\nThis lets us bound how transformations compound across layers.",
-      "tags": ["ch26", "submultiplicativity", "property"]
+      "tags": [
+        "ch26",
+        "submultiplicativity",
+        "property"
+      ]
     },
     {
-      "uid": "26-007",
+      "uid": "linear-algebra-26-007",
       "front": "How do you interpret \\( ||A||_2 \\) as a Lipschitz constant?",
       "back": "The linear map \\( \\vec{x} \\mapsto A\\vec{x} \\) satisfies:\n\n\\( ||A\\vec{x} - A\\vec{y}||_2 \\leq ||A||_2 \\cdot ||\\vec{x} - \\vec{y}||_2 \\)\n\nThe spectral norm bounds how much distances can be amplified.",
-      "tags": ["ch26", "lipschitz", "interpretation"]
+      "tags": [
+        "ch26",
+        "lipschitz",
+        "interpretation"
+      ]
     },
     {
-      "uid": "26-008",
+      "uid": "linear-algebra-26-008",
       "front": "What is the relationship between Frobenius and spectral norms?",
       "back": "\\( ||A||_2 \\leq ||A||_F \\leq \\sqrt{r} \\cdot ||A||_2 \\)\n\nwhere \\( r = \\text{rank}(A) \\).\n\nFrobenius is easier to compute; spectral is tighter for operator bounds.",
-      "tags": ["ch26", "norm-comparison", "inequality"]
+      "tags": [
+        "ch26",
+        "norm-comparison",
+        "inequality"
+      ]
     },
     {
-      "uid": "26-009",
+      "uid": "linear-algebra-26-009",
       "front": "What is the nuclear norm (trace norm)?",
       "back": "\\( ||A||_* = \\sum_i \\sigma_i \\)\n\nThe sum of singular values.\n\nUsed as a convex surrogate for rank in optimization (encourages low-rank solutions).",
-      "tags": ["ch26", "nuclear-norm", "definition"]
+      "tags": [
+        "ch26",
+        "nuclear-norm",
+        "definition"
+      ]
     },
     {
-      "uid": "26-010",
+      "uid": "linear-algebra-26-010",
       "front": "Why are norms important in mechanistic interpretability?",
       "back": "They let us:\n\n- Bound amplification across layers (spectral norm)\n- Measure \"total weight\" of matrices (Frobenius)\n- Reason about which directions matter most\n- Compare magnitudes meaningfully across components",
-      "tags": ["ch26", "norms", "mi-application"]
+      "tags": [
+        "ch26",
+        "norms",
+        "mi-application"
+      ]
     },
     {
-      "uid": "26-011",
+      "uid": "linear-algebra-26-011",
       "front": "What are some quick mental bounds for \\( ||A||_2 \\)?",
       "back": "Easy upper bounds:\n\n- \\( ||A||_2 \\leq ||A||_F = \\sqrt{\\sum_{i,j} a_{ij}^2} \\)\n- \\( ||A||_2 \\leq \\sqrt{||A||_1 \\, ||A||_\\infty} \\), where \\( ||A||_1 \\) is max column sum and \\( ||A||_\\infty \\) is max row sum\n\nRule of thumb: if every row sums to at most \\( c \\) in absolute value, then \\( ||A||_2 \\lesssim c \\).",
-      "tags": ["ch26", "spectral-norm", "bounds"]
+      "tags": [
+        "ch26",
+        "spectral-norm",
+        "bounds"
+      ]
     }
   ]
 }

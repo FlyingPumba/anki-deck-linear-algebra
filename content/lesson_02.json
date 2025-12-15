@@ -9,52 +9,84 @@
   ],
   "cards": [
     {
-      "uid": "02-001",
+      "uid": "linear-algebra-02-001",
       "front": "What is a linear combination of vectors \\( \\vec{v} \\) and \\( \\vec{w} \\)?",
       "back": "Scaling two vectors by scalar values and adding them together:\n\n\\( a\\vec{v} + b\\vec{w} \\)\n\nwhere \\( a \\) and \\( b \\) are any real numbers.",
-      "tags": ["ch02", "linear-combination", "definition"]
+      "tags": [
+        "ch02",
+        "linear-combination",
+        "definition"
+      ]
     },
     {
-      "uid": "02-002",
+      "uid": "linear-algebra-02-002",
       "front": "What is the span of a set of vectors?",
       "back": "The collection of all possible vectors obtainable through linear combinations of those vectors.\n\nIt represents all reachable points using only vector addition and scalar multiplication.",
-      "tags": ["ch02", "span", "definition"]
+      "tags": [
+        "ch02",
+        "span",
+        "definition"
+      ]
     },
     {
-      "uid": "02-003",
+      "uid": "linear-algebra-02-003",
       "front": "What are the standard basis vectors in 2D?",
       "back": "\\( \\hat{i} \\) (i-hat): unit vector in the x-direction \\( [1, 0] \\)\n\\( \\hat{j} \\) (j-hat): unit vector in the y-direction \\( [0, 1] \\)\n\nAny 2D vector can be written as a linear combination of \\( \\hat{i} \\) and \\( \\hat{j} \\).",
-      "tags": ["ch02", "basis", "definition"]
+      "tags": [
+        "ch02",
+        "basis",
+        "definition"
+      ]
     },
     {
-      "uid": "02-004",
+      "uid": "linear-algebra-02-004",
       "front": "What does it mean for vectors to be linearly dependent?",
       "back": "At least one vector can be expressed as a linear combination of the others.\n\nRemoving such a vector doesn't reduce the span. The vectors are \"redundant.\"",
-      "tags": ["ch02", "linear-dependence", "definition"]
+      "tags": [
+        "ch02",
+        "linear-dependence",
+        "definition"
+      ]
     },
     {
-      "uid": "02-005",
+      "uid": "linear-algebra-02-005",
       "front": "What does it mean for vectors to be linearly independent?",
       "back": "Each vector contributes something new to the span. No vector can be written as a linear combination of the others.\n\nRemoving any vector would reduce the span.",
-      "tags": ["ch02", "linear-independence", "definition"]
+      "tags": [
+        "ch02",
+        "linear-independence",
+        "definition"
+      ]
     },
     {
-      "uid": "02-006",
+      "uid": "linear-algebra-02-006",
       "front": "What is a basis of a vector space?",
       "back": "A set of vectors that are:\n\n1. Linearly independent\n2. Span the entire space\n\nA basis provides a complete coordinate system with no redundancy.",
-      "tags": ["ch02", "basis", "definition"]
+      "tags": [
+        "ch02",
+        "basis",
+        "definition"
+      ]
     },
     {
-      "uid": "02-007",
+      "uid": "linear-algebra-02-007",
       "front": "What is the span of two non-collinear vectors in 2D?",
       "back": "The entire 2D plane.\n\nTwo vectors that don't lie on the same line can reach any point in the plane through linear combinations.",
-      "tags": ["ch02", "span", "insight"]
+      "tags": [
+        "ch02",
+        "span",
+        "insight"
+      ]
     },
     {
-      "uid": "02-008",
+      "uid": "linear-algebra-02-008",
       "front": "What do coordinates really represent?",
       "back": "Coordinates are scalars applied to basis vectors, not absolute positions.\n\nThe vector \\( [3, 2] \\) means \\( 3\\hat{i} + 2\\hat{j} \\), which depends on your choice of basis.",
-      "tags": ["ch02", "coordinates", "insight"]
+      "tags": [
+        "ch02",
+        "coordinates",
+        "insight"
+      ]
     }
   ]
 }

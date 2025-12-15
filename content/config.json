@@ -1,4 +1,5 @@
 {
   "course": "Linear Algebra",
-  "deck": "Linear Algebra"
+  "deck": "Linear Algebra",
+  "uid_prefix": "linear-algebra"
 }

@@ -10,82 +10,134 @@
   ],
   "cards": [
     {
-      "uid": "14-001",
+      "uid": "linear-algebra-14-001",
       "front": "What is an eigenvector?",
       "back": "A non-zero vector that stays on its own span (line through origin) when transformed.\n\nIt only gets stretched, squished, or flipped - never rotated off its line.",
-      "tags": ["ch14", "eigenvector", "definition"]
+      "tags": [
+        "ch14",
+        "eigenvector",
+        "definition"
+      ]
     },
     {
-      "uid": "14-002",
+      "uid": "linear-algebra-14-002",
       "front": "What is an eigenvalue?",
       "back": "The scalar factor \\( \\lambda \\) by which an eigenvector is stretched or squished during the transformation.\n\nIf \\( \\vec{v} \\) is an eigenvector: \\( A\\vec{v} = \\lambda\\vec{v} \\)",
-      "tags": ["ch14", "eigenvalue", "definition"]
+      "tags": [
+        "ch14",
+        "eigenvalue",
+        "definition"
+      ]
     },
     {
-      "uid": "14-003",
+      "uid": "linear-algebra-14-003",
       "front": "What is the defining equation for eigenvectors and eigenvalues?",
       "back": "\\( A\\vec{v} = \\lambda\\vec{v} \\)\n\nThe matrix \\( A \\) acting on eigenvector \\( \\vec{v} \\) gives the same result as simply scaling \\( \\vec{v} \\) by \\( \\lambda \\).",
-      "tags": ["ch14", "eigen", "equation"]
+      "tags": [
+        "ch14",
+        "eigen",
+        "equation"
+      ]
     },
     {
-      "uid": "14-004",
+      "uid": "linear-algebra-14-004",
       "front": "How do you find eigenvalues?",
       "back": "Solve: \\( \\det(A - \\lambda I) = 0 \\)\n\nThis is called the characteristic equation. Its solutions are the eigenvalues.",
-      "tags": ["ch14", "eigenvalue", "computation"]
+      "tags": [
+        "ch14",
+        "eigenvalue",
+        "computation"
+      ]
     },
     {
-      "uid": "14-005",
+      "uid": "linear-algebra-14-005",
       "front": "What do different eigenvalue values mean geometrically?",
       "back": "\\( \\lambda > 1 \\): eigenvector stretched\n\n\\( 0 < \\lambda < 1 \\): eigenvector squished\n\n\\( \\lambda < 0 \\): eigenvector flipped and scaled\n\n\\( \\lambda = 1 \\): eigenvector unchanged\n\n\\( \\lambda = 0 \\): eigenvector squished to origin",
-      "tags": ["ch14", "eigenvalue", "geometry"]
+      "tags": [
+        "ch14",
+        "eigenvalue",
+        "geometry"
+      ]
     },
     {
-      "uid": "14-006",
+      "uid": "linear-algebra-14-006",
       "front": "For a 3D rotation, what is special about the eigenvalue 1?",
       "back": "The eigenvector with eigenvalue 1 is the axis of rotation.\n\nIt's the only direction that doesn't move during the rotation.",
-      "tags": ["ch14", "eigen", "rotation"]
+      "tags": [
+        "ch14",
+        "eigen",
+        "rotation"
+      ]
     },
     {
-      "uid": "14-007",
+      "uid": "linear-algebra-14-007",
       "front": "What is an eigenbasis?",
       "back": "A basis consisting entirely of eigenvectors.\n\nIn this basis, the transformation matrix becomes diagonal, with eigenvalues on the diagonal. This greatly simplifies calculations like matrix powers.",
-      "tags": ["ch14", "eigenbasis", "definition"]
+      "tags": [
+        "ch14",
+        "eigenbasis",
+        "definition"
+      ]
     },
     {
-      "uid": "14-008",
+      "uid": "linear-algebra-14-008",
       "front": "Can every matrix be diagonalized (have an eigenbasis)?",
       "back": "No. A matrix can be diagonalized only if it has enough linearly independent eigenvectors to form a basis.\n\nSome matrices (like shears) don't have enough eigenvectors.",
-      "tags": ["ch14", "diagonalization", "conditions"]
+      "tags": [
+        "ch14",
+        "diagonalization",
+        "conditions"
+      ]
     },
     {
-      "uid": "14-009",
+      "uid": "linear-algebra-14-009",
       "front": "What is the diagonalization formula for a matrix \\( A \\)?",
       "back": "\\( A = PDP^{-1} \\)\n\nWhere:\n\n- \\( P \\) is the matrix whose columns are eigenvectors of \\( A \\)\n- \\( D \\) is the diagonal matrix with eigenvalues on the diagonal",
-      "tags": ["ch14", "diagonalization", "formula"]
+      "tags": [
+        "ch14",
+        "diagonalization",
+        "formula"
+      ]
     },
     {
-      "uid": "14-010",
+      "uid": "linear-algebra-14-010",
       "front": "How do you find eigenvectors once you know an eigenvalue \\( \\lambda \\)?",
       "back": "Solve \\( (A - \\lambda I)\\vec{v} = \\vec{0} \\)\n\nFind the null space of \\( (A - \\lambda I) \\). Any non-zero vector in this null space is an eigenvector for \\( \\lambda \\).",
-      "tags": ["ch14", "eigenvector", "computation"]
+      "tags": [
+        "ch14",
+        "eigenvector",
+        "computation"
+      ]
     },
     {
-      "uid": "14-011",
+      "uid": "linear-algebra-14-011",
       "front": "Why is diagonalization useful for computing matrix powers?",
       "back": "If \\( A = PDP^{-1} \\), then:\n\n\\( A^n = PD^nP^{-1} \\)\n\nRaising a diagonal matrix to a power is trivial: just raise each diagonal entry to that power.",
-      "tags": ["ch14", "diagonalization", "application"]
+      "tags": [
+        "ch14",
+        "diagonalization",
+        "application"
+      ]
     },
     {
-      "uid": "14-012",
+      "uid": "linear-algebra-14-012",
       "front": "What is the eigenspace of an eigenvalue?",
       "back": "The set of all eigenvectors corresponding to that eigenvalue, plus the zero vector.\n\nIt is the null space of \\( (A - \\lambda I) \\) and forms a subspace.",
-      "tags": ["ch14", "eigenspace", "definition"]
+      "tags": [
+        "ch14",
+        "eigenspace",
+        "definition"
+      ]
     },
     {
-      "uid": "14-013",
+      "uid": "linear-algebra-14-013",
       "front": "What is algebraic multiplicity vs geometric multiplicity of an eigenvalue?",
       "back": "Algebraic multiplicity: how many times \\( \\lambda \\) appears as a root of the characteristic polynomial.\n\nGeometric multiplicity: the dimension of the eigenspace (number of linearly independent eigenvectors).\n\nGeometric \\( \\leq \\) Algebraic. A matrix is diagonalizable iff they are equal for all eigenvalues.",
-      "tags": ["ch14", "multiplicity", "diagonalization"]
+      "tags": [
+        "ch14",
+        "multiplicity",
+        "diagonalization"
+      ]
     }
   ]
 }

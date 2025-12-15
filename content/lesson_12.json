@@ -8,34 +8,54 @@
   ],
   "cards": [
     {
-      "uid": "12-001",
+      "uid": "linear-algebra-12-001",
       "front": "What is Cramer's rule for solving \\( A\\vec{x} = \\vec{b} \\)?",
       "back": "For each variable \\( x_i \\):\n\n\\( x_i = \\frac{\\det(A_i)}{\\det(A)} \\)\n\nwhere \\( A_i \\) is matrix \\( A \\) with column \\( i \\) replaced by \\( \\vec{b} \\).",
-      "tags": ["ch12", "cramers-rule", "formula"]
+      "tags": [
+        "ch12",
+        "cramers-rule",
+        "formula"
+      ]
     },
     {
-      "uid": "12-002",
+      "uid": "linear-algebra-12-002",
       "front": "What is the geometric insight behind Cramer's rule?",
       "back": "Coordinates can be represented using signed areas/volumes instead of dot products.\n\nThe y-coordinate equals the signed area of the parallelogram formed by \\( \\hat{i} \\) and the vector, divided by the unit parallelogram area.",
-      "tags": ["ch12", "cramers-rule", "geometry"]
+      "tags": [
+        "ch12",
+        "cramers-rule",
+        "geometry"
+      ]
     },
     {
-      "uid": "12-003",
+      "uid": "linear-algebra-12-003",
       "front": "Why does Cramer's rule use determinant ratios?",
       "back": "When a matrix transforms space, all parallelograms scale by \\( \\det(A) \\).\n\nSo: transformed area \\( = \\det(A) \\times \\) original area\n\nSolving for original coordinates: divide the transformed area by \\( \\det(A) \\).",
-      "tags": ["ch12", "cramers-rule", "insight"]
+      "tags": [
+        "ch12",
+        "cramers-rule",
+        "insight"
+      ]
     },
     {
-      "uid": "12-004",
+      "uid": "linear-algebra-12-004",
       "front": "When does Cramer's rule work?",
       "back": "Only when \\( \\det(A) \\neq 0 \\).\n\nThe matrix must be invertible, guaranteeing exactly one solution exists.",
-      "tags": ["ch12", "cramers-rule", "conditions"]
+      "tags": [
+        "ch12",
+        "cramers-rule",
+        "conditions"
+      ]
     },
     {
-      "uid": "12-005",
+      "uid": "linear-algebra-12-005",
       "front": "Is Cramer's rule computationally efficient?",
       "back": "No. Gaussian elimination is faster for large systems.\n\nCramer's rule is valuable for understanding the geometric relationship between determinants and coordinates, not for practical computation.",
-      "tags": ["ch12", "cramers-rule", "practicality"]
+      "tags": [
+        "ch12",
+        "cramers-rule",
+        "practicality"
+      ]
     }
   ]
 }

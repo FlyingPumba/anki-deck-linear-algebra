@@ -9,52 +9,84 @@
   ],
   "cards": [
     {
-      "uid": "21-001",
+      "uid": "linear-algebra-21-001",
       "front": "What does the Gram-Schmidt process do?",
       "back": "Converts any basis into an orthogonal (or orthonormal) basis for the same subspace.\n\nInput: linearly independent vectors \\( \\{\\vec{x}_1, ..., \\vec{x}_k\\} \\)\n\nOutput: orthogonal vectors \\( \\{\\vec{v}_1, ..., \\vec{v}_k\\} \\) spanning the same space.",
-      "tags": ["ch21", "gram-schmidt", "definition"]
+      "tags": [
+        "ch21",
+        "gram-schmidt",
+        "definition"
+      ]
     },
     {
-      "uid": "21-002",
+      "uid": "linear-algebra-21-002",
       "front": "What is the first step of Gram-Schmidt?",
       "back": "Set \\( \\vec{v}_1 = \\vec{x}_1 \\)\n\nThe first vector is kept as-is (or normalized if you want orthonormal).",
-      "tags": ["ch21", "gram-schmidt", "algorithm"]
+      "tags": [
+        "ch21",
+        "gram-schmidt",
+        "algorithm"
+      ]
     },
     {
-      "uid": "21-003",
+      "uid": "linear-algebra-21-003",
       "front": "What is the Gram-Schmidt formula for \\( \\vec{v}_2 \\)?",
       "back": "\\( \\vec{v}_2 = \\vec{x}_2 - \\text{proj}_{\\vec{v}_1} \\vec{x}_2 \\)\n\n\\( \\vec{v}_2 = \\vec{x}_2 - \\frac{\\vec{x}_2 \\cdot \\vec{v}_1}{\\vec{v}_1 \\cdot \\vec{v}_1} \\vec{v}_1 \\)\n\nSubtract the component of \\( \\vec{x}_2 \\) in the direction of \\( \\vec{v}_1 \\).",
-      "tags": ["ch21", "gram-schmidt", "formula"]
+      "tags": [
+        "ch21",
+        "gram-schmidt",
+        "formula"
+      ]
     },
     {
-      "uid": "21-004",
+      "uid": "linear-algebra-21-004",
       "front": "What is the general Gram-Schmidt formula for \\( \\vec{v}_k \\)?",
       "back": "\\( \\vec{v}_k = \\vec{x}_k - \\sum_{j=1}^{k-1} \\text{proj}_{\\vec{v}_j} \\vec{x}_k \\)\n\nSubtract projections onto all previously computed orthogonal vectors.",
-      "tags": ["ch21", "gram-schmidt", "formula"]
+      "tags": [
+        "ch21",
+        "gram-schmidt",
+        "formula"
+      ]
     },
     {
-      "uid": "21-005",
+      "uid": "linear-algebra-21-005",
       "front": "How do you get an orthonormal basis from Gram-Schmidt?",
       "back": "Normalize each vector after computing it:\n\n\\( \\vec{u}_k = \\frac{\\vec{v}_k}{||\\vec{v}_k||} \\)\n\nOr normalize all vectors at the end.",
-      "tags": ["ch21", "gram-schmidt", "orthonormal"]
+      "tags": [
+        "ch21",
+        "gram-schmidt",
+        "orthonormal"
+      ]
     },
     {
-      "uid": "21-006",
+      "uid": "linear-algebra-21-006",
       "front": "What is the QR factorization of a matrix?",
       "back": "\\( A = QR \\)\n\nWhere:\n\n- \\( Q \\) is an \\( m \\times n \\) matrix with orthonormal columns\n- \\( R \\) is an \\( n \\times n \\) upper triangular matrix\n\nThe columns of \\( Q \\) come from applying Gram-Schmidt to the columns of \\( A \\).",
-      "tags": ["ch21", "qr-factorization", "definition"]
+      "tags": [
+        "ch21",
+        "qr-factorization",
+        "definition"
+      ]
     },
     {
-      "uid": "21-007",
+      "uid": "linear-algebra-21-007",
       "front": "How do you find \\( R \\) in the QR factorization?",
       "back": "\\( R = Q^T A \\)\n\nSince \\( Q \\) has orthonormal columns: \\( Q^T Q = I \\)\n\nSo from \\( A = QR \\), we get \\( Q^T A = Q^T Q R = R \\)",
-      "tags": ["ch21", "qr-factorization", "computation"]
+      "tags": [
+        "ch21",
+        "qr-factorization",
+        "computation"
+      ]
     },
     {
-      "uid": "21-008",
+      "uid": "linear-algebra-21-008",
       "front": "Why is QR factorization useful?",
       "back": "1. Solving least squares problems\n\n2. Computing eigenvalues (QR algorithm)\n\n3. Numerical stability in computations\n\nOrthogonal matrices preserve numerical precision.",
-      "tags": ["ch21", "qr-factorization", "applications"]
+      "tags": [
+        "ch21",
+        "qr-factorization",
+        "applications"
+      ]
     }
   ]
 }
