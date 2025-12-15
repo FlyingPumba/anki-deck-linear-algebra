@@ -139,6 +139,48 @@
         "null-space",
         "algorithm"
       ]
+    },
+    {
+      "uid": "linear-algebra-24-014",
+      "front": "Why are right singular vectors eigenvectors of \\( A^T A \\)?",
+      "back": "From \\( A = U \\Sigma V^T \\):\n\n\\( A^T A = (U \\Sigma V^T)^T (U \\Sigma V^T) = V \\Sigma^T \\Sigma V^T \\)\n\nSo \\( A^T A \\, \\vec{v}_i = \\sigma_i^2 \\, \\vec{v}_i \\).\n\nThe columns of \\( V \\) are eigenvectors of \\( A^T A \\) with eigenvalues \\( \\sigma_i^2 \\).\n\nSimilarly, \\( A A^T = U \\Sigma \\Sigma^T U^T \\), so left singular vectors are eigenvectors of \\( A A^T \\).",
+      "tags": [
+        "ch24",
+        "svd",
+        "eigenvectors",
+        "derivation"
+      ]
+    },
+    {
+      "uid": "linear-algebra-24-015",
+      "front": "How do left and right singular vectors pair up?",
+      "back": "For \\( \\sigma_i > 0 \\):\n\n\\( A \\vec{v}_i = \\sigma_i \\vec{u}_i \\)\n\\( A^T \\vec{u}_i = \\sigma_i \\vec{v}_i \\)\n\n\\( A \\) maps the right singular direction \\( \\vec{v}_i \\) to the left singular direction \\( \\vec{u}_i \\), scaled by \\( \\sigma_i \\).\n\nRight singular vectors live in input space (\\( \\mathbb{R}^n \\)); left singular vectors live in output space (\\( \\mathbb{R}^m \\)).",
+      "tags": [
+        "ch24",
+        "svd",
+        "singular-vectors"
+      ]
+    },
+    {
+      "uid": "linear-algebra-24-016",
+      "front": "What happens to SVD when \\( A \\) is symmetric?",
+      "back": "For symmetric \\( A = A^T \\):\n\n- Can choose \\( U = V \\)\n- Singular vectors coincide with eigenvectors of \\( A \\)\n- Singular values are \\( |\\lambda_i| \\) (absolute eigenvalues)\n\nThe eigendecomposition \\( A = Q \\Lambda Q^T \\) and SVD \\( A = U \\Sigma V^T \\) are closely related, differing only in sign handling.",
+      "tags": [
+        "ch24",
+        "svd",
+        "symmetric"
+      ]
+    },
+    {
+      "uid": "linear-algebra-24-017",
+      "front": "Mental model: eigenvectors vs singular vectors?",
+      "back": "Eigenvectors: directions preserved by \\( A \\) up to a (possibly negative/complex) scale \\( \\lambda \\).\n\nSingular vectors: directions that \\( A \\) stretches most cleanly, with guaranteed non-negative stretch \\( \\sigma_i \\).\n\nKey difference:\n\n- Eigenvectors: same space for input and output (square matrices only)\n- Singular vectors: right vectors in input space, left vectors in output space (any matrix)\n\nBoth are eigenvectors of symmetric PSD matrices: \\( V \\) from \\( A^T A \\), \\( U \\) from \\( A A^T \\).",
+      "tags": [
+        "ch24",
+        "eigenvectors",
+        "singular-vectors",
+        "intuition"
+      ]
     }
   ]
 }
