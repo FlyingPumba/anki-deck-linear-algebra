@@ -117,6 +117,39 @@
         "matrix-calculus",
         "shape-checking"
       ]
+    },
+    {
+      "uid": "linear-algebra-33-012",
+      "front": "Consider \\( f(\\vec{x}) = \\text{ReLU}(W\\vec{x} + \\vec{b}) \\) where \\( \\vec{x} \\in \\mathbb{R}^5 \\), \\( \\vec{b} \\in \\mathbb{R}^3 \\), and \\( W \\) is \\( 3 \\times 5 \\).\n\nWhat is the Jacobian of \\( f \\)?",
+      "back": "Using chain rule with \\( g(\\vec{x}) = W\\vec{x} + \\vec{b} \\):\n\n\\( J_f = \\frac{\\partial f}{\\partial g} \\cdot \\frac{\\partial g}{\\partial \\vec{x}} \\)\n\n\\( \\frac{\\partial g}{\\partial \\vec{x}} = W \\)\n\n\\( \\frac{\\partial \\text{ReLU}}{\\partial g} = \\text{diag}(\\mathbf{1}_{g_i > 0}) \\) (diagonal matrix with 1 where \\( g_i > 0 \\), else 0)\n\nResult: \\( J_f \\) is \\( W \\) with rows zeroed out wherever \\( (W\\vec{x} + \\vec{b})_i \\leq 0 \\).\n\nShape: \\( 3 \\times 5 \\) (output dim \\( \\times \\) input dim).",
+      "tags": [
+        "ch33",
+        "jacobian",
+        "relu",
+        "chain-rule"
+      ]
+    },
+    {
+      "uid": "linear-algebra-33-013",
+      "front": "Where is the Jacobian of \\( f(\\vec{x}) = \\text{ReLU}(W\\vec{x} + \\vec{b}) \\) not well-defined?",
+      "back": "The Jacobian is undefined wherever any element of \\( (W\\vec{x} + \\vec{b}) \\) equals exactly 0.\n\nReLU is not differentiable at 0: the left derivative is 0, the right derivative is 1.\n\nGeometrically, these are hyperplanes in input space where the output \"kinks.\"",
+      "tags": [
+        "ch33",
+        "jacobian",
+        "relu",
+        "differentiability"
+      ]
+    },
+    {
+      "uid": "linear-algebra-33-014",
+      "front": "How do we handle non-differentiability of ReLU at zero in practice?",
+      "back": "Use a subgradient: choose any value in \\( [0, 1] \\) for the derivative at 0.\n\nConvention: most frameworks set \\( \\text{ReLU}'(0) = 0 \\).\n\nThis works because:\n\n- The set of inputs hitting exactly 0 has measure zero\n- Subgradient descent still converges for convex problems\n- In practice, floating point rarely lands exactly on 0",
+      "tags": [
+        "ch33",
+        "subgradient",
+        "relu",
+        "practical"
+      ]
     }
   ]
 }

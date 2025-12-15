@@ -117,6 +117,28 @@
         "svd",
         "mi-application"
       ]
+    },
+    {
+      "uid": "linear-algebra-24-012",
+      "front": "What are the key differences between eigenvalues and singular values?",
+      "back": "Eigenvalues:\n\n- Only for square matrices\n- Can be negative or complex\n- Eigenvectors may not be orthogonal\n- Not every matrix is diagonalizable\n\nSingular values:\n\n- Work for any \\( m \\times n \\) matrix\n- Always real and non-negative\n- Singular vectors are always orthonormal\n- Every matrix has an SVD\n\nFor symmetric positive definite matrices, they coincide.",
+      "tags": [
+        "ch24",
+        "eigenvalues",
+        "singular-values",
+        "comparison"
+      ]
+    },
+    {
+      "uid": "linear-algebra-24-013",
+      "front": "How do you find the null space of a matrix using SVD?",
+      "back": "A matrix \\( A \\) has a non-trivial null space iff one or more singular values are zero (or near-zero numerically).\n\nThe right singular vectors \\( \\vec{v}_i \\) corresponding to zero singular values span the null space.\n\nIn NumPy:\n\n```\nU, S, Vh = np.linalg.svd(A)\nnullspace = Vh[np.abs(S) <= eps].T\n```\n\nThis is more numerically stable than row reduction.",
+      "tags": [
+        "ch24",
+        "svd",
+        "null-space",
+        "algorithm"
+      ]
     }
   ]
 }

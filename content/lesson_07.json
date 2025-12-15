@@ -87,6 +87,16 @@
         "linear-systems",
         "existence"
       ]
+    },
+    {
+      "uid": "linear-algebra-07-009",
+      "front": "What shape is the null space?",
+      "back": "Always a linear subspace: a flat geometric object passing through the origin.\n\nDepending on its dimension (nullity), it can be:\n\n- A single point (just \\( \\vec{0} \\)) if nullity = 0\n- A line through the origin if nullity = 1\n- A plane through the origin if nullity = 2\n- A higher-dimensional hyperplane if nullity > 2",
+      "tags": [
+        "ch07",
+        "null-space",
+        "geometry"
+      ]
     }
   ]
 }
