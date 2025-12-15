@@ -107,6 +107,16 @@
         "fundamental-subspaces",
         "relationships"
       ]
+    },
+    {
+      "uid": "linear-algebra-19-011",
+      "front": "What does it mean for a subspace to be \"linear\"?",
+      "back": "A subspace is called linear because it is closed under linear combinations:\n\nIf \\( \\vec{u}, \\vec{v} \\in H \\) and \\( a, b \\in \\mathbb{R} \\), then \\( a\\vec{u} + b\\vec{v} \\in H \\).\n\nThis implies it must contain \\( \\vec{0} \\) (set \\( a = b = 0 \\)).\n\nGeometrically:\n\n- Contains the origin\n- Is \"flat\" (no curvature)\n- Extends infinitely in all its directions",
+      "tags": [
+        "ch19",
+        "subspace",
+        "definition"
+      ]
     }
   ]
 }
