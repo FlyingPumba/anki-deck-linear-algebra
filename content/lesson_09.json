@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-09-002",
       "front": "What is the geometric interpretation of the dot product?",
-      "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.<br><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.",
+      "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.<br><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.<br><br><img src=\"linear-algebra-09-002_01.png\">",
       "tags": [
         "ch09",
         "dot-product",
