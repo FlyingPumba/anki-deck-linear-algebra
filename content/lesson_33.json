@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-33-004",
       "front": "What is the trace trick for matrix derivatives?",
-      "back": "Many scalar functions can be written as traces:\n\n\\( ||A||_F^2 = \\text{tr}(A^T A) \\)\n\\( \\vec{x}^T A \\vec{y} = \\text{tr}(\\vec{y} \\vec{x}^T A) \\)\n\nThen use: \\( \\frac{\\partial}{\\partial X} \\text{tr}(AXB) = A^T B^T \\)",
+      "back": "<b>Problem:</b> Differentiating w.r.t. a matrix \\( X \\) is tricky because you need to track how each entry affects the output.<br><br><b>Solution:</b> Rewrite scalar expressions as traces, then use simple differentiation rules.<br><br><b>Why it works:</b> The trace is a scalar, and trace has a cyclic property: \\( \\text{tr}(ABC) = \\text{tr}(CAB) \\). This lets you \"move\" \\( X \\) to a convenient position.<br><br><b>Key formulas:</b><br>\\( \\frac{\\partial}{\\partial X} \\text{tr}(AX) = A^T \\)<br>\\( \\frac{\\partial}{\\partial X} \\text{tr}(AXB) = A^T B^T \\)<br>\\( \\frac{\\partial}{\\partial X} \\text{tr}(X^T A) = A \\)<br><br><b>Common rewrites:</b><br>\\( \\vec{x}^T A \\vec{y} = \\text{tr}(\\vec{x}^T A \\vec{y}) = \\text{tr}(\\vec{y} \\vec{x}^T A) \\)<br>\\( ||A||_F^2 = \\text{tr}(A^T A) \\)",
       "tags": [
         "ch33",
         "trace-trick",
