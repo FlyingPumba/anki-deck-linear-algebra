@@ -21,8 +21,8 @@
     },
     {
       "uid": "linear-algebra-13-002",
-      "front": "How do you translate coordinates from \"their\" basis to \"your\" basis?",
-      "back": "Create a matrix \\( P \\) whose columns are their basis vectors expressed in your coordinates.<br><br>Multiply: \\( \\text{(your coordinates)} = P \\times \\text{(their coordinates)} \\)",
+      "front": "How do you translate coordinates from a new basis to the standard basis?",
+      "back": "Create a change-of-basis matrix \\( P \\) whose columns are the new basis vectors expressed in standard coordinates.<br><br>\\( \\text{(standard coordinates)} = P \\times \\text{(new basis coordinates)} \\)<br><br>P converts: new basis → standard basis.",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -31,8 +31,8 @@
     },
     {
       "uid": "linear-algebra-13-003",
-      "front": "How do you translate from \"your\" basis to \"their\" basis?",
-      "back": "Use the inverse matrix \\( P^{-1} \\).<br><br>\\( \\text{(their coordinates)} = P^{-1} \\times \\text{(your coordinates)} \\)",
+      "front": "How do you translate coordinates from the standard basis to a new basis?",
+      "back": "Use \\( P^{-1} \\), where \\( P \\) is the change-of-basis matrix (columns = new basis vectors in standard coordinates).<br><br>\\( \\text{(new basis coordinates)} = P^{-1} \\times \\text{(standard coordinates)} \\)<br><br>P^{-1} converts: standard basis → new basis.",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -41,8 +41,8 @@
     },
     {
       "uid": "linear-algebra-13-004",
-      "front": "What does the expression \\( P^{-1}AP \\) represent?",
-      "back": "The same transformation \\( A \\) expressed in a different coordinate system defined by \\( P \\).<br><br><ol><li>\\( P \\): convert from new basis to standard basis</li><li>\\( A \\): apply transformation in standard basis</li><li>\\( P^{-1} \\): convert result back to new basis</li></ol><br>This is called a similarity transformation.",
+      "front": "What does \\( P^{-1}AP \\) represent, where \\( P \\) is a change-of-basis matrix?",
+      "back": "The same transformation \\( A \\) expressed in the basis defined by \\( P \\)'s columns.<br><br>Reading right-to-left when applied to a vector:<br><br><ol><li>\\( P \\): convert from new basis to standard</li><li>\\( A \\): apply transformation in standard basis</li><li>\\( P^{-1} \\): convert result back to new basis</li></ol><br>This is called a similarity transformation.",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -62,7 +62,7 @@
     {
       "uid": "linear-algebra-13-006",
       "front": "What are similar matrices?",
-      "back": "Two matrices \\( A \\) and \\( B \\) are similar if there exists an invertible matrix \\( P \\) such that:<br><br>\\( B = P^{-1}AP \\)<br><br>Similar matrices represent the same linear transformation in different bases.",
+      "back": "Two matrices \\( A \\) and \\( B \\) are similar if there exists an invertible matrix \\( P \\) such that:<br><br>\\( B = P^{-1}AP \\)<br><br>Here \\( P \\) is a change-of-basis matrix (columns = new basis vectors in standard coordinates). Similar matrices represent the same linear transformation in different bases.",
       "tags": [
         "ch13",
         "similar-matrices",
@@ -81,8 +81,8 @@
     },
     {
       "uid": "linear-algebra-13-008",
-      "front": "If \\( A \\) and \\( B \\) are similar, what can you say about \\( A^n \\) and \\( B^n \\)?",
-      "back": "They are also similar.<br><br>If \\( B = P^{-1}AP \\), then \\( B^n = P^{-1}A^nP \\).<br><br>This makes similar matrices useful for computing powers.",
+      "front": "If \\( A \\) and \\( B \\) are similar matrices (\\( B = P^{-1}AP \\)), what can you say about \\( A^n \\) and \\( B^n \\)?",
+      "back": "They are also similar: \\( B^n = P^{-1}A^nP \\).<br><br>This is useful for computing powers: if \\( P \\) diagonalizes \\( A \\), then \\( B \\) is diagonal and \\( B^n \\) is trivial to compute.",
       "tags": [
         "ch13",
         "similar-matrices",
