@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-07-005",
       "front": "What is the rank of a matrix?",
-      "back": "The number of dimensions in the transformation's output.<br><br><ul><li>Rank 1: output is a line</li><li>Rank 2: output is a plane</li><li>Full rank: rank equals number of columns (\\( \\det \\neq 0 \\))</li></ul>",
+      "back": "The number of dimensions in the transformation's output.<br><br><ul><li>Rank 1: output is a line</li><li>Rank 2: output is a plane</li><li>Rank 3: output is all of 3D space</li></ul>",
       "tags": [
         "ch07",
         "rank",
@@ -96,6 +96,16 @@
         "ch07",
         "null-space",
         "geometry"
+      ]
+    },
+    {
+      "uid": "linear-algebra-07-010",
+      "front": "What does it mean for a square matrix to have full rank?",
+      "back": "Its rank equals its number of columns (or rows).<br><br>Equivalently:<br><br><ul><li>\\( \\det(A) \\neq 0 \\)</li><li>The transformation doesn't squish space to a lower dimension</li><li>The inverse \\( A^{-1} \\) exists</li><li>The null space contains only \\( \\vec{0} \\)</li></ul>",
+      "tags": [
+        "ch07",
+        "rank",
+        "full-rank"
       ]
     }
   ]
