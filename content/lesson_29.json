@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-29-001",
       "front": "What is the QR decomposition?",
-      "back": "Any \\( m \\times n \\) matrix \\( A \\) (\\( m \\geq n \\)) can be written as:\n\n\\( A = QR \\)\n\nWhere:\n\n- \\( Q \\) is \\( m \\times n \\) with orthonormal columns\n- \\( R \\) is \\( n \\times n \\) upper triangular",
+      "back": "Any \\( m \\times n \\) matrix \\( A \\) (\\( m \\geq n \\)) can be written as:<br><br>\\( A = QR \\)<br><br>Where:<br><br><ul><li>\\( Q \\) is \\( m \\times n \\) with orthonormal columns</li><li>\\( R \\) is \\( n \\times n \\) upper triangular</li></ul>",
       "tags": [
         "ch29",
         "qr",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-29-002",
       "front": "How does QR relate to Gram-Schmidt?",
-      "back": "Gram-Schmidt orthogonalizes columns of \\( A \\) to get columns of \\( Q \\).\n\n\\( R \\) contains the coefficients: \\( r_{ij} = \\vec{q}_i^T \\vec{a}_j \\)\n\nClassical Gram-Schmidt is numerically unstable; use modified Gram-Schmidt or Householder.",
+      "back": "Gram-Schmidt orthogonalizes columns of \\( A \\) to get columns of \\( Q \\).<br><br>\\( R \\) contains the coefficients: \\( r_{ij} = \\vec{q}_i^T \\vec{a}_j \\)<br><br>Classical Gram-Schmidt is numerically unstable; use modified Gram-Schmidt or Householder.",
       "tags": [
         "ch29",
         "qr",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-29-003",
       "front": "What is the Householder QR algorithm?",
-      "back": "Uses Householder reflections to zero out below-diagonal entries column by column.\n\n\\( A \\to H_1 A \\to H_2 H_1 A \\to ... \\to R \\)\n\nThen \\( Q = H_1 H_2 ... H_{n-1} \\).\n\nNumerically stable and preferred in practice.",
+      "back": "Uses Householder reflections to zero out below-diagonal entries column by column.<br><br>\\( A \\to H_1 A \\to H_2 H_1 A \\to ... \\to R \\)<br><br>Then \\( Q = H_1 H_2 ... H_{n-1} \\).<br><br>Numerically stable and preferred in practice.",
       "tags": [
         "ch29",
         "householder",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-29-004",
       "front": "Why is QR more numerically stable than normal equations for least squares?",
-      "back": "Normal equations form \\( A^T A \\), which squares the condition number.\n\nQR solves \\( R\\hat{x} = Q^T \\vec{b} \\) directly, preserving the original condition number.\n\nRule of thumb: if \\( A \\) has condition number \\( \\kappa \\), \\( A^T A \\) has \\( \\kappa^2 \\).",
+      "back": "Normal equations form \\( A^T A \\), which squares the condition number.<br><br>QR solves \\( R\\hat{x} = Q^T \\vec{b} \\) directly, preserving the original condition number.<br><br>Rule of thumb: if \\( A \\) has condition number \\( \\kappa \\), \\( A^T A \\) has \\( \\kappa^2 \\).",
       "tags": [
         "ch29",
         "numerical-stability",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-29-005",
       "front": "When should you use QR vs SVD vs eigendecomposition?",
-      "back": "QR: solving least squares, finding orthonormal bases (fast)\n\nSVD: rank determination, pseudoinverse, low-rank approximation (robust)\n\nEigendecomposition: only for square matrices; symmetric case for spectral analysis",
+      "back": "QR: solving least squares, finding orthonormal bases (fast)<br><br>SVD: rank determination, pseudoinverse, low-rank approximation (robust)<br><br>Eigendecomposition: only for square matrices; symmetric case for spectral analysis",
       "tags": [
         "ch29",
         "comparison",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-29-006",
       "front": "What is the computational cost of QR vs SVD?",
-      "back": "For \\( m \\times n \\) matrix (\\( m \\geq n \\)):\n\nQR: \\( O(mn^2) \\)\n\nSVD: \\( O(mn^2 + n^3) \\) or \\( O(m^2n + n^3) \\)\n\nQR is cheaper; use SVD when you need singular values/vectors.",
+      "back": "For \\( m \\times n \\) matrix (\\( m \\geq n \\)):<br><br>QR: \\( O(mn^2) \\)<br><br>SVD: \\( O(mn^2 + n^3) \\) or \\( O(m^2n + n^3) \\)<br><br>QR is cheaper; use SVD when you need singular values/vectors.",
       "tags": [
         "ch29",
         "complexity",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-29-007",
       "front": "What is the thin QR vs full QR decomposition?",
-      "back": "Thin (reduced): \\( A = Q_1 R_1 \\) where \\( Q_1 \\) is \\( m \\times n \\), \\( R_1 \\) is \\( n \\times n \\)\n\nFull: \\( A = Q R \\) where \\( Q \\) is \\( m \\times m \\) orthogonal, \\( R \\) is \\( m \\times n \\)\n\nThin is more efficient and usually sufficient.",
+      "back": "Thin (reduced): \\( A = Q_1 R_1 \\) where \\( Q_1 \\) is \\( m \\times n \\), \\( R_1 \\) is \\( n \\times n \\)<br><br>Full: \\( A = Q R \\) where \\( Q \\) is \\( m \\times m \\) orthogonal, \\( R \\) is \\( m \\times n \\)<br><br>Thin is more efficient and usually sufficient.",
       "tags": [
         "ch29",
         "qr",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-29-008",
       "front": "How does QR help with eigenvalue computation?",
-      "back": "The QR algorithm iterates:\n\n\\( A_k = Q_k R_k \\), then \\( A_{k+1} = R_k Q_k \\)\n\n\\( A_k \\) converges to upper triangular with eigenvalues on diagonal.\n\nThis is how eigenvalues are computed in practice.",
+      "back": "The QR algorithm iterates:<br><br>\\( A_k = Q_k R_k \\), then \\( A_{k+1} = R_k Q_k \\)<br><br>\\( A_k \\) converges to upper triangular with eigenvalues on diagonal.<br><br>This is how eigenvalues are computed in practice.",
       "tags": [
         "ch29",
         "qr-algorithm",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-29-009",
       "front": "What is backward stability in numerical linear algebra?",
-      "back": "An algorithm is backward stable if the computed answer is the exact answer to a slightly perturbed problem.\n\nHouseholder QR is backward stable: computed \\( \\hat{Q}\\hat{R} = A + E \\) where \\( ||E|| \\) is small.\n\nThis is the gold standard for numerical algorithms.",
+      "back": "An algorithm is backward stable if the computed answer is the exact answer to a slightly perturbed problem.<br><br>Householder QR is backward stable: computed \\( \\hat{Q}\\hat{R} = A + E \\) where \\( ||E|| \\) is small.<br><br>This is the gold standard for numerical algorithms.",
       "tags": [
         "ch29",
         "backward-stability",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-29-010",
       "front": "Why does numerical stability matter for MI?",
-      "back": "Model weights are already imprecise (float32/float16).\n\nUnstable algorithms amplify errors:\n\n- Decompositions of large weight matrices\n- Extracting small singular values\n- Computing in ill-conditioned regimes\n\nUse QR or SVD rather than naive methods.",
+      "back": "Model weights are already imprecise (float32/float16).<br><br>Unstable algorithms amplify errors:<br><br><ul><li>Decompositions of large weight matrices</li><li>Extracting small singular values</li><li>Computing in ill-conditioned regimes</li></ul><br>Use QR or SVD rather than naive methods.",
       "tags": [
         "ch29",
         "numerical-stability",

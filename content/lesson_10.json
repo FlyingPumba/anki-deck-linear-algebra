@@ -10,7 +10,7 @@
     {
       "uid": "linear-algebra-10-001",
       "front": "What is the 2D cross product of two vectors?",
-      "back": "The signed area of the parallelogram they span.\n\nPositive: second vector is counterclockwise from first\nNegative: second vector is clockwise from first\n\nComputed as \\( \\det \\begin{pmatrix} v_1 & w_1 \\\\ v_2 & w_2 \\end{pmatrix} \\)",
+      "back": "The signed area of the parallelogram they span.<br><br><ul><li>Positive: second vector is counterclockwise from first</li><li>Negative: second vector is clockwise from first</li></ul><br>Computed as \\( \\det \\begin{pmatrix} v_1 & w_1 \\\\ v_2 & w_2 \\end{pmatrix} \\)",
       "tags": [
         "ch10",
         "cross-product",
@@ -20,7 +20,7 @@
     {
       "uid": "linear-algebra-10-002",
       "front": "What is the 3D cross product \\( \\vec{v} \\times \\vec{w} \\)?",
-      "back": "A new vector that is:\n\n1. Perpendicular to both \\( \\vec{v} \\) and \\( \\vec{w} \\)\n2. Has magnitude equal to the area of the parallelogram formed by \\( \\vec{v} \\) and \\( \\vec{w} \\)\n3. Direction follows an orientation convention (swapping order reverses direction)",
+      "back": "A new vector that is:<br><br><ol><li>Perpendicular to both \\( \\vec{v} \\) and \\( \\vec{w} \\)</li><li>Has magnitude equal to the area of the parallelogram formed by \\( \\vec{v} \\) and \\( \\vec{w} \\)</li><li>Direction follows an orientation convention (swapping order reverses direction)</li></ol>",
       "tags": [
         "ch10",
         "cross-product",
@@ -29,8 +29,8 @@
     },
     {
       "uid": "linear-algebra-10-004",
-      "front": "Is the cross product commutative?\n\nDoes \\( \\vec{v} \\times \\vec{w} = \\vec{w} \\times \\vec{v} \\)?",
-      "back": "No! The cross product is anti-commutative.\n\n\\( \\vec{v} \\times \\vec{w} = -(\\vec{w} \\times \\vec{v}) \\)\n\nSwapping the order flips the sign (reverses direction).",
+      "front": "Is the cross product commutative?<br><br>Does \\( \\vec{v} \\times \\vec{w} = \\vec{w} \\times \\vec{v} \\)?",
+      "back": "No! The cross product is anti-commutative.<br><br>\\( \\vec{v} \\times \\vec{w} = -(\\vec{w} \\times \\vec{v}) \\)<br><br>Swapping the order flips the sign (reverses direction).",
       "tags": [
         "ch10",
         "cross-product",
@@ -40,7 +40,7 @@
     {
       "uid": "linear-algebra-10-005",
       "front": "What happens to the cross product when vectors are parallel or perpendicular?",
-      "back": "Parallel vectors: cross product is zero (no parallelogram area)\n\nPerpendicular vectors: cross product magnitude is maximal \\( (||\\vec{v}|| \\times ||\\vec{w}||) \\)",
+      "back": "<ul><li>Parallel vectors: cross product is zero (no parallelogram area)</li><li>Perpendicular vectors: cross product magnitude is maximal \\( (||\\vec{v}|| \\times ||\\vec{w}||) \\)</li></ul>",
       "tags": [
         "ch10",
         "cross-product",
@@ -49,8 +49,8 @@
     },
     {
       "uid": "linear-algebra-10-006",
-      "front": "How does scaling affect the cross product?\n\n\\( (k\\vec{v}) \\times \\vec{w} = ? \\)",
-      "back": "\\( (k\\vec{v}) \\times \\vec{w} = k(\\vec{v} \\times \\vec{w}) \\)\n\nScaling one vector by \\( k \\) scales the cross product by \\( k \\) (because it scales the parallelogram area by \\( k \\)).",
+      "front": "How does scaling affect the cross product?<br><br>\\( (k\\vec{v}) \\times \\vec{w} = ? \\)",
+      "back": "\\( (k\\vec{v}) \\times \\vec{w} = k(\\vec{v} \\times \\vec{w}) \\)<br><br>Scaling one vector by \\( k \\) scales the cross product by \\( k \\) (because it scales the parallelogram area by \\( k \\)).",
       "tags": [
         "ch10",
         "cross-product",

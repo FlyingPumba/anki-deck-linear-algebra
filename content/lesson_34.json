@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-34-001",
       "front": "What is the power iteration method?",
-      "back": "An iterative algorithm to approximate the dominant eigenvector of a matrix \\( A \\):\n\n1. Start with a non-zero vector \\( \\vec{x}_0 \\)\n2. Iterate \\( \\vec{x}_{k+1} = A \\vec{x}_k \\), then normalize\n3. \\( \\vec{x}_k \\) converges (under mild conditions) to the top eigenvector\n\nIt only needs matrix-vector products, not full factorizations.",
+      "back": "An iterative algorithm to approximate the dominant eigenvector of a matrix \\( A \\):<br><br><ol><li>Start with a non-zero vector \\( \\vec{x}_0 \\)</li><li>Iterate \\( \\vec{x}_{k+1} = A \\vec{x}_k \\), then normalize</li><li>\\( \\vec{x}_k \\) converges (under mild conditions) to the top eigenvector</li></ol><br>It only needs matrix-vector products, not full factorizations.",
       "tags": [
         "ch34",
         "power-iteration",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-34-002",
       "front": "To which eigenpair does power iteration converge, and when does it work?",
-      "back": "It converges to the eigenvector associated with the eigenvalue of largest magnitude \\( |\\lambda_1| \\):\n\n- Requires \\( |\\lambda_1| > |\\lambda_2| \\)\n- Initial vector must have a non-zero component along the top eigenvector\n\nConvergence rate is geometric, governed by \\( |\\lambda_2 / \\lambda_1| \\).",
+      "back": "It converges to the eigenvector associated with the eigenvalue of largest magnitude \\( |\\lambda_1| \\):<br><br><ul><li>Requires \\( |\\lambda_1| > |\\lambda_2| \\)</li><li>Initial vector must have a non-zero component along the top eigenvector</li></ul><br>Convergence rate is geometric, governed by \\( |\\lambda_2 / \\lambda_1| \\).",
       "tags": [
         "ch34",
         "power-iteration",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-34-003",
       "front": "Why is power iteration useful for large-scale problems?",
-      "back": "It replaces expensive decompositions with cheap matrix-vector products:\n\n- Memory: never forms or stores a full eigenbasis\n- Computation: each step is \\( O(\\text{nnz}(A)) \\) for sparse \\( A \\)\n- Works in streaming/online settings where you can apply \\( A \\) but not materialize it fully",
+      "back": "It replaces expensive decompositions with cheap matrix-vector products:<br><br><ul><li>Memory: never forms or stores a full eigenbasis</li><li>Computation: each step is \\( O(\\text{nnz}(A)) \\) for sparse \\( A \\)</li><li>Works in streaming/online settings where you can apply \\( A \\) but not materialize it fully</li></ul>",
       "tags": [
         "ch34",
         "power-iteration",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-34-004",
       "front": "What is the Lanczos algorithm (at a high level)?",
-      "back": "An iterative method for symmetric \\( A \\) that builds an orthonormal basis of the Krylov subspace:\n\n\\( \\mathcal{K}_k(A, \\vec{v}) = \\text{span}\\{ \\vec{v}, A\\vec{v}, A^2\\vec{v}, ..., A^{k-1}\\vec{v} \\} \\)\n\nIt reduces \\( A \\) to a small tridiagonal matrix whose eigenvalues approximate those of \\( A \\).",
+      "back": "An iterative method for symmetric \\( A \\) that builds an orthonormal basis of the Krylov subspace:<br><br>\\( \\mathcal{K}_k(A, \\vec{v}) = \\text{span}\\{ \\vec{v}, A\\vec{v}, A^2\\vec{v}, ..., A^{k-1}\\vec{v} \\} \\)<br><br>It reduces \\( A \\) to a small tridiagonal matrix whose eigenvalues approximate those of \\( A \\).",
       "tags": [
         "ch34",
         "lanczos",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-34-005",
       "front": "How does Lanczos help approximate several eigenvalues or singular values?",
-      "back": "After \\( k \\) steps, Lanczos gives a \\( k \\times k \\) tridiagonal matrix \\( T_k \\):\n\n- Eigenvalues of \\( T_k \\) approximate extremal eigenvalues of \\( A \\)\n- Eigenvectors can be lifted back to approximate eigenvectors of \\( A \\)\n\nFor SVD, apply Lanczos to \\( A^T A \\) or \\( AA^T \\) (or use specialized Lanczos-SVD variants).",
+      "back": "After \\( k \\) steps, Lanczos gives a \\( k \\times k \\) tridiagonal matrix \\( T_k \\):<br><br><ul><li>Eigenvalues of \\( T_k \\) approximate extremal eigenvalues of \\( A \\)</li><li>Eigenvectors can be lifted back to approximate eigenvectors of \\( A \\)</li></ul><br>For SVD, apply Lanczos to \\( A^T A \\) or \\( AA^T \\) (or use specialized Lanczos-SVD variants).",
       "tags": [
         "ch34",
         "lanczos",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-34-006",
       "front": "What is the basic idea of randomized SVD?",
-      "back": "Approximate the column space of \\( A \\) using random probes:\n\n1. Draw a random matrix \\( \\Omega \\)\n2. Form \\( Y = A \\Omega \\) and orthonormalize columns to get \\( Q \\)\n3. Compute SVD of the small matrix \\( B = Q^T A \\)\n\nThen \\( A \\approx Q B \\) gives a low-rank SVD approximation.",
+      "back": "Approximate the column space of \\( A \\) using random probes:<br><br><ol><li>Draw a random matrix \\( \\Omega \\)</li><li>Form \\( Y = A \\Omega \\) and orthonormalize columns to get \\( Q \\)</li><li>Compute SVD of the small matrix \\( B = Q^T A \\)</li></ol><br>Then \\( A \\approx Q B \\) gives a low-rank SVD approximation.",
       "tags": [
         "ch34",
         "randomized-svd",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-34-007",
       "front": "Why is randomized SVD efficient for huge matrices?",
-      "back": "It trades exactness for controlled approximation:\n\n- Only needs a few passes over \\( A \\)\n- Works well when \\( A \\) is numerically low-rank (fast spectral decay)\n- Computation scales with target rank \\( k \\), not full dimension\n\nError can be bounded in terms of trailing singular values.",
+      "back": "It trades exactness for controlled approximation:<br><br><ul><li>Only needs a few passes over \\( A \\)</li><li>Works well when \\( A \\) is numerically low-rank (fast spectral decay)</li><li>Computation scales with target rank \\( k \\), not full dimension</li></ul><br>Error can be bounded in terms of trailing singular values.",
       "tags": [
         "ch34",
         "randomized-svd",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-34-008",
       "front": "Why do large ML models rarely use full eigendecompositions or SVDs?",
-      "back": "For weight or activation matrices with millions of entries:\n\n- Full decompositions are \\( O(n^3) \\) and memory-heavy\n- Often you only need top-k directions (e.g., dominant features or modes)\n- Iterative/randomized methods give \"good enough\" spectra much cheaper\n\nThis matches how we analyze large models: focus on the most important directions.",
+      "back": "For weight or activation matrices with millions of entries:<br><br><ul><li>Full decompositions are \\( O(n^3) \\) and memory-heavy</li><li>Often you only need top-k directions (e.g., dominant features or modes)</li><li>Iterative/randomized methods give \"good enough\" spectra much cheaper</li></ul><br>This matches how we analyze large models: focus on the most important directions.",
       "tags": [
         "ch34",
         "large-scale",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-34-009",
       "front": "How do these methods connect to mechanistic interpretability?",
-      "back": "They let you work with realistic model scales:\n\n- Estimate spectral norms or top singular vectors of huge weight matrices\n- Find leading principal components of activations without storing all data\n- Track how a few dominant directions evolve during training\n\nThis is the practical bridge from textbook decompositions to 7B-parameter models.",
+      "back": "They let you work with realistic model scales:<br><br><ul><li>Estimate spectral norms or top singular vectors of huge weight matrices</li><li>Find leading principal components of activations without storing all data</li><li>Track how a few dominant directions evolve during training</li></ul><br>This is the practical bridge from textbook decompositions to 7B-parameter models.",
       "tags": [
         "ch34",
         "mi-application",

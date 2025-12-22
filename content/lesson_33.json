@@ -69,6 +69,37 @@
       ]
     },
     {
+      "uid": "linear-algebra-33-017",
+      "front": "Why is \\( ||\\vec{r}||^2 = \\vec{r}^T \\vec{r} \\)?",
+      "back": "<b>Convention:</b> Vectors are column vectors by default.<br><br>A vector \\( \\vec{r} \\in \\mathbb{R}^n \\) is an \\( n \\times 1 \\) matrix:<br>\\( \\vec{r} = \\begin{bmatrix} r_1 \\\\ r_2 \\\\ \\vdots \\\\ r_n \\end{bmatrix} \\)<br><br><b>To get a scalar from two vectors</b>, dimensions must match for multiplication. So we transpose one:<br><br>\\( \\vec{r}^T \\vec{r} = \\begin{bmatrix} r_1 & r_2 & \\cdots & r_n \\end{bmatrix} \\begin{bmatrix} r_1 \\\\ r_2 \\\\ \\vdots \\\\ r_n \\end{bmatrix} = r_1^2 + r_2^2 + \\cdots + r_n^2 = ||\\vec{r}||^2 \\)<br><br><b>Shape check:</b> \\( (1 \\times n)(n \\times 1) = (1 \\times 1) \\) = scalar.",
+      "tags": [
+        "ch33",
+        "convention",
+        "notation"
+      ]
+    },
+    {
+      "uid": "linear-algebra-33-016",
+      "front": "How do you compute \\( \\frac{\\partial}{\\partial \\vec{x}} ||\\vec{r}(\\vec{x})||^2 \\) when \\( \\vec{r} \\) depends on \\( \\vec{x} \\)?",
+      "back": "<b>Identity:</b><br>\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{r}^T \\vec{r}) = 2 \\left( \\frac{\\partial \\vec{r}}{\\partial \\vec{x}} \\right)^T \\vec{r} = 2 J^T \\vec{r} \\)<br><br>where \\( J = \\frac{\\partial \\vec{r}}{\\partial \\vec{x}} \\) is the Jacobian of \\( \\vec{r} \\).<br><br><b>Why?</b> Apply the chain rule: \\( ||\\vec{r}||^2 = \\vec{r}^T \\vec{r} \\) is a scalar, and its gradient w.r.t. \\( \\vec{r} \\) is \\( 2\\vec{r} \\). Then multiply by \\( J^T \\) to pull back to \\( \\vec{x} \\).<br><br><b>Simple example:</b> Let \\( \\vec{r} = \\vec{x} - \\vec{a} \\) (displacement from point \\( \\vec{a} \\)).<br>Then \\( J = I \\), so:<br>\\( \\frac{\\partial}{\\partial \\vec{x}} ||\\vec{x} - \\vec{a}||^2 = 2(\\vec{x} - \\vec{a}) \\)<br><br><b>This identity derives the least squares gradient</b> when \\( \\vec{r} = A\\vec{x} - \\vec{b} \\).",
+      "tags": [
+        "ch33",
+        "chain-rule",
+        "gradient",
+        "squared-norm"
+      ]
+    },
+    {
+      "uid": "linear-algebra-33-015",
+      "front": "What is the multivariable chain rule in matrix form?",
+      "back": "<b>Scalar form:</b> If \\( f \\) depends on \\( \\vec{y} \\), and \\( \\vec{y} \\) depends on \\( \\vec{x} \\):<br><br>\\( \\frac{\\partial f}{\\partial x_i} = \\sum_j \\frac{\\partial f}{\\partial y_j} \\frac{\\partial y_j}{\\partial x_i} \\)<br><br><b>Matrix form:</b> This sum is exactly matrix multiplication:<br><br>\\( \\nabla_{\\vec{x}} f = J_{\\vec{y}}^T \\nabla_{\\vec{y}} f \\)<br><br>where \\( J_{\\vec{y}} \\) is the Jacobian \\( \\frac{\\partial \\vec{y}}{\\partial \\vec{x}} \\).<br><br><b>Intuition:</b> Each \\( x_i \\) affects \\( f \\) through ALL the \\( y_j \\)'s. The sum collects all these pathways. Matrix multiplication automates this summation.<br><br><b>Why the transpose?</b> Gradients are column vectors; the Jacobian's rows are gradients of each \\( y_j \\). The transpose aligns dimensions correctly.",
+      "tags": [
+        "ch33",
+        "chain-rule",
+        "gradient"
+      ]
+    },
+    {
       "uid": "linear-algebra-33-007",
       "front": "How does the chain rule work with Jacobians?",
       "back": "For composition \\( f \\circ g \\):<br><br>\\( J_{f \\circ g} = J_f \\cdot J_g \\)<br><br><b>Intuition:</b> Small changes propagate through each function. The Jacobian of the composition is the product of individual Jacobians - just like the single-variable chain rule \\( (f \\circ g)' = f' \\cdot g' \\).<br><br><b>Order matters:</b> \\( J_f \\) is evaluated at \\( g(\\vec{x}) \\), and \\( J_g \\) at \\( \\vec{x} \\).<br><br><b>Connection to backprop:</b> This IS backpropagation. To get gradients w.r.t. early layers, multiply Jacobians backward through the computation graph. Each layer contributes its local Jacobian.",

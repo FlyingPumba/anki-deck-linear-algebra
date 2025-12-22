@@ -12,7 +12,7 @@
     {
       "uid": "linear-algebra-13-001",
       "front": "What is a change of basis?",
-      "back": "Converting how a vector is described between two different coordinate systems with different basis vectors.\n\nThe same geometric vector can have different numerical coordinates depending on your choice of basis.",
+      "back": "Converting how a vector is described between two different coordinate systems with different basis vectors.<br><br>The same geometric vector can have different numerical coordinates depending on your choice of basis.",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -22,7 +22,7 @@
     {
       "uid": "linear-algebra-13-002",
       "front": "How do you translate coordinates from \"their\" basis to \"your\" basis?",
-      "back": "Create a matrix \\( P \\) whose columns are their basis vectors expressed in your coordinates.\n\nMultiply: \\( \\text{(your coordinates)} = P \\times \\text{(their coordinates)} \\)",
+      "back": "Create a matrix \\( P \\) whose columns are their basis vectors expressed in your coordinates.<br><br>Multiply: \\( \\text{(your coordinates)} = P \\times \\text{(their coordinates)} \\)",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -32,7 +32,7 @@
     {
       "uid": "linear-algebra-13-003",
       "front": "How do you translate from \"your\" basis to \"their\" basis?",
-      "back": "Use the inverse matrix \\( P^{-1} \\).\n\n\\( \\text{(their coordinates)} = P^{-1} \\times \\text{(your coordinates)} \\)",
+      "back": "Use the inverse matrix \\( P^{-1} \\).<br><br>\\( \\text{(their coordinates)} = P^{-1} \\times \\text{(your coordinates)} \\)",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -42,7 +42,7 @@
     {
       "uid": "linear-algebra-13-004",
       "front": "What does the expression \\( P^{-1}AP \\) represent?",
-      "back": "The same transformation \\( A \\) expressed in a different coordinate system defined by \\( P \\).\n\n1. \\( P \\): convert from new basis to standard basis\n2. \\( A \\): apply transformation in standard basis\n3. \\( P^{-1} \\): convert result back to new basis\n\nThis is called a similarity transformation.",
+      "back": "The same transformation \\( A \\) expressed in a different coordinate system defined by \\( P \\).<br><br><ol><li>\\( P \\): convert from new basis to standard basis</li><li>\\( A \\): apply transformation in standard basis</li><li>\\( P^{-1} \\): convert result back to new basis</li></ol><br>This is called a similarity transformation.",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -52,7 +52,7 @@
     {
       "uid": "linear-algebra-13-005",
       "front": "Why is change of basis useful?",
-      "back": "Some bases make certain transformations simpler.\n\nFor example, choosing eigenvectors as a basis can turn a complex matrix into a simple diagonal matrix.",
+      "back": "Some bases make certain transformations simpler.<br><br>For example, choosing eigenvectors as a basis can turn a complex matrix into a simple diagonal matrix.",
       "tags": [
         "ch13",
         "change-of-basis",
@@ -62,7 +62,7 @@
     {
       "uid": "linear-algebra-13-006",
       "front": "What are similar matrices?",
-      "back": "Two matrices \\( A \\) and \\( B \\) are similar if there exists an invertible matrix \\( P \\) such that:\n\n\\( B = P^{-1}AP \\)\n\nSimilar matrices represent the same linear transformation in different bases.",
+      "back": "Two matrices \\( A \\) and \\( B \\) are similar if there exists an invertible matrix \\( P \\) such that:<br><br>\\( B = P^{-1}AP \\)<br><br>Similar matrices represent the same linear transformation in different bases.",
       "tags": [
         "ch13",
         "similar-matrices",
@@ -72,7 +72,7 @@
     {
       "uid": "linear-algebra-13-007",
       "front": "What properties do similar matrices share?",
-      "back": "Similar matrices have the same:\n\n- Determinant\n- Trace\n- Eigenvalues\n- Rank\n- Characteristic polynomial\n\nThese are called similarity invariants.",
+      "back": "Similar matrices have the same:<br><br><ul><li>Determinant</li><li>Trace</li><li>Eigenvalues</li><li>Rank</li><li>Characteristic polynomial</li></ul><br>These are called similarity invariants.",
       "tags": [
         "ch13",
         "similar-matrices",
@@ -82,7 +82,7 @@
     {
       "uid": "linear-algebra-13-008",
       "front": "If \\( A \\) and \\( B \\) are similar, what can you say about \\( A^n \\) and \\( B^n \\)?",
-      "back": "They are also similar.\n\nIf \\( B = P^{-1}AP \\), then \\( B^n = P^{-1}A^nP \\).\n\nThis makes similar matrices useful for computing powers.",
+      "back": "They are also similar.<br><br>If \\( B = P^{-1}AP \\), then \\( B^n = P^{-1}A^nP \\).<br><br>This makes similar matrices useful for computing powers.",
       "tags": [
         "ch13",
         "similar-matrices",
@@ -92,7 +92,7 @@
     {
       "uid": "linear-algebra-13-009",
       "front": "When is a matrix similar to a diagonal matrix?",
-      "back": "When the matrix is diagonalizable, i.e., when it has \\( n \\) linearly independent eigenvectors for an \\( n \\times n \\) matrix.\n\nThe diagonal matrix has the eigenvalues on its diagonal.",
+      "back": "When the matrix is diagonalizable, i.e., when it has \\( n \\) linearly independent eigenvectors for an \\( n \\times n \\) matrix.<br><br>The diagonal matrix has the eigenvalues on its diagonal.",
       "tags": [
         "ch13",
         "similar-matrices",

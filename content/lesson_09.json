@@ -10,8 +10,8 @@
   "cards": [
     {
       "uid": "linear-algebra-09-001",
-      "front": "How do you compute the dot product of two vectors?\n\n\\( [a, b] \\cdot [c, d] = ? \\)",
-      "back": "Pair coordinates, multiply, and sum:\n\n\\( a \\cdot c + b \\cdot d \\)\n\nExample: \\( [1, 2] \\cdot [3, 4] = 1(3) + 2(4) = 11 \\)",
+      "front": "How do you compute the dot product of two vectors?<br><br>\\( [a, b] \\cdot [c, d] = ? \\)",
+      "back": "Pair coordinates, multiply, and sum:<br><br>\\( a \\cdot c + b \\cdot d \\)<br><br>Example: \\( [1, 2] \\cdot [3, 4] = 1(3) + 2(4) = 11 \\)",
       "tags": [
         "ch09",
         "dot-product",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-09-002",
       "front": "What is the geometric interpretation of the dot product?",
-      "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.\n\n\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)\n\nwhere \\( \\theta \\) is the angle between them.",
+      "back": "Project one vector onto the other's line, then multiply the projection length by the second vector's length.<br><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.",
       "tags": [
         "ch09",
         "dot-product",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-09-003",
       "front": "What does the sign of a dot product tell you?",
-      "back": "- Positive: vectors point in similar directions (angle < 90°)\n- Zero: vectors are perpendicular (angle = 90°)\n- Negative: vectors point in opposing directions (angle > 90°)",
+      "back": "<ul><li>Positive: vectors point in similar directions (angle < 90°)</li><li>Zero: vectors are perpendicular (angle = 90°)</li><li>Negative: vectors point in opposing directions (angle > 90°)</li></ul>",
       "tags": [
         "ch09",
         "dot-product",
@@ -40,8 +40,8 @@
     },
     {
       "uid": "linear-algebra-09-004",
-      "front": "Is the dot product commutative?\n\nDoes \\( \\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v} \\)?",
-      "back": "Yes! Order doesn't matter.\n\n\\( \\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v} \\)\n\nProjecting \\( \\vec{w} \\) onto \\( \\vec{v} \\) then scaling gives the same result as the reverse.",
+      "front": "Is the dot product commutative?<br><br>Does \\( \\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v} \\)?",
+      "back": "Yes! Order doesn't matter.<br><br>\\( \\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v} \\)<br><br>Projecting \\( \\vec{w} \\) onto \\( \\vec{v} \\) then scaling gives the same result as the reverse.",
       "tags": [
         "ch09",
         "dot-product",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-09-005",
       "front": "What does it mean to dot with a unit vector?",
-      "back": "It computes the projection of your vector onto the unit vector's direction.\n\nThe result is the signed length of the shadow cast onto that line.",
+      "back": "It computes the projection of your vector onto the unit vector's direction.<br><br>The result is the signed length of the shadow cast onto that line.",
       "tags": [
         "ch09",
         "dot-product",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-09-006",
       "front": "What is duality in the context of dot products?",
-      "back": "Every linear transformation from n-dimensional space to numbers corresponds to a unique vector in that space.\n\nComputing the transformation equals taking the dot product with that vector.\n\nA \\( 1 \\times n \\) matrix \\( [a, b, ...] \\) acting on \\( \\vec{v} \\) gives the same result as \\( [a, b, ...] \\cdot \\vec{v} \\).",
+      "back": "Every linear transformation from n-dimensional space to numbers corresponds to a unique vector in that space.<br><br>Computing the transformation equals taking the dot product with that vector.<br><br>A \\( 1 \\times n \\) matrix \\( [a, b, ...] \\) acting on \\( \\vec{v} \\) gives the same result as \\( [a, b, ...] \\cdot \\vec{v} \\).",
       "tags": [
         "ch09",
         "duality",

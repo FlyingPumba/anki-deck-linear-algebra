@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-19-001",
       "front": "What is a subspace of \\( \\mathbb{R}^n \\)?",
-      "back": "A subset \\( H \\) of \\( \\mathbb{R}^n \\) that satisfies:\n\n1. Contains the zero vector: \\( \\vec{0} \\in H \\)\n2. Closed under addition: \\( \\vec{u}, \\vec{v} \\in H \\Rightarrow \\vec{u} + \\vec{v} \\in H \\)\n3. Closed under scalar multiplication: \\( \\vec{u} \\in H, c \\in \\mathbb{R} \\Rightarrow c\\vec{u} \\in H \\)",
+      "back": "A subset \\( H \\) of \\( \\mathbb{R}^n \\) that satisfies:<br><br><ol><li>Contains the zero vector: \\( \\vec{0} \\in H \\)</li><li>Closed under addition: \\( \\vec{u}, \\vec{v} \\in H \\Rightarrow \\vec{u} + \\vec{v} \\in H \\)</li><li>Closed under scalar multiplication: \\( \\vec{u} \\in H, c \\in \\mathbb{R} \\Rightarrow c\\vec{u} \\in H \\)</li></ol>",
       "tags": [
         "ch19",
         "subspace",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-19-002",
       "front": "What is the dimension of a subspace?",
-      "back": "The number of vectors in any basis for the subspace.\n\nAll bases for a given subspace have the same number of vectors.",
+      "back": "The number of vectors in any basis for the subspace.<br><br>All bases for a given subspace have the same number of vectors.",
       "tags": [
         "ch19",
         "dimension",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-19-003",
       "front": "What is the dimension of the column space of an \\( m \\times n \\) matrix?",
-      "back": "The rank of the matrix.\n\nThis equals the number of pivot columns, which is the number of linearly independent columns.",
+      "back": "The rank of the matrix.<br><br>This equals the number of pivot columns, which is the number of linearly independent columns.",
       "tags": [
         "ch19",
         "column-space",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-19-004",
       "front": "What is the dimension of the null space of an \\( m \\times n \\) matrix?",
-      "back": "The number of free variables, which equals \\( n - \\text{rank}(A) \\).\n\nThis is called the nullity of \\( A \\).",
+      "back": "The number of free variables, which equals \\( n - \\text{rank}(A) \\).<br><br>This is called the nullity of \\( A \\).",
       "tags": [
         "ch19",
         "null-space",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-19-005",
       "front": "What is the Rank-Nullity Theorem?",
-      "back": "For an \\( m \\times n \\) matrix \\( A \\):\n\n\\( \\text{rank}(A) + \\text{nullity}(A) = n \\)\n\nThe dimension of the column space plus the dimension of the null space equals the number of columns.",
+      "back": "For an \\( m \\times n \\) matrix \\( A \\):<br><br>\\( \\text{rank}(A) + \\text{nullity}(A) = n \\)<br><br>The dimension of the column space plus the dimension of the null space equals the number of columns.",
       "tags": [
         "ch19",
         "rank-nullity",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-19-006",
       "front": "What is the row space of a matrix?",
-      "back": "The span of the row vectors.\n\nEquivalently, the column space of \\( A^T \\).\n\nThe dimension of the row space equals the rank (same as column space dimension).",
+      "back": "The span of the row vectors.<br><br>Equivalently, the column space of \\( A^T \\).<br><br>The dimension of the row space equals the rank (same as column space dimension).",
       "tags": [
         "ch19",
         "row-space",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-19-007",
       "front": "How do you find a basis for the column space?",
-      "back": "Row reduce and identify pivot columns.\n\nThe corresponding columns of the original matrix (not the reduced matrix) form a basis for the column space.",
+      "back": "Row reduce and identify pivot columns.<br><br>The corresponding columns of the original matrix (not the reduced matrix) form a basis for the column space.",
       "tags": [
         "ch19",
         "column-space",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-19-008",
       "front": "How do you find a basis for the null space?",
-      "back": "1. Solve \\( A\\vec{x} = \\vec{0} \\) using row reduction\n\n2. Express basic variables in terms of free variables\n\n3. Write the general solution as a linear combination of vectors, one per free variable\n\nThese vectors form a basis for the null space.",
+      "back": "<ol><li>Solve \\( A\\vec{x} = \\vec{0} \\) using row reduction</li><li>Express basic variables in terms of free variables</li><li>Write the general solution as a linear combination of vectors, one per free variable</li></ol><br>These vectors form a basis for the null space.",
       "tags": [
         "ch19",
         "null-space",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-19-009",
       "front": "What is the relationship between row operations and column space?",
-      "back": "Row operations change the column space but preserve which columns are linearly independent.\n\nThe pivot columns of \\( A \\) correspond to a basis, but you must use the original columns of \\( A \\), not the reduced form.",
+      "back": "Row operations change the column space but preserve which columns are linearly independent.<br><br>The pivot columns of \\( A \\) correspond to a basis, but you must use the original columns of \\( A \\), not the reduced form.",
       "tags": [
         "ch19",
         "row-operations",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-19-010",
       "front": "What are the four fundamental subspaces of a matrix \\( A \\), and how are they related?",
-      "back": "1. Column space of \\( A \\) (in \\( \\mathbb{R}^m \\))\n\n2. Null space of \\( A \\) (in \\( \\mathbb{R}^n \\))\n\n3. Row space of \\( A \\) (in \\( \\mathbb{R}^n \\))\n\n4. Left null space of \\( A \\) (null space of \\( A^T \\), in \\( \\mathbb{R}^m \\))\n\nOrthogonal complement relationships:\n\n- \\( (\\text{Row}(A))^\\perp = \\text{Null}(A) \\)\n- \\( (\\text{Col}(A))^\\perp = \\text{Null}(A^T) \\)\n\nRank-nullity ties their dimensions together: \\( \\dim(\\text{Col}(A)) + \\dim(\\text{Null}(A)) = n \\).",
+      "back": "<ol><li>Column space of \\( A \\) (in \\( \\mathbb{R}^m \\))</li><li>Null space of \\( A \\) (in \\( \\mathbb{R}^n \\))</li><li>Row space of \\( A \\) (in \\( \\mathbb{R}^n \\))</li><li>Left null space of \\( A \\) (null space of \\( A^T \\), in \\( \\mathbb{R}^m \\))</li></ol><br>Orthogonal complement relationships:<br><ul><li>\\( (\\text{Row}(A))^\\perp = \\text{Null}(A) \\)</li><li>\\( (\\text{Col}(A))^\\perp = \\text{Null}(A^T) \\)</li></ul><br>Rank-nullity ties their dimensions together: \\( \\dim(\\text{Col}(A)) + \\dim(\\text{Null}(A)) = n \\).",
       "tags": [
         "ch19",
         "fundamental-subspaces",
@@ -111,7 +111,7 @@
     {
       "uid": "linear-algebra-19-011",
       "front": "What does it mean for a subspace to be \"linear\"?",
-      "back": "A subspace is called linear because it is closed under linear combinations:\n\nIf \\( \\vec{u}, \\vec{v} \\in H \\) and \\( a, b \\in \\mathbb{R} \\), then \\( a\\vec{u} + b\\vec{v} \\in H \\).\n\nThis implies it must contain \\( \\vec{0} \\) (set \\( a = b = 0 \\)).\n\nGeometrically:\n\n- Contains the origin\n- Is \"flat\" (no curvature)\n- Extends infinitely in all its directions",
+      "back": "A subspace is called linear because it is closed under linear combinations:<br><br>If \\( \\vec{u}, \\vec{v} \\in H \\) and \\( a, b \\in \\mathbb{R} \\), then \\( a\\vec{u} + b\\vec{v} \\in H \\).<br><br>This implies it must contain \\( \\vec{0} \\) (set \\( a = b = 0 \\)).<br><br>Geometrically:<br><ul><li>Contains the origin</li><li>Is \"flat\" (no curvature)</li><li>Extends infinitely in all its directions</li></ul>",
       "tags": [
         "ch19",
         "subspace",

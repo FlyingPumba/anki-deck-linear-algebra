@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-23-001",
       "front": "What is a symmetric matrix?",
-      "back": "A matrix equal to its transpose: \\( A = A^T \\)\n\nEquivalently: \\( a_{ij} = a_{ji} \\) for all entries.\n\nSymmetric matrices are always square.",
+      "back": "A matrix equal to its transpose: \\( A = A^T \\)<br><br>Equivalently: \\( a_{ij} = a_{ji} \\) for all entries.<br><br>Symmetric matrices are always square.",
       "tags": [
         "ch23",
         "symmetric",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-23-002",
       "front": "What is special about the eigenvalues of a symmetric matrix?",
-      "back": "All eigenvalues are real (no complex eigenvalues).\n\nThis is true even though the characteristic polynomial could theoretically have complex roots.",
+      "back": "All eigenvalues are real (no complex eigenvalues).<br><br>This is true even though the characteristic polynomial could theoretically have complex roots.",
       "tags": [
         "ch23",
         "symmetric",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-23-003",
       "front": "What is the Spectral Theorem for symmetric matrices?",
-      "back": "Every symmetric matrix \\( A \\) can be diagonalized as:\n\n\\( A = Q \\Lambda Q^T \\)\n\nWhere \\( Q \\) is orthogonal (columns are orthonormal eigenvectors) and \\( \\Lambda \\) is diagonal (eigenvalues).\n\nThis is called orthogonal diagonalization.",
+      "back": "Every symmetric matrix \\( A \\) can be diagonalized as:<br><br>\\( A = Q \\Lambda Q^T \\)<br><br>Where \\( Q \\) is orthogonal (columns are orthonormal eigenvectors) and \\( \\Lambda \\) is diagonal (eigenvalues).<br><br>This is called orthogonal diagonalization.",
       "tags": [
         "ch23",
         "spectral-theorem",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-23-004",
       "front": "What is special about eigenvectors of symmetric matrices?",
-      "back": "Eigenvectors corresponding to different eigenvalues are orthogonal.\n\nThis allows us to find an orthonormal basis of eigenvectors.",
+      "back": "Eigenvectors corresponding to different eigenvalues are orthogonal.<br><br>This allows us to find an orthonormal basis of eigenvectors.",
       "tags": [
         "ch23",
         "symmetric",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-23-005",
       "front": "What is a positive definite matrix?",
-      "back": "A symmetric matrix \\( A \\) such that:\n\n\\( \\vec{x}^T A \\vec{x} > 0 \\) for all non-zero \\( \\vec{x} \\)\n\nThe quadratic form is always positive.",
+      "back": "A symmetric matrix \\( A \\) such that:<br><br>\\( \\vec{x}^T A \\vec{x} > 0 \\) for all non-zero \\( \\vec{x} \\)<br><br>The quadratic form is always positive.",
       "tags": [
         "ch23",
         "positive-definite",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-23-006",
       "front": "What are equivalent conditions for positive definiteness?",
-      "back": "A symmetric matrix \\( A \\) is positive definite iff any of these hold:\n\n- All eigenvalues are positive\n- All pivots are positive\n- All leading principal minors are positive\n- \\( A = R^T R \\) for some matrix \\( R \\) with independent columns",
+      "back": "A symmetric matrix \\( A \\) is positive definite iff any of these hold:<br><br><ul><li>All eigenvalues are positive</li><li>All pivots are positive</li><li>All leading principal minors are positive</li><li>\\( A = R^T R \\) for some matrix \\( R \\) with independent columns</li></ul>",
       "tags": [
         "ch23",
         "positive-definite",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-23-007",
       "front": "What is a positive semi-definite matrix?",
-      "back": "A symmetric matrix \\( A \\) such that:\n\n\\( \\vec{x}^T A \\vec{x} \\geq 0 \\) for all \\( \\vec{x} \\)\n\nEquivalent to: all eigenvalues are \\( \\geq 0 \\).",
+      "back": "A symmetric matrix \\( A \\) such that:<br><br>\\( \\vec{x}^T A \\vec{x} \\geq 0 \\) for all \\( \\vec{x} \\)<br><br>Equivalent to: all eigenvalues are \\( \\geq 0 \\).",
       "tags": [
         "ch23",
         "positive-semi-definite",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-23-008",
       "front": "Why are positive definite matrices important?",
-      "back": "They arise in:\n\n- Optimization (Hessian at a minimum)\n- Covariance matrices in statistics\n- Energy functions in physics\n- Ensuring systems have unique solutions\n\nThey generalize the concept of \"positive\" to matrices.",
+      "back": "They arise in:<br><br><ul><li>Optimization (Hessian at a minimum)</li><li>Covariance matrices in statistics</li><li>Energy functions in physics</li><li>Ensuring systems have unique solutions</li></ul><br>They generalize the concept of \"positive\" to matrices.",
       "tags": [
         "ch23",
         "positive-definite",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-23-009",
       "front": "What is Cholesky decomposition?",
-      "back": "For positive definite \\( A \\):\n\n\\( A = LL^T \\)\n\nWhere \\( L \\) is lower triangular with positive diagonal entries.\n\nThis is like \"taking the square root\" of a matrix.",
+      "back": "For positive definite \\( A \\):<br><br>\\( A = LL^T \\)<br><br>Where \\( L \\) is lower triangular with positive diagonal entries.<br><br>This is like \"taking the square root\" of a matrix.",
       "tags": [
         "ch23",
         "cholesky",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-23-010",
       "front": "Is \\( A^T A \\) always positive semi-definite?",
-      "back": "Yes.\n\n\\( \\vec{x}^T (A^T A) \\vec{x} = (A\\vec{x})^T (A\\vec{x}) = ||A\\vec{x}||^2 \\geq 0 \\)\n\nIt is positive definite iff \\( A \\) has independent columns.",
+      "back": "Yes.<br><br>\\( \\vec{x}^T (A^T A) \\vec{x} = (A\\vec{x})^T (A\\vec{x}) = ||A\\vec{x}||^2 \\geq 0 \\)<br><br>It is positive definite iff \\( A \\) has independent columns.",
       "tags": [
         "ch23",
         "ata",

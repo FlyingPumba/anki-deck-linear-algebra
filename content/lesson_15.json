@@ -9,7 +9,7 @@
     {
       "uid": "linear-algebra-15-001",
       "front": "What is the trace of a matrix?",
-      "back": "The sum of the diagonal entries.\n\nFor a 2×2 matrix \\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\): \\( \\text{trace} = a + d \\)",
+      "back": "The sum of the diagonal entries.<br><br>For a 2×2 matrix \\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\): \\( \\text{trace} = a + d \\)",
       "tags": [
         "ch15",
         "trace",
@@ -19,7 +19,7 @@
     {
       "uid": "linear-algebra-15-002",
       "front": "How does the trace relate to eigenvalues?",
-      "back": "The trace equals the sum of the eigenvalues.\n\nFor a 2×2 matrix: \\( \\lambda_1 + \\lambda_2 = \\text{trace}(A) \\)",
+      "back": "The trace equals the sum of the eigenvalues.<br><br>For a 2×2 matrix: \\( \\lambda_1 + \\lambda_2 = \\text{trace}(A) \\)",
       "tags": [
         "ch15",
         "trace",
@@ -29,7 +29,7 @@
     {
       "uid": "linear-algebra-15-003",
       "front": "How does the determinant relate to eigenvalues?",
-      "back": "The determinant equals the product of the eigenvalues.\n\nFor a 2×2 matrix: \\( \\lambda_1 \\times \\lambda_2 = \\det(A) \\)",
+      "back": "The determinant equals the product of the eigenvalues.<br><br>For a 2×2 matrix: \\( \\lambda_1 \\times \\lambda_2 = \\det(A) \\)",
       "tags": [
         "ch15",
         "determinant",
@@ -39,7 +39,7 @@
     {
       "uid": "linear-algebra-15-004",
       "front": "What is the quick formula for 2×2 eigenvalues using mean \\( m \\) and product \\( p \\)?",
-      "back": "If \\( m = \\frac{a+d}{2} \\) and \\( p = ad - bc \\), then:\n\n\\( \\lambda = m \\pm \\sqrt{m^2 - p} \\)\n\nThe eigenvalues are: \\( m + \\sqrt{m^2 - p} \\) and \\( m - \\sqrt{m^2 - p} \\)",
+      "back": "If \\( m = \\frac{a+d}{2} \\) and \\( p = ad - bc \\), then:<br><br>\\( \\lambda = m \\pm \\sqrt{m^2 - p} \\)<br><br>The eigenvalues are: \\( m + \\sqrt{m^2 - p} \\) and \\( m - \\sqrt{m^2 - p} \\)",
       "tags": [
         "ch15",
         "eigenvalues",
@@ -49,7 +49,7 @@
     {
       "uid": "linear-algebra-15-005",
       "front": "Why is the mean-product formula useful?",
-      "back": "It bypasses expanding the characteristic polynomial.\n\nYou can read \\( m \\) directly from the diagonal average and \\( p \\) from the determinant, then immediately compute eigenvalues.",
+      "back": "It bypasses expanding the characteristic polynomial.<br><br>You can read \\( m \\) directly from the diagonal average and \\( p \\) from the determinant, then immediately compute eigenvalues.",
       "tags": [
         "ch15",
         "eigenvalues",

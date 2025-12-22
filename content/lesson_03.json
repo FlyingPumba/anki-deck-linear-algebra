@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-03-001",
       "front": "What are the two key properties of a linear transformation?",
-      "back": "1. All lines remain lines (no curves)\n2. The origin remains fixed\n\nEquivalently: grid lines remain parallel and evenly spaced.",
+      "back": "<ol><li>All lines remain lines (no curves)</li><li>The origin remains fixed</li></ol><br>Equivalently: grid lines remain parallel and evenly spaced.",
       "tags": [
         "ch03",
         "linear-transformation",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-03-002",
       "front": "What two algebraic properties must a linear transformation \\( L \\) satisfy?",
-      "back": "1. Additivity: \\( L(\\vec{v} + \\vec{w}) = L(\\vec{v}) + L(\\vec{w}) \\)\n2. Scaling: \\( L(c\\vec{v}) = cL(\\vec{v}) \\)\n\nThese can be combined: \\( L(a\\vec{v} + b\\vec{w}) = aL(\\vec{v}) + bL(\\vec{w}) \\)",
+      "back": "<ol><li>Additivity: \\( L(\\vec{v} + \\vec{w}) = L(\\vec{v}) + L(\\vec{w}) \\)</li><li>Scaling: \\( L(c\\vec{v}) = cL(\\vec{v}) \\)</li></ol><br>These can be combined: \\( L(a\\vec{v} + b\\vec{w}) = aL(\\vec{v}) + bL(\\vec{w}) \\)",
       "tags": [
         "ch03",
         "linear-transformation",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-03-003",
       "front": "How is a 2D linear transformation completely determined?",
-      "back": "By tracking where the two basis vectors \\( \\hat{i} \\) and \\( \\hat{j} \\) land.\n\nOnce you know where \\( \\hat{i} \\) and \\( \\hat{j} \\) go, you know where every vector goes (since every vector is a linear combination of \\( \\hat{i} \\) and \\( \\hat{j} \\)).",
+      "back": "By tracking where the two basis vectors \\( \\hat{i} \\) and \\( \\hat{j} \\) land.<br><br>Once you know where \\( \\hat{i} \\) and \\( \\hat{j} \\) go, you know where every vector goes (since every vector is a linear combination of \\( \\hat{i} \\) and \\( \\hat{j} \\)).",
       "tags": [
         "ch03",
         "linear-transformation",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-03-004",
       "front": "How do the columns of a 2x2 matrix relate to a linear transformation?",
-      "back": "The first column is where \\( \\hat{i} \\) lands.\nThe second column is where \\( \\hat{j} \\) lands.\n\n\\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\) means \\( \\hat{i} \\to [a,c] \\) and \\( \\hat{j} \\to [b,d] \\)",
+      "back": "<ul><li>The first column is where \\( \\hat{i} \\) lands.</li><li>The second column is where \\( \\hat{j} \\) lands.</li></ul><br>\\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\) means \\( \\hat{i} \\to [a,c] \\) and \\( \\hat{j} \\to [b,d] \\)",
       "tags": [
         "ch03",
         "matrix",
@@ -50,8 +50,8 @@
     },
     {
       "uid": "linear-algebra-03-005",
-      "front": "How do you compute the matrix-vector product?\n\n\\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} \\)",
-      "back": "\\( x \\cdot (\\text{first column}) + y \\cdot (\\text{second column}) \\)\n\n\\( = x \\cdot [a,c] + y \\cdot [b,d] \\)\n\\( = [ax + by, cx + dy] \\)",
+      "front": "How do you compute the matrix-vector product?<br><br>\\( \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} \\)",
+      "back": "\\( x \\cdot (\\text{first column}) + y \\cdot (\\text{second column}) \\)<br><br>\\( = x \\cdot [a,c] + y \\cdot [b,d] \\)<br>\\( = [ax + by, cx + dy] \\)",
       "tags": [
         "ch03",
         "matrix-multiplication",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-03-006",
       "front": "What is the matrix for a 90° counterclockwise rotation?",
-      "back": "\\( \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix} \\)\n\n\\( \\hat{i} \\) lands at \\( [0, 1] \\)\n\\( \\hat{j} \\) lands at \\( [-1, 0] \\)",
+      "back": "\\( \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix} \\)<br><br><ul><li>\\( \\hat{i} \\) lands at \\( [0, 1] \\)</li><li>\\( \\hat{j} \\) lands at \\( [-1, 0] \\)</li></ul>",
       "tags": [
         "ch03",
         "rotation",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-03-007",
       "front": "What is a shear transformation?",
-      "back": "A transformation that keeps one basis vector fixed while tilting the other.\n\nExample (horizontal shear):\n\\( \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix} \\) keeps \\( \\hat{i} \\) fixed, moves \\( \\hat{j} \\) to \\( [1,1] \\)",
+      "back": "A transformation that keeps one basis vector fixed while tilting the other.<br><br>Example (horizontal shear):<br>\\( \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix} \\) keeps \\( \\hat{i} \\) fixed, moves \\( \\hat{j} \\) to \\( [1,1] \\)",
       "tags": [
         "ch03",
         "shear",

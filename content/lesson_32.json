@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-32-001",
       "front": "What is the Kronecker product \\( A \\otimes B \\)?",
-      "back": "For \\( A \\) (\\( m \\times n \\)) and \\( B \\) (\\( p \\times q \\)):\n\n\\( A \\otimes B = \\begin{bmatrix} a_{11}B & \\cdots & a_{1n}B \\\\ \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & \\cdots & a_{mn}B \\end{bmatrix} \\)\n\nResult is \\( (mp) \\times (nq) \\). Each entry of \\( A \\) scales a copy of \\( B \\).",
+      "back": "For \\( A \\) (\\( m \\times n \\)) and \\( B \\) (\\( p \\times q \\)):<br><br>\\( A \\otimes B = \\begin{bmatrix} a_{11}B & \\cdots & a_{1n}B \\\\ \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & \\cdots & a_{mn}B \\end{bmatrix} \\)<br><br>Result is \\( (mp) \\times (nq) \\). Each entry of \\( A \\) scales a copy of \\( B \\).",
       "tags": [
         "ch32",
         "kronecker",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-32-002",
       "front": "What is the key property \\( (A \\otimes B)(C \\otimes D) = ? \\)",
-      "back": "\\( (A \\otimes B)(C \\otimes D) = (AC) \\otimes (BD) \\)\n\nKronecker products of products equal products of Kronecker products.\n\nThis is the \"mixed-product property.\"",
+      "back": "\\( (A \\otimes B)(C \\otimes D) = (AC) \\otimes (BD) \\)<br><br>Kronecker products of products equal products of Kronecker products.<br><br>This is the \"mixed-product property.\"",
       "tags": [
         "ch32",
         "kronecker",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-32-003",
       "front": "How do eigenvalues of \\( A \\otimes B \\) relate to those of \\( A \\) and \\( B \\)?",
-      "back": "Eigenvalues of \\( A \\otimes B \\) are all products \\( \\lambda_i \\mu_j \\).\n\nIf \\( A\\vec{v} = \\lambda\\vec{v} \\) and \\( B\\vec{w} = \\mu\\vec{w} \\), then:\n\n\\( (A \\otimes B)(\\vec{v} \\otimes \\vec{w}) = \\lambda\\mu (\\vec{v} \\otimes \\vec{w}) \\)",
+      "back": "Eigenvalues of \\( A \\otimes B \\) are all products \\( \\lambda_i \\mu_j \\).<br><br>If \\( A\\vec{v} = \\lambda\\vec{v} \\) and \\( B\\vec{w} = \\mu\\vec{w} \\), then:<br><br>\\( (A \\otimes B)(\\vec{v} \\otimes \\vec{w}) = \\lambda\\mu (\\vec{v} \\otimes \\vec{w}) \\)",
       "tags": [
         "ch32",
         "kronecker",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-32-004",
       "front": "What is the vec operator?",
-      "back": "\\( \\text{vec}(X) \\) stacks columns of matrix \\( X \\) into a single vector.\n\nFor \\( X \\) (\\( m \\times n \\)): \\( \\text{vec}(X) \\) has length \\( mn \\).\n\nKey identity: \\( \\text{vec}(AXB) = (B^T \\otimes A) \\text{vec}(X) \\)",
+      "back": "\\( \\text{vec}(X) \\) stacks columns of matrix \\( X \\) into a single vector.<br><br>For \\( X \\) (\\( m \\times n \\)): \\( \\text{vec}(X) \\) has length \\( mn \\).<br><br>Key identity: \\( \\text{vec}(AXB) = (B^T \\otimes A) \\text{vec}(X) \\)",
       "tags": [
         "ch32",
         "vec",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-32-005",
       "front": "How does the Kronecker product relate to tensor products?",
-      "back": "\\( A \\otimes B \\) represents \\( A \\) acting on one factor and \\( B \\) on another in a tensor product space.\n\n\\( (A \\otimes B)(\\vec{v} \\otimes \\vec{w}) = (A\\vec{v}) \\otimes (B\\vec{w}) \\)\n\nMatrix form of the abstract tensor product of linear maps.",
+      "back": "\\( A \\otimes B \\) represents \\( A \\) acting on one factor and \\( B \\) on another in a tensor product space.<br><br>\\( (A \\otimes B)(\\vec{v} \\otimes \\vec{w}) = (A\\vec{v}) \\otimes (B\\vec{w}) \\)<br><br>Matrix form of the abstract tensor product of linear maps.",
       "tags": [
         "ch32",
         "kronecker",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-32-006",
       "front": "What is a tensor (in the array sense)?",
-      "back": "A multi-dimensional array of numbers.\n\n- 0D tensor: scalar\n- 1D tensor: vector\n- 2D tensor: matrix\n- 3D tensor: \"cube\" of numbers (e.g., \\( T_{ijk} \\))\n\nOrder/rank = number of indices.",
+      "back": "A multi-dimensional array of numbers.<br><br><ul><li>0D tensor: scalar</li><li>1D tensor: vector</li><li>2D tensor: matrix</li><li>3D tensor: \"cube\" of numbers (e.g., \\( T_{ijk} \\))</li></ul><br>Order/rank = number of indices.",
       "tags": [
         "ch32",
         "tensor",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-32-007",
       "front": "What is tensor reshaping (matricization)?",
-      "back": "Rearranging a tensor into a matrix by choosing which indices become rows vs columns.\n\nA 3D tensor \\( T \\in \\mathbb{R}^{I \\times J \\times K} \\) can be reshaped to:\n\n- \\( T_{(1)} \\in \\mathbb{R}^{I \\times JK} \\) (mode-1 unfolding)\n- \\( T_{(2)} \\in \\mathbb{R}^{J \\times IK} \\)\n- etc.",
+      "back": "Rearranging a tensor into a matrix by choosing which indices become rows vs columns.<br><br>A 3D tensor \\( T \\in \\mathbb{R}^{I \\times J \\times K} \\) can be reshaped to:<br><br><ul><li>\\( T_{(1)} \\in \\mathbb{R}^{I \\times JK} \\) (mode-1 unfolding)</li><li>\\( T_{(2)} \\in \\mathbb{R}^{J \\times IK} \\)</li><li>etc.</li></ul>",
       "tags": [
         "ch32",
         "tensor",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-32-008",
       "front": "What is the connection between multi-head attention and Kronecker structure?",
-      "back": "Multi-head attention can be viewed as:\n\n\\( \\text{Concat}(\\text{head}_1, ..., \\text{head}_h) W^O \\)\n\nThe parallel heads create block structure.\n\nWeight matrices often have approximate Kronecker or low-rank + Kronecker structure.",
+      "back": "Multi-head attention can be viewed as:<br><br>\\( \\text{Concat}(\\text{head}_1, ..., \\text{head}_h) W^O \\)<br><br>The parallel heads create block structure.<br><br>Weight matrices often have approximate Kronecker or low-rank + Kronecker structure.",
       "tags": [
         "ch32",
         "attention",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-32-009",
       "front": "What is Kronecker factorization?",
-      "back": "Approximating a matrix as \\( A \\approx \\sum_i A_i \\otimes B_i \\).\n\nIf \\( W \\approx A \\otimes B \\), storage drops from \\( mn \\) to \\( m_1 n_1 + m_2 n_2 \\).\n\nUsed for parameter-efficient models and structured compression.",
+      "back": "Approximating a matrix as \\( A \\approx \\sum_i A_i \\otimes B_i \\).<br><br>If \\( W \\approx A \\otimes B \\), storage drops from \\( mn \\) to \\( m_1 n_1 + m_2 n_2 \\).<br><br>Used for parameter-efficient models and structured compression.",
       "tags": [
         "ch32",
         "kronecker",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-32-010",
       "front": "Why are Kronecker products and tensors important for MI?",
-      "back": "They help understand:\n\n- Multi-head attention structure\n- Parameter factorizations (LoRA has Kronecker flavor)\n- Reasoning about \"position \\( \\times \\) feature\" interactions\n- Structured sparsity and weight sharing patterns",
+      "back": "They help understand:<br><br><ul><li>Multi-head attention structure</li><li>Parameter factorizations (LoRA has Kronecker flavor)</li><li>Reasoning about \"position \\( \\times \\) feature\" interactions</li><li>Structured sparsity and weight sharing patterns</li></ul>",
       "tags": [
         "ch32",
         "kronecker",

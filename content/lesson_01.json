@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-01-001",
       "front": "What are the three perspectives on vectors?",
-      "back": "1. Physics: Arrows in space defined by length and direction (position doesn't matter)\n2. Computer Science: Ordered lists of numbers\n3. Mathematics: Any object where vector addition and scalar multiplication are sensible operations",
+      "back": "<ol><li>Physics: Arrows in space defined by length and direction (position doesn't matter)</li><li>Computer Science: Ordered lists of numbers</li><li>Mathematics: Any object where vector addition and scalar multiplication are sensible operations</li></ol>",
       "tags": [
         "ch01",
         "vectors",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-01-002",
       "front": "How do you add two vectors geometrically?",
-      "back": "Place the second vector's tail at the first vector's tip. Draw a new vector from the first vector's tail to the second vector's tip.\n\nThis represents combined movements or steps.",
+      "back": "Place the second vector's tail at the first vector's tip. Draw a new vector from the first vector's tail to the second vector's tip.<br><br>This represents combined movements or steps.",
       "tags": [
         "ch01",
         "vectors",
@@ -30,8 +30,8 @@
     },
     {
       "uid": "linear-algebra-01-003",
-      "front": "How do you add two vectors algebraically?\n\n\\( [x_1, y_1] + [x_2, y_2] = ? \\)",
-      "back": "\\( [x_1 + x_2, y_1 + y_2] \\)\n\nMatch up terms and add them together.",
+      "front": "How do you add two vectors algebraically?<br><br>\\( [x_1, y_1] + [x_2, y_2] = ? \\)",
+      "back": "\\( [x_1 + x_2, y_1 + y_2] \\)<br><br>Match up terms and add them together.",
       "tags": [
         "ch01",
         "vectors",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-01-004",
       "front": "What does scalar multiplication do to a vector?",
-      "back": "It stretches, squishes, or reverses the vector.\n\n- Positive scalars: stretch or compress\n- Negative scalars: flip direction plus stretch/compress\n\nFormula: \\( k \\cdot [x, y] = [kx, ky] \\)",
+      "back": "It stretches, squishes, or reverses the vector.<br><br><ul><li>Positive scalars: stretch or compress</li><li>Negative scalars: flip direction plus stretch/compress</li></ul><br>Formula: \\( k \\cdot [x, y] = [kx, ky] \\)",
       "tags": [
         "ch01",
         "vectors",

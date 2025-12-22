@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-28-001",
       "front": "What is the Moore-Penrose pseudoinverse \\( A^+ \\)?",
-      "back": "The unique matrix satisfying four conditions:\n\n1. \\( AA^+A = A \\)\n2. \\( A^+AA^+ = A^+ \\)\n3. \\( (AA^+)^T = AA^+ \\)\n4. \\( (A^+A)^T = A^+A \\)\n\nGeneralizes the inverse to any matrix (including non-square and singular).",
+      "back": "The unique matrix satisfying four conditions:<br><br><ol><li>\\( AA^+A = A \\)</li><li>\\( A^+AA^+ = A^+ \\)</li><li>\\( (AA^+)^T = AA^+ \\)</li><li>\\( (A^+A)^T = A^+A \\)</li></ol><br>Generalizes the inverse to any matrix (including non-square and singular).",
       "tags": [
         "ch28",
         "pseudoinverse",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-28-002",
       "front": "How do you compute the pseudoinverse using SVD?",
-      "back": "If \\( A = U\\Sigma V^T \\), then:\n\n\\( A^+ = V\\Sigma^+ U^T \\)\n\nWhere \\( \\Sigma^+ \\) inverts non-zero singular values:\n\n\\( \\sigma_i^+ = \\begin{cases} 1/\\sigma_i & \\sigma_i > 0 \\\\ 0 & \\sigma_i = 0 \\end{cases} \\)",
+      "back": "If \\( A = U\\Sigma V^T \\), then:<br><br>\\( A^+ = V\\Sigma^+ U^T \\)<br><br>Where \\( \\Sigma^+ \\) inverts non-zero singular values:<br><br>\\( \\sigma_i^+ = \\begin{cases} 1/\\sigma_i & \\sigma_i > 0 \\\\ 0 & \\sigma_i = 0 \\end{cases} \\)",
       "tags": [
         "ch28",
         "pseudoinverse",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-28-003",
       "front": "What does \\( A^+ \\) give for an overdetermined system \\( A\\vec{x} = \\vec{b} \\)?",
-      "back": "\\( \\hat{x} = A^+ \\vec{b} \\) is the least-squares solution.\n\nIt minimizes \\( ||A\\vec{x} - \\vec{b}||_2 \\).\n\nFor full column rank: \\( A^+ = (A^T A)^{-1} A^T \\)",
+      "back": "\\( \\hat{x} = A^+ \\vec{b} \\) is the least-squares solution.<br><br>It minimizes \\( ||A\\vec{x} - \\vec{b}||_2 \\).<br><br>For full column rank: \\( A^+ = (A^T A)^{-1} A^T \\)",
       "tags": [
         "ch28",
         "pseudoinverse",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-28-004",
       "front": "What does \\( A^+ \\) give for an underdetermined system?",
-      "back": "\\( \\hat{x} = A^+ \\vec{b} \\) is the minimum-norm solution.\n\nAmong all solutions to \\( A\\vec{x} = \\vec{b} \\), it has the smallest \\( ||\\vec{x}||_2 \\).\n\nFor full row rank: \\( A^+ = A^T(AA^T)^{-1} \\)",
+      "back": "\\( \\hat{x} = A^+ \\vec{b} \\) is the minimum-norm solution.<br><br>Among all solutions to \\( A\\vec{x} = \\vec{b} \\), it has the smallest \\( ||\\vec{x}||_2 \\).<br><br>For full row rank: \\( A^+ = A^T(AA^T)^{-1} \\)",
       "tags": [
         "ch28",
         "pseudoinverse",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-28-005",
       "front": "What is the minimum-norm least-squares solution?",
-      "back": "For any system \\( A\\vec{x} = \\vec{b} \\), \\( A^+ \\vec{b} \\) gives the solution that:\n\n1. Minimizes \\( ||A\\vec{x} - \\vec{b}||_2 \\) (closest to \\( \\vec{b} \\))\n2. Among those, minimizes \\( ||\\vec{x}||_2 \\) (smallest solution)\n\nThis handles all cases: overdetermined, underdetermined, rank-deficient.",
+      "back": "For any system \\( A\\vec{x} = \\vec{b} \\), \\( A^+ \\vec{b} \\) gives the solution that:<br><br><ol><li>Minimizes \\( ||A\\vec{x} - \\vec{b}||_2 \\) (closest to \\( \\vec{b} \\))</li><li>Among those, minimizes \\( ||\\vec{x}||_2 \\) (smallest solution)</li></ol><br>This handles all cases: overdetermined, underdetermined, rank-deficient.",
       "tags": [
         "ch28",
         "minimum-norm",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-28-006",
       "front": "What is the relationship between \\( AA^+ \\) and \\( A^+A \\)?",
-      "back": "\\( AA^+ \\) = projection onto \\( \\text{Col}(A) \\)\n\n\\( A^+A \\) = projection onto \\( \\text{Row}(A) \\)\n\nBoth are orthogonal projection matrices (symmetric and idempotent).",
+      "back": "\\( AA^+ \\) = projection onto \\( \\text{Col}(A) \\)<br><br>\\( A^+A \\) = projection onto \\( \\text{Row}(A) \\)<br><br>Both are orthogonal projection matrices (symmetric and idempotent).",
       "tags": [
         "ch28",
         "pseudoinverse",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-28-007",
       "front": "What happens when a matrix is rank-deficient?",
-      "back": "The least-squares problem has infinitely many solutions (non-unique).\n\nThe pseudoinverse picks the unique minimum-norm solution.\n\nGeometrically: project onto column space, then pick the shortest preimage.",
+      "back": "The least-squares problem has infinitely many solutions (non-unique).<br><br>The pseudoinverse picks the unique minimum-norm solution.<br><br>Geometrically: project onto column space, then pick the shortest preimage.",
       "tags": [
         "ch28",
         "rank-deficient",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-28-008",
       "front": "How do you handle near-zero singular values in practice?",
-      "back": "Use truncated pseudoinverse: set \\( \\sigma_i^+ = 0 \\) for \\( \\sigma_i < \\epsilon \\).\n\nThis is regularization against numerical instability.\n\nSmall singular values cause large, unreliable components in \\( A^+ \\).",
+      "back": "Use truncated pseudoinverse: set \\( \\sigma_i^+ = 0 \\) for \\( \\sigma_i < \\epsilon \\).<br><br>This is regularization against numerical instability.<br><br>Small singular values cause large, unreliable components in \\( A^+ \\).",
       "tags": [
         "ch28",
         "truncated",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-28-009",
       "front": "What is the pseudoinverse of a diagonal matrix?",
-      "back": "Invert non-zero diagonal entries, leave zeros as zeros:\n\n\\( D = \\text{diag}(\\sigma_1, ..., \\sigma_r, 0, ..., 0) \\)\n\n\\( D^+ = \\text{diag}(1/\\sigma_1, ..., 1/\\sigma_r, 0, ..., 0) \\)\n\nTranspose the shape if \\( D \\) is not square.",
+      "back": "Invert non-zero diagonal entries, leave zeros as zeros:<br><br>\\( D = \\text{diag}(\\sigma_1, ..., \\sigma_r, 0, ..., 0) \\)<br><br>\\( D^+ = \\text{diag}(1/\\sigma_1, ..., 1/\\sigma_r, 0, ..., 0) \\)<br><br>Transpose the shape if \\( D \\) is not square.",
       "tags": [
         "ch28",
         "pseudoinverse",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-28-010",
       "front": "Why is the pseudoinverse important for MI?",
-      "back": "It enables:\n\n- Solving linear probes even with rank-deficient features\n- Interpreting linear readouts robustly\n- Finding minimal interventions/edits\n- Handling cases where exact solutions don't exist",
+      "back": "It enables:<br><br><ul><li>Solving linear probes even with rank-deficient features</li><li>Interpreting linear readouts robustly</li><li>Finding minimal interventions/edits</li><li>Handling cases where exact solutions don't exist</li></ul>",
       "tags": [
         "ch28",
         "pseudoinverse",

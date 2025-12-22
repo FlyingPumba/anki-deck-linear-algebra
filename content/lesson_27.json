@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-27-001",
       "front": "State the Spectral Theorem for real symmetric matrices.",
-      "back": "Every real symmetric matrix \\( A \\) can be written as:\n\n\\( A = Q \\Lambda Q^T \\)\n\nWhere:\n\n- \\( Q \\) is orthogonal (\\( Q^T Q = I \\))\n- \\( \\Lambda \\) is diagonal with real eigenvalues\n- Columns of \\( Q \\) are orthonormal eigenvectors",
+      "back": "Every real symmetric matrix \\( A \\) can be written as:<br><br>\\( A = Q \\Lambda Q^T \\)<br><br>Where:<br><br><ul><li>\\( Q \\) is orthogonal (\\( Q^T Q = I \\))</li><li>\\( \\Lambda \\) is diagonal with real eigenvalues</li><li>Columns of \\( Q \\) are orthonormal eigenvectors</li></ul>",
       "tags": [
         "ch27",
         "spectral-theorem",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-27-002",
       "front": "Why can symmetric matrices always be orthogonally diagonalized?",
-      "back": "Eigenvectors of distinct eigenvalues are automatically orthogonal for symmetric matrices.\n\nFor repeated eigenvalues, we can always find an orthonormal basis within each eigenspace.\n\nThis fails for non-symmetric matrices.",
+      "back": "Eigenvectors of distinct eigenvalues are automatically orthogonal for symmetric matrices.<br><br>For repeated eigenvalues, we can always find an orthonormal basis within each eigenspace.<br><br>This fails for non-symmetric matrices.",
       "tags": [
         "ch27",
         "spectral-theorem",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-27-003",
       "front": "What is a quadratic form?",
-      "back": "A function \\( q(\\vec{x}) = \\vec{x}^T A \\vec{x} \\) where \\( A \\) is symmetric.\n\nIn 2D: \\( q(x,y) = ax^2 + 2bxy + cy^2 \\)\n\nfor \\( A = \\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix} \\)",
+      "back": "A function \\( q(\\vec{x}) = \\vec{x}^T A \\vec{x} \\) where \\( A \\) is symmetric.<br><br>In 2D: \\( q(x,y) = ax^2 + 2bxy + cy^2 \\)<br><br>for \\( A = \\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix} \\)",
       "tags": [
         "ch27",
         "quadratic-form",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-27-004",
       "front": "How does the spectral theorem simplify quadratic forms?",
-      "back": "If \\( A = Q\\Lambda Q^T \\) and \\( \\vec{y} = Q^T \\vec{x} \\), then:\n\n\\( \\vec{x}^T A \\vec{x} = \\vec{y}^T \\Lambda \\vec{y} = \\lambda_1 y_1^2 + \\lambda_2 y_2^2 + ... \\)\n\nIn eigenvector coordinates, the quadratic form is a weighted sum of squares.",
+      "back": "If \\( A = Q\\Lambda Q^T \\) and \\( \\vec{y} = Q^T \\vec{x} \\), then:<br><br>\\( \\vec{x}^T A \\vec{x} = \\vec{y}^T \\Lambda \\vec{y} = \\lambda_1 y_1^2 + \\lambda_2 y_2^2 + ... \\)<br><br>In eigenvector coordinates, the quadratic form is a weighted sum of squares.",
       "tags": [
         "ch27",
         "quadratic-form",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-27-005",
       "front": "What do the level sets of a quadratic form look like?",
-      "back": "Ellipsoids (or hyperboloids) aligned with eigenvector directions.\n\n- Eigenvalues determine axis lengths (\\( 1/\\sqrt{|\\lambda_i|} \\))\n- Eigenvectors determine axis directions\n- Signs determine ellipsoid vs hyperboloid",
+      "back": "Ellipsoids (or hyperboloids) aligned with eigenvector directions.<br><br><ul><li>Eigenvalues determine axis lengths (\\( 1/\\sqrt{|\\lambda_i|} \\))</li><li>Eigenvectors determine axis directions</li><li>Signs determine ellipsoid vs hyperboloid</li></ul>",
       "tags": [
         "ch27",
         "quadratic-form",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-27-006",
       "front": "How does the spectral theorem relate to the Hessian in optimization?",
-      "back": "The Hessian \\( H \\) (matrix of second derivatives) is symmetric.\n\nAt a critical point:\n\n- All eigenvalues > 0: local minimum\n- All eigenvalues < 0: local maximum\n- Mixed signs: saddle point\n\nEigenvectors are principal curvature directions.",
+      "back": "The Hessian \\( H \\) (matrix of second derivatives) is symmetric.<br><br>At a critical point:<br><br><ul><li>All eigenvalues > 0: local minimum</li><li>All eigenvalues < 0: local maximum</li><li>Mixed signs: saddle point</li></ul><br>Eigenvectors are principal curvature directions.",
       "tags": [
         "ch27",
         "hessian",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-27-007",
       "front": "What is Rayleigh quotient?",
-      "back": "\\( R(\\vec{x}) = \\frac{\\vec{x}^T A \\vec{x}}{\\vec{x}^T \\vec{x}} \\)\n\nFor symmetric \\( A \\):\n\n- Maximum value is \\( \\lambda_{\\max} \\) (achieved at top eigenvector)\n- Minimum value is \\( \\lambda_{\\min} \\) (achieved at bottom eigenvector)",
+      "back": "\\( R(\\vec{x}) = \\frac{\\vec{x}^T A \\vec{x}}{\\vec{x}^T \\vec{x}} \\)<br><br>For symmetric \\( A \\):<br><br><ul><li>Maximum value is \\( \\lambda_{\\max} \\) (achieved at top eigenvector)</li><li>Minimum value is \\( \\lambda_{\\min} \\) (achieved at bottom eigenvector)</li></ul>",
       "tags": [
         "ch27",
         "rayleigh-quotient",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-27-008",
       "front": "What is the variational characterization of eigenvalues?",
-      "back": "\\( \\lambda_k = \\min_{\\dim(V)=k} \\max_{\\vec{x} \\in V, ||\\vec{x}||=1} \\vec{x}^T A \\vec{x} \\)\n\nThe \\( k \\)-th eigenvalue is the min-max of the Rayleigh quotient over \\( k \\)-dimensional subspaces.\n\nUseful for proving eigenvalue inequalities.",
+      "back": "\\( \\lambda_k = \\min_{\\dim(V)=k} \\max_{\\vec{x} \\in V, ||\\vec{x}||=1} \\vec{x}^T A \\vec{x} \\)<br><br>The \\( k \\)-th eigenvalue is the min-max of the Rayleigh quotient over \\( k \\)-dimensional subspaces.<br><br>Useful for proving eigenvalue inequalities.",
       "tags": [
         "ch27",
         "variational",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-27-009",
       "front": "How do you write \\( A \\) as a sum of rank-1 matrices using the spectral theorem?",
-      "back": "\\( A = \\sum_{i=1}^{n} \\lambda_i \\vec{q}_i \\vec{q}_i^T \\)\n\nEach term is a rank-1 projection scaled by its eigenvalue.\n\nThis is the spectral decomposition or eigendecomposition.",
+      "back": "\\( A = \\sum_{i=1}^{n} \\lambda_i \\vec{q}_i \\vec{q}_i^T \\)<br><br>Each term is a rank-1 projection scaled by its eigenvalue.<br><br>This is the spectral decomposition or eigendecomposition.",
       "tags": [
         "ch27",
         "spectral-decomposition",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-27-010",
       "front": "Why is the spectral theorem important for MI?",
-      "back": "It helps interpret:\n\n- Covariance structure of activations\n- Hessians for understanding loss landscapes\n- Energy/variance in different directions\n- Symmetric components like \\( A^T A \\) or \\( AA^T \\)",
+      "back": "It helps interpret:<br><br><ul><li>Covariance structure of activations</li><li>Hessians for understanding loss landscapes</li><li>Energy/variance in different directions</li><li>Symmetric components like \\( A^T A \\) or \\( AA^T \\)</li></ul>",
       "tags": [
         "ch27",
         "spectral-theorem",

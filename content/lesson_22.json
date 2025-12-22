@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-22-001",
       "front": "What is an overdetermined system?",
-      "back": "A system \\( A\\vec{x} = \\vec{b} \\) with more equations than unknowns (\\( m > n \\)).\n\nTypically has no exact solution because \\( \\vec{b} \\) is not in the column space of \\( A \\).",
+      "back": "A system \\( A\\vec{x} = \\vec{b} \\) with more equations than unknowns (\\( m > n \\)).<br><br>Typically has no exact solution because \\( \\vec{b} \\) is not in the column space of \\( A \\).",
       "tags": [
         "ch22",
         "overdetermined",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-22-002",
       "front": "What is the least-squares problem?",
-      "back": "Find \\( \\hat{x} \\) that minimizes \\( ||A\\vec{x} - \\vec{b}||^2 \\)\n\nFind the \"best approximate solution\" that gets as close as possible to \\( \\vec{b} \\).",
+      "back": "Find \\( \\hat{x} \\) that minimizes \\( ||A\\vec{x} - \\vec{b}||^2 \\)<br><br>Find the \"best approximate solution\" that gets as close as possible to \\( \\vec{b} \\).",
       "tags": [
         "ch22",
         "least-squares",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-22-003",
       "front": "What is the geometric interpretation of least squares?",
-      "back": "Find the point \\( A\\hat{x} \\) in the column space of \\( A \\) that is closest to \\( \\vec{b} \\).\n\nThis point is the orthogonal projection of \\( \\vec{b} \\) onto \\( \\text{Col}(A) \\).",
+      "back": "Find the point \\( A\\hat{x} \\) in the column space of \\( A \\) that is closest to \\( \\vec{b} \\).<br><br>This point is the orthogonal projection of \\( \\vec{b} \\) onto \\( \\text{Col}(A) \\).",
       "tags": [
         "ch22",
         "least-squares",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-22-004",
       "front": "What are the normal equations for least squares?",
-      "back": "\\( A^T A \\hat{x} = A^T \\vec{b} \\)\n\nIf \\( A \\) has linearly independent columns, then:\n\n\\( \\hat{x} = (A^T A)^{-1} A^T \\vec{b} \\)",
+      "back": "\\( A^T A \\hat{x} = A^T \\vec{b} \\)<br><br>If \\( A \\) has linearly independent columns, then:<br><br>\\( \\hat{x} = (A^T A)^{-1} A^T \\vec{b} \\)",
       "tags": [
         "ch22",
         "normal-equations",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-22-005",
       "front": "Why do the normal equations give the least-squares solution?",
-      "back": "The error \\( \\vec{b} - A\\hat{x} \\) must be orthogonal to the column space of \\( A \\).\n\nThis means \\( A^T(\\vec{b} - A\\hat{x}) = 0 \\), which gives \\( A^T A \\hat{x} = A^T \\vec{b} \\).",
+      "back": "The error \\( \\vec{b} - A\\hat{x} \\) must be orthogonal to the column space of \\( A \\).<br><br>This means \\( A^T(\\vec{b} - A\\hat{x}) = 0 \\), which gives \\( A^T A \\hat{x} = A^T \\vec{b} \\).",
       "tags": [
         "ch22",
         "normal-equations",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-22-006",
       "front": "What is the least-squares error?",
-      "back": "The residual vector: \\( \\vec{e} = \\vec{b} - A\\hat{x} \\)\n\nIts length \\( ||\\vec{e}|| \\) measures how well the solution fits the data.",
+      "back": "The residual vector: \\( \\vec{e} = \\vec{b} - A\\hat{x} \\)<br><br>Its length \\( ||\\vec{e}|| \\) measures how well the solution fits the data.",
       "tags": [
         "ch22",
         "residual",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-22-007",
       "front": "How is least squares used for linear regression?",
-      "back": "To fit a line \\( y = \\beta_0 + \\beta_1 x \\) to data points \\( (x_1, y_1), ..., (x_n, y_n) \\):\n\nSet up \\( A = \\begin{bmatrix} 1 & x_1 \\\\ \\vdots & \\vdots \\\\ 1 & x_n \\end{bmatrix} \\), \\( \\vec{b} = \\begin{bmatrix} y_1 \\\\ \\vdots \\\\ y_n \\end{bmatrix} \\)\n\nSolve \\( A^T A \\hat{\\beta} = A^T \\vec{b} \\) for \\( \\hat{\\beta} = [\\beta_0, \\beta_1]^T \\).",
+      "back": "To fit a line \\( y = \\beta_0 + \\beta_1 x \\) to data points \\( (x_1, y_1), ..., (x_n, y_n) \\):<br><br>Set up \\( A = \\begin{bmatrix} 1 & x_1 \\\\ \\vdots & \\vdots \\\\ 1 & x_n \\end{bmatrix} \\), \\( \\vec{b} = \\begin{bmatrix} y_1 \\\\ \\vdots \\\\ y_n \\end{bmatrix} \\)<br><br>Solve \\( A^T A \\hat{\\beta} = A^T \\vec{b} \\) for \\( \\hat{\\beta} = [\\beta_0, \\beta_1]^T \\).",
       "tags": [
         "ch22",
         "linear-regression",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-22-008",
       "front": "How can QR factorization solve least squares?",
-      "back": "If \\( A = QR \\), then \\( A^T A = R^T R \\) and \\( A^T \\vec{b} = R^T Q^T \\vec{b} \\).\n\nThe normal equations become \\( R\\hat{x} = Q^T \\vec{b} \\).\n\nThis is more numerically stable than computing \\( (A^T A)^{-1} \\).",
+      "back": "If \\( A = QR \\), then \\( A^T A = R^T R \\) and \\( A^T \\vec{b} = R^T Q^T \\vec{b} \\).<br><br>The normal equations become \\( R\\hat{x} = Q^T \\vec{b} \\).<br><br>This is more numerically stable than computing \\( (A^T A)^{-1} \\).",
       "tags": [
         "ch22",
         "qr-factorization",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-22-009",
       "front": "What is the pseudoinverse (Moore-Penrose inverse)?",
-      "back": "\\( A^+ = (A^T A)^{-1} A^T \\) (when \\( A \\) has independent columns)\n\nIt generalizes the inverse to non-square matrices.\n\n\\( \\hat{x} = A^+ \\vec{b} \\) gives the least-squares solution.",
+      "back": "\\( A^+ = (A^T A)^{-1} A^T \\) (when \\( A \\) has independent columns)<br><br>It generalizes the inverse to non-square matrices.<br><br>\\( \\hat{x} = A^+ \\vec{b} \\) gives the least-squares solution.",
       "tags": [
         "ch22",
         "pseudoinverse",

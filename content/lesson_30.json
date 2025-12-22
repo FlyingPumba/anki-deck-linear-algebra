@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-30-001",
       "front": "What is the Eckart-Young theorem?",
-      "back": "The best rank-\\( k \\) approximation to \\( A \\) (in Frobenius or spectral norm) is:\n\n\\( A_k = \\sum_{i=1}^{k} \\sigma_i \\vec{u}_i \\vec{v}_i^T \\)\n\nTruncate SVD to top \\( k \\) singular values.\n\nError: \\( ||A - A_k||_F = \\sqrt{\\sum_{i>k} \\sigma_i^2} \\)",
+      "back": "The best rank-\\( k \\) approximation to \\( A \\) (in Frobenius or spectral norm) is:<br><br>\\( A_k = \\sum_{i=1}^{k} \\sigma_i \\vec{u}_i \\vec{v}_i^T \\)<br><br>Truncate SVD to top \\( k \\) singular values.<br><br>Error: \\( ||A - A_k||_F = \\sqrt{\\sum_{i>k} \\sigma_i^2} \\)",
       "tags": [
         "ch30",
         "eckart-young",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-30-002",
       "front": "How much variance does the rank-\\( k \\) approximation capture?",
-      "back": "Fraction of variance explained:\n\n\\( \\frac{\\sum_{i=1}^{k} \\sigma_i^2}{\\sum_{i=1}^{n} \\sigma_i^2} = \\frac{||A_k||_F^2}{||A||_F^2} \\)\n\nSingular values indicate importance of each component.",
+      "back": "Fraction of variance explained:<br><br>\\( \\frac{\\sum_{i=1}^{k} \\sigma_i^2}{\\sum_{i=1}^{n} \\sigma_i^2} = \\frac{||A_k||_F^2}{||A||_F^2} \\)<br><br>Singular values indicate importance of each component.",
       "tags": [
         "ch30",
         "variance-explained",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-30-003",
       "front": "What is Principal Component Analysis (PCA)?",
-      "back": "Find directions of maximum variance in data.\n\nGiven centered data matrix \\( X \\) (rows = samples):\n\n1. Compute covariance \\( C = \\frac{1}{n-1} X^T X \\)\n2. Eigendecomposition of \\( C \\) gives principal components\n\nEquivalently: right singular vectors of \\( X \\).",
+      "back": "Find directions of maximum variance in data.<br><br>Given centered data matrix \\( X \\) (rows = samples):<br><br><ol><li>Compute covariance \\( C = \\frac{1}{n-1} X^T X \\)</li><li>Eigendecomposition of \\( C \\) gives principal components</li></ol><br>Equivalently: right singular vectors of \\( X \\).",
       "tags": [
         "ch30",
         "pca",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-30-004",
       "front": "How does PCA relate to SVD?",
-      "back": "For centered data \\( X = U\\Sigma V^T \\):\n\n- Principal components = columns of \\( V \\)\n- Principal values = \\( \\sigma_i^2 / (n-1) \\) (eigenvalues of covariance)\n- Projected data = \\( XV = U\\Sigma \\)\n\nSVD of \\( X \\) directly gives PCA without forming \\( X^T X \\).",
+      "back": "For centered data \\( X = U\\Sigma V^T \\):<br><br><ul><li>Principal components = columns of \\( V \\)</li><li>Principal values = \\( \\sigma_i^2 / (n-1) \\) (eigenvalues of covariance)</li><li>Projected data = \\( XV = U\\Sigma \\)</li></ul><br>SVD of \\( X \\) directly gives PCA without forming \\( X^T X \\).",
       "tags": [
         "ch30",
         "pca",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-30-005",
       "front": "What does projecting data onto top \\( k \\) principal components do?",
-      "back": "Dimensionality reduction that:\n\n- Keeps maximum variance\n- Minimizes reconstruction error\n- Finds the best \\( k \\)-dimensional subspace for the data\n\nProjected: \\( \\tilde{X} = XV_k \\) (\\( n \\times k \\) instead of \\( n \\times d \\))",
+      "back": "Dimensionality reduction that:<br><br><ul><li>Keeps maximum variance</li><li>Minimizes reconstruction error</li><li>Finds the best \\( k \\)-dimensional subspace for the data</li></ul><br>Projected: \\( \\tilde{X} = XV_k \\) (\\( n \\times k \\) instead of \\( n \\times d \\))",
       "tags": [
         "ch30",
         "pca",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-30-006",
       "front": "What is the \"elbow method\" for choosing \\( k \\)?",
-      "back": "Plot singular values (or variance explained) vs index.\n\nLook for an \"elbow\" where values drop off sharply.\n\nComponents before the elbow capture structure; after capture noise.",
+      "back": "Plot singular values (or variance explained) vs index.<br><br>Look for an \"elbow\" where values drop off sharply.<br><br>Components before the elbow capture structure; after capture noise.",
       "tags": [
         "ch30",
         "rank-selection",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-30-007",
       "front": "What is the difference between PCA and truncated SVD?",
-      "back": "PCA requires centered data (subtract mean).\n\nTruncated SVD works on raw data.\n\nFor centered data, they're equivalent. For uncentered data, SVD also captures the mean direction.",
+      "back": "PCA requires centered data (subtract mean).<br><br>Truncated SVD works on raw data.<br><br>For centered data, they're equivalent. For uncentered data, SVD also captures the mean direction.",
       "tags": [
         "ch30",
         "pca",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-30-008",
       "front": "How do you interpret principal components?",
-      "back": "Each PC is a direction in feature space.\n\n- PC1: direction of maximum variance\n- PC2: max variance orthogonal to PC1\n- etc.\n\nLoadings (entries of \\( V \\)) show how original features contribute to each PC.",
+      "back": "Each PC is a direction in feature space.<br><br><ul><li>PC1: direction of maximum variance</li><li>PC2: max variance orthogonal to PC1</li><li>etc.</li></ul><br>Loadings (entries of \\( V \\)) show how original features contribute to each PC.",
       "tags": [
         "ch30",
         "pca",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-30-009",
       "front": "What is the relationship between rank and model complexity?",
-      "back": "Low rank = simpler structure = fewer parameters.\n\nRank-\\( k \\) matrix has \\( k(m+n-k) \\) degrees of freedom vs \\( mn \\) for full.\n\nLow-rank structure suggests redundancy or patterns.",
+      "back": "Low rank = simpler structure = fewer parameters.<br><br>Rank-\\( k \\) matrix has \\( k(m+n-k) \\) degrees of freedom vs \\( mn \\) for full.<br><br>Low-rank structure suggests redundancy or patterns.",
       "tags": [
         "ch30",
         "low-rank",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-30-010",
       "front": "Why is low-rank/PCA important for MI?",
-      "back": "Activations often have low effective rank:\n\n- Top singular vectors capture main \"features\"\n- Superposition: more features than dimensions\n- Compression reveals what the model \"cares about\"\n\nPCA on activations identifies dominant directions of variation.",
+      "back": "Activations often have low effective rank:<br><br><ul><li>Top singular vectors capture main \"features\"</li><li>Superposition: more features than dimensions</li><li>Compression reveals what the model \"cares about\"</li></ul><br>PCA on activations identifies dominant directions of variation.",
       "tags": [
         "ch30",
         "low-rank",

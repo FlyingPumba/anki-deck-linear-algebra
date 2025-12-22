@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-17-001",
       "front": "What are the three elementary row operations?",
-      "back": "1. Swap two rows\n\n2. Multiply a row by a non-zero scalar\n\n3. Add a multiple of one row to another row\n\nThese operations don't change the solution set of a linear system.",
+      "back": "<ol><li>Swap two rows</li><li>Multiply a row by a non-zero scalar</li><li>Add a multiple of one row to another row</li></ol><br>These operations don't change the solution set of a linear system.",
       "tags": [
         "ch17",
         "row-operations",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-17-002",
       "front": "What is a pivot position in a matrix?",
-      "back": "A position in a matrix that corresponds to a leading 1 in the reduced echelon form.\n\nPivot positions identify the \"important\" entries that determine the structure of solutions.",
+      "back": "A position in a matrix that corresponds to a leading 1 in the reduced echelon form.<br><br>Pivot positions identify the \"important\" entries that determine the structure of solutions.",
       "tags": [
         "ch17",
         "pivot",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-17-003",
       "front": "What is row echelon form (REF)?",
-      "back": "A matrix is in REF if:\n\n1. All zero rows are at the bottom\n2. Each leading entry (pivot) is in a column to the right of the leading entry above it\n3. All entries below a pivot are zero",
+      "back": "A matrix is in REF if:<br><br><ol><li>All zero rows are at the bottom</li><li>Each leading entry (pivot) is in a column to the right of the leading entry above it</li><li>All entries below a pivot are zero</li></ol>",
       "tags": [
         "ch17",
         "echelon-form",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-17-004",
       "front": "What is reduced row echelon form (RREF)?",
-      "back": "A matrix is in RREF if it is in REF and additionally:\n\n1. Each pivot is 1\n2. Each pivot is the only non-zero entry in its column\n\nRREF is unique for any given matrix.",
+      "back": "A matrix is in RREF if it is in REF and additionally:<br><br><ol><li>Each pivot is 1</li><li>Each pivot is the only non-zero entry in its column</li></ol><br>RREF is unique for any given matrix.",
       "tags": [
         "ch17",
         "rref",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-17-005",
       "front": "What is Gaussian elimination?",
-      "back": "The algorithm to reduce a matrix to row echelon form using elementary row operations.\n\nWork from top to bottom, creating zeros below each pivot.",
+      "back": "The algorithm to reduce a matrix to row echelon form using elementary row operations.<br><br>Work from top to bottom, creating zeros below each pivot.",
       "tags": [
         "ch17",
         "gaussian-elimination",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-17-006",
       "front": "What is Gauss-Jordan elimination?",
-      "back": "The extension of Gaussian elimination that produces RREF.\n\nAfter reaching REF, work from bottom to top to create zeros above each pivot, then scale pivots to 1.",
+      "back": "The extension of Gaussian elimination that produces RREF.<br><br>After reaching REF, work from bottom to top to create zeros above each pivot, then scale pivots to 1.",
       "tags": [
         "ch17",
         "gauss-jordan",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-17-007",
       "front": "How do you solve \\( A\\vec{x} = \\vec{b} \\) using row reduction?",
-      "back": "1. Form the augmented matrix \\( [A | \\vec{b}] \\)\n\n2. Reduce to RREF\n\n3. Read off the solution:\n   - Pivot columns \\( \\to \\) basic variables\n   - Non-pivot columns \\( \\to \\) free variables",
+      "back": "<ol><li>Form the augmented matrix \\( [A | \\vec{b}] \\)</li><li>Reduce to RREF</li><li>Read off the solution:<ul><li>Pivot columns \\( \\to \\) basic variables</li><li>Non-pivot columns \\( \\to \\) free variables</li></ul></li></ol>",
       "tags": [
         "ch17",
         "solving-systems",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-17-008",
       "front": "What does a row of zeros with a non-zero entry in the augmented column mean?",
-      "back": "The system is inconsistent (no solution).\n\nThis row represents the equation \\( 0 = c \\) where \\( c \\neq 0 \\), which is impossible.",
+      "back": "The system is inconsistent (no solution).<br><br>This row represents the equation \\( 0 = c \\) where \\( c \\neq 0 \\), which is impossible.",
       "tags": [
         "ch17",
         "inconsistent",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-17-009",
       "front": "When does a system have infinitely many solutions?",
-      "back": "When the system is consistent and has free variables (non-pivot columns in the coefficient matrix).\n\nThe general solution is expressed in terms of the free variables as parameters.",
+      "back": "When the system is consistent and has free variables (non-pivot columns in the coefficient matrix).<br><br>The general solution is expressed in terms of the free variables as parameters.",
       "tags": [
         "ch17",
         "solutions",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-17-010",
       "front": "How is the rank of a matrix related to its echelon form?",
-      "back": "The rank equals the number of pivots (non-zero rows in echelon form).\n\nThis counts the number of linearly independent rows (or columns).",
+      "back": "The rank equals the number of pivots (non-zero rows in echelon form).<br><br>This counts the number of linearly independent rows (or columns).",
       "tags": [
         "ch17",
         "rank",

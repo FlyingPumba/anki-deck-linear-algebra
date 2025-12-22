@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-24-001",
       "front": "What is the Singular Value Decomposition (SVD)?",
-      "back": "Any \\( m \\times n \\) matrix \\( A \\) can be factored as:\n\n\\( A = U \\Sigma V^T \\)\n\nWhere:\n\n- \\( U \\) is \\( m \\times m \\) orthogonal\n- \\( \\Sigma \\) is \\( m \\times n \\) diagonal (singular values)\n- \\( V \\) is \\( n \\times n \\) orthogonal",
+      "back": "Any \\( m \\times n \\) matrix \\( A \\) can be factored as:<br><br>\\( A = U \\Sigma V^T \\)<br><br>Where:<br><br><ul><li>\\( U \\) is \\( m \\times m \\) orthogonal</li><li>\\( \\Sigma \\) is \\( m \\times n \\) diagonal (singular values)</li><li>\\( V \\) is \\( n \\times n \\) orthogonal</li></ul>",
       "tags": [
         "ch24",
         "svd",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-24-002",
       "front": "What are singular values?",
-      "back": "The diagonal entries \\( \\sigma_1, \\sigma_2, ... \\) of \\( \\Sigma \\), arranged in decreasing order.\n\nThey are the square roots of the eigenvalues of \\( A^T A \\) (or \\( AA^T \\)):\n\n\\( \\sigma_i = \\sqrt{\\lambda_i} \\)\n\nSingular values are always non-negative.",
+      "back": "The diagonal entries \\( \\sigma_1, \\sigma_2, ... \\) of \\( \\Sigma \\), arranged in decreasing order.<br><br>They are the square roots of the eigenvalues of \\( A^T A \\) (or \\( AA^T \\)):<br><br>\\( \\sigma_i = \\sqrt{\\lambda_i} \\)<br><br>Singular values are always non-negative.",
       "tags": [
         "ch24",
         "singular-values",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-24-003",
       "front": "How do you find \\( V \\) in the SVD?",
-      "back": "The columns of \\( V \\) are the eigenvectors of \\( A^T A \\), called right singular vectors.\n\nCompute the eigendecomposition of \\( A^T A = V \\Lambda V^T \\).",
+      "back": "The columns of \\( V \\) are the eigenvectors of \\( A^T A \\), called right singular vectors.<br><br>Compute the eigendecomposition of \\( A^T A = V \\Lambda V^T \\).",
       "tags": [
         "ch24",
         "svd",
@@ -41,7 +41,7 @@
     {
       "uid": "linear-algebra-24-004",
       "front": "How do you find \\( U \\) in the SVD?",
-      "back": "The columns of \\( U \\) are the eigenvectors of \\( AA^T \\), called left singular vectors.\n\nAlternatively: \\( \\vec{u}_i = \\frac{1}{\\sigma_i} A \\vec{v}_i \\) for non-zero singular values.",
+      "back": "The columns of \\( U \\) are the eigenvectors of \\( AA^T \\), called left singular vectors.<br><br>Alternatively: \\( \\vec{u}_i = \\frac{1}{\\sigma_i} A \\vec{v}_i \\) for non-zero singular values.",
       "tags": [
         "ch24",
         "svd",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-24-005",
       "front": "What is the geometric interpretation of SVD?",
-      "back": "Every matrix transformation can be decomposed into:\n\n1. \\( V^T \\): rotate/reflect in the domain\n2. \\( \\Sigma \\): scale along coordinate axes\n3. \\( U \\): rotate/reflect in the codomain\n\nAny transformation is rotation-scaling-rotation.",
+      "back": "Every matrix transformation can be decomposed into:<br><br><ol><li>\\( V^T \\): rotate/reflect in the domain</li><li>\\( \\Sigma \\): scale along coordinate axes</li><li>\\( U \\): rotate/reflect in the codomain</li></ol><br>Any transformation is rotation-scaling-rotation.",
       "tags": [
         "ch24",
         "svd",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-24-006",
       "front": "How does SVD relate to matrix rank?",
-      "back": "The rank of \\( A \\) equals the number of non-zero singular values.\n\nThe non-zero singular values correspond to the \"important\" dimensions of the transformation.",
+      "back": "The rank of \\( A \\) equals the number of non-zero singular values.<br><br>The non-zero singular values correspond to the \"important\" dimensions of the transformation.",
       "tags": [
         "ch24",
         "svd",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-24-007",
       "front": "What is the low-rank approximation using SVD?",
-      "back": "The best rank-\\( k \\) approximation to \\( A \\) is:\n\n\\( A_k = \\sum_{i=1}^{k} \\sigma_i \\vec{u}_i \\vec{v}_i^T \\)\n\nKeep only the \\( k \\) largest singular values. This minimizes \\( ||A - A_k|| \\).",
+      "back": "The best rank-\\( k \\) approximation to \\( A \\) is:<br><br>\\( A_k = \\sum_{i=1}^{k} \\sigma_i \\vec{u}_i \\vec{v}_i^T \\)<br><br>Keep only the \\( k \\) largest singular values. This minimizes \\( ||A - A_k|| \\).",
       "tags": [
         "ch24",
         "low-rank",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-24-008",
       "front": "How does SVD express the pseudoinverse?",
-      "back": "\\( A^+ = V \\Sigma^+ U^T \\)\n\nWhere \\( \\Sigma^+ \\) inverts non-zero singular values and transposes the shape:\n\n\\( \\sigma_i^+ = \\begin{cases} 1/\\sigma_i & \\sigma_i \\neq 0 \\\\ 0 & \\sigma_i = 0 \\end{cases} \\)",
+      "back": "\\( A^+ = V \\Sigma^+ U^T \\)<br><br>Where \\( \\Sigma^+ \\) inverts non-zero singular values and transposes the shape:<br><br>\\( \\sigma_i^+ = \\begin{cases} 1/\\sigma_i & \\sigma_i \\neq 0 \\\\ 0 & \\sigma_i = 0 \\end{cases} \\)",
       "tags": [
         "ch24",
         "svd",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-24-009",
       "front": "What is the condition number of a matrix?",
-      "back": "\\( \\kappa(A) = \\frac{\\sigma_{\\max}}{\\sigma_{\\min}} = \\frac{\\sigma_1}{\\sigma_r} \\)\n\nMeasures sensitivity to numerical errors. Large condition number means the matrix is \"nearly singular\" and computations are unstable.",
+      "back": "\\( \\kappa(A) = \\frac{\\sigma_{\\max}}{\\sigma_{\\min}} = \\frac{\\sigma_1}{\\sigma_r} \\)<br><br>Measures sensitivity to numerical errors. Large condition number means the matrix is \"nearly singular\" and computations are unstable.",
       "tags": [
         "ch24",
         "condition-number",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-24-010",
       "front": "What are applications of SVD?",
-      "back": "1. Image compression (low-rank approximation)\n\n2. Noise reduction in data\n\n3. Principal Component Analysis (PCA)\n\n4. Recommender systems\n\n5. Solving least-squares problems\n\n6. Computing matrix rank numerically",
+      "back": "<ol><li>Image compression (low-rank approximation)</li><li>Noise reduction in data</li><li>Principal Component Analysis (PCA)</li><li>Recommender systems</li><li>Solving least-squares problems</li><li>Computing matrix rank numerically</li></ol>",
       "tags": [
         "ch24",
         "svd",
@@ -111,7 +111,7 @@
     {
       "uid": "linear-algebra-24-011",
       "front": "How does SVD help interpret feature subspaces in mechanistic interpretability?",
-      "back": "Think of \\( A \\) as a weight or activation matrix:\n\n- Columns of \\( V \\) are \"feature directions\" in input space\n- Columns of \\( U \\) show how those features appear across data points or layers\n- Large singular values pick out dominant, stable directions; tiny ones often correspond to noise or superposed features\n\nSVD on activations or weights reveals low-dimensional feature subspaces and superposition structure.",
+      "back": "Think of \\( A \\) as a weight or activation matrix:<br><br><ul><li>Columns of \\( V \\) are \"feature directions\" in input space</li><li>Columns of \\( U \\) show how those features appear across data points or layers</li><li>Large singular values pick out dominant, stable directions; tiny ones often correspond to noise or superposed features</li></ul><br>SVD on activations or weights reveals low-dimensional feature subspaces and superposition structure.",
       "tags": [
         "ch24",
         "svd",
@@ -121,7 +121,7 @@
     {
       "uid": "linear-algebra-24-012",
       "front": "What are the key differences between eigenvalues and singular values?",
-      "back": "Eigenvalues:\n\n- Only for square matrices\n- Can be negative or complex\n- Eigenvectors may not be orthogonal\n- Not every matrix is diagonalizable\n\nSingular values:\n\n- Work for any \\( m \\times n \\) matrix\n- Always real and non-negative\n- Singular vectors are always orthonormal\n- Every matrix has an SVD\n\nFor symmetric positive definite matrices, they coincide.",
+      "back": "Eigenvalues:<br><br><ul><li>Only for square matrices</li><li>Can be negative or complex</li><li>Eigenvectors may not be orthogonal</li><li>Not every matrix is diagonalizable</li></ul><br>Singular values:<br><br><ul><li>Work for any \\( m \\times n \\) matrix</li><li>Always real and non-negative</li><li>Singular vectors are always orthonormal</li><li>Every matrix has an SVD</li></ul><br>For symmetric positive definite matrices, they coincide.",
       "tags": [
         "ch24",
         "eigenvalues",
@@ -132,7 +132,7 @@
     {
       "uid": "linear-algebra-24-013",
       "front": "How do you find the null space of a matrix using SVD?",
-      "back": "A matrix \\( A \\) has a non-trivial null space iff one or more singular values are zero (or near-zero numerically).\n\nThe right singular vectors \\( \\vec{v}_i \\) corresponding to zero singular values span the null space.\n\nIn NumPy:\n\n```\nU, S, Vh = np.linalg.svd(A)\nnullspace = Vh[np.abs(S) <= eps].T\n```\n\nThis is more numerically stable than row reduction.",
+      "back": "A matrix \\( A \\) has a non-trivial null space iff one or more singular values are zero (or near-zero numerically).<br><br>The right singular vectors \\( \\vec{v}_i \\) corresponding to zero singular values span the null space.<br><br>In NumPy:<br><br><code>U, S, Vh = np.linalg.svd(A)<br>nullspace = Vh[np.abs(S) &lt;= eps].T</code><br><br>This is more numerically stable than row reduction.",
       "tags": [
         "ch24",
         "svd",
@@ -143,7 +143,7 @@
     {
       "uid": "linear-algebra-24-014",
       "front": "Why are right singular vectors eigenvectors of \\( A^T A \\)?",
-      "back": "From \\( A = U \\Sigma V^T \\):\n\n\\( A^T A = (U \\Sigma V^T)^T (U \\Sigma V^T) = V \\Sigma^T \\Sigma V^T \\)\n\nSo \\( A^T A \\, \\vec{v}_i = \\sigma_i^2 \\, \\vec{v}_i \\).\n\nThe columns of \\( V \\) are eigenvectors of \\( A^T A \\) with eigenvalues \\( \\sigma_i^2 \\).\n\nSimilarly, \\( A A^T = U \\Sigma \\Sigma^T U^T \\), so left singular vectors are eigenvectors of \\( A A^T \\).",
+      "back": "From \\( A = U \\Sigma V^T \\):<br><br>\\( A^T A = (U \\Sigma V^T)^T (U \\Sigma V^T) = V \\Sigma^T \\Sigma V^T \\)<br><br>So \\( A^T A \\, \\vec{v}_i = \\sigma_i^2 \\, \\vec{v}_i \\).<br><br>The columns of \\( V \\) are eigenvectors of \\( A^T A \\) with eigenvalues \\( \\sigma_i^2 \\).<br><br>Similarly, \\( A A^T = U \\Sigma \\Sigma^T U^T \\), so left singular vectors are eigenvectors of \\( A A^T \\).",
       "tags": [
         "ch24",
         "svd",
@@ -154,7 +154,7 @@
     {
       "uid": "linear-algebra-24-015",
       "front": "How do left and right singular vectors pair up?",
-      "back": "For \\( \\sigma_i > 0 \\):\n\n\\( A \\vec{v}_i = \\sigma_i \\vec{u}_i \\)\n\\( A^T \\vec{u}_i = \\sigma_i \\vec{v}_i \\)\n\n\\( A \\) maps the right singular direction \\( \\vec{v}_i \\) to the left singular direction \\( \\vec{u}_i \\), scaled by \\( \\sigma_i \\).\n\nRight singular vectors live in input space (\\( \\mathbb{R}^n \\)); left singular vectors live in output space (\\( \\mathbb{R}^m \\)).",
+      "back": "For \\( \\sigma_i > 0 \\):<br><br>\\( A \\vec{v}_i = \\sigma_i \\vec{u}_i \\)<br>\\( A^T \\vec{u}_i = \\sigma_i \\vec{v}_i \\)<br><br>\\( A \\) maps the right singular direction \\( \\vec{v}_i \\) to the left singular direction \\( \\vec{u}_i \\), scaled by \\( \\sigma_i \\).<br><br>Right singular vectors live in input space (\\( \\mathbb{R}^n \\)); left singular vectors live in output space (\\( \\mathbb{R}^m \\)).",
       "tags": [
         "ch24",
         "svd",
@@ -164,7 +164,7 @@
     {
       "uid": "linear-algebra-24-016",
       "front": "What happens to SVD when \\( A \\) is symmetric?",
-      "back": "For symmetric \\( A = A^T \\):\n\n- Can choose \\( U = V \\)\n- Singular vectors coincide with eigenvectors of \\( A \\)\n- Singular values are \\( |\\lambda_i| \\) (absolute eigenvalues)\n\nThe eigendecomposition \\( A = Q \\Lambda Q^T \\) and SVD \\( A = U \\Sigma V^T \\) are closely related, differing only in sign handling.",
+      "back": "For symmetric \\( A = A^T \\):<br><br><ul><li>Can choose \\( U = V \\)</li><li>Singular vectors coincide with eigenvectors of \\( A \\)</li><li>Singular values are \\( |\\lambda_i| \\) (absolute eigenvalues)</li></ul><br>The eigendecomposition \\( A = Q \\Lambda Q^T \\) and SVD \\( A = U \\Sigma V^T \\) are closely related, differing only in sign handling.",
       "tags": [
         "ch24",
         "svd",
@@ -174,7 +174,7 @@
     {
       "uid": "linear-algebra-24-017",
       "front": "Mental model: eigenvectors vs singular vectors?",
-      "back": "Eigenvectors: directions preserved by \\( A \\) up to a (possibly negative/complex) scale \\( \\lambda \\).\n\nSingular vectors: directions that \\( A \\) stretches most cleanly, with guaranteed non-negative stretch \\( \\sigma_i \\).\n\nKey difference:\n\n- Eigenvectors: same space for input and output (square matrices only)\n- Singular vectors: right vectors in input space, left vectors in output space (any matrix)\n\nBoth are eigenvectors of symmetric PSD matrices: \\( V \\) from \\( A^T A \\), \\( U \\) from \\( A A^T \\).",
+      "back": "Eigenvectors: directions preserved by \\( A \\) up to a (possibly negative/complex) scale \\( \\lambda \\).<br><br>Singular vectors: directions that \\( A \\) stretches most cleanly, with guaranteed non-negative stretch \\( \\sigma_i \\).<br><br>Key difference:<br><br><ul><li>Eigenvectors: same space for input and output (square matrices only)</li><li>Singular vectors: right vectors in input space, left vectors in output space (any matrix)</li></ul><br>Both are eigenvectors of symmetric PSD matrices: \\( V \\) from \\( A^T A \\), \\( U \\) from \\( A A^T \\).",
       "tags": [
         "ch24",
         "eigenvectors",
