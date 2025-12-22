@@ -1,152 +1,42 @@
-# Linear Algebra Anki Deck
+# Linear Algebra
 
-A comprehensive Linear Algebra curriculum synced to Anki. Lessons 1-16 are based on 3Blue1Brown's "Essence of Linear Algebra" video series. Lessons 17-24 cover additional computational topics. Lessons 25-33 focus on concepts essential for mechanistic interpretability, with an optional Lesson 34 bridging to large-scale methods.
-
-## Prerequisites
-
-1. [Anki](https://apps.ankiweb.net/) installed
-2. [AnkiConnect](https://ankiweb.net/shared/info/2055492159) add-on installed (code: 2055492159)
-3. Python 3.13+ with [uv](https://github.com/astral-sh/uv)
-
-## Setup
-
-```bash
-# Clone the repository
-git clone <repo-url>
-cd anki-deck-linear-algebra
-
-# Install dependencies
-uv sync
-```
-
-## Usage
-
-1. Open Anki (AnkiConnect runs on port 8765)
-2. Run the sync script:
-
-```bash
-uv run python sync_anki.py
-```
-
-The script will:
-- Create the "Linear Algebra" deck with subdecks for each lesson
-- Add new cards
-- Update modified cards
-- Remove cards that no longer exist in the JSON files
+Anki flashcards for linear algebra, designed with mechanistic interpretability applications in mind.
 
 ## Curriculum Structure
 
-33 lessons covering:
-
 ### Part 1: Geometric Intuition (3Blue1Brown)
-
-| Lesson | Topic |
-|--------|-------|
-| 01 | Vectors |
-| 02 | Linear Combinations, Span, and Basis Vectors |
-| 03 | Linear Transformations and Matrices |
-| 04 | Matrix Multiplication as Composition |
-| 05 | Three-Dimensional Linear Transformations |
-| 06 | The Determinant |
-| 07 | Inverse Matrices, Column Space, and Null Space |
-| 08 | Nonsquare Matrices |
-| 09 | Dot Products and Duality |
-| 10 | Cross Products (optional) |
-| 11 | Cross Products and Linear Transformations (optional) |
-| 12 | Cramer's Rule (optional) |
-| 13 | Change of Basis and Similar Matrices |
-| 14 | Eigenvectors, Eigenvalues, and Diagonalization |
-| 15 | Quick Eigenvalue Computation |
-| 16 | Abstract Vector Spaces |
+Lessons 1-16 follow 3Blue1Brown's "Essence of Linear Algebra" series:
+- Vectors, spans, and basis
+- Linear transformations and matrices
+- Determinants, inverses, and null space
+- Eigenvectors and eigenvalues
+- Abstract vector spaces
 
 ### Part 2: Computational Methods
-
-| Lesson | Topic |
-|--------|-------|
-| 17 | Row Reduction and Echelon Forms |
-| 18 | Matrix Operations (Transpose, Block Matrices) |
-| 19 | Dimension, Subspaces, and the Four Fundamental Subspaces |
-| 20 | Orthogonality |
-| 21 | Gram-Schmidt Process |
-| 22 | Least Squares |
-| 23 | Symmetric and Positive Definite Matrices |
-| 24 | Singular Value Decomposition |
+Lessons 17-24 cover computational techniques:
+- Row reduction and echelon forms
+- Orthogonality and Gram-Schmidt
+- Least squares and SVD
+- Symmetric and positive definite matrices
 
 ### Part 3: MI-Focused Essentials
+Lessons 25-33 focus on concepts essential for mechanistic interpretability:
+- Projections and norms
+- Spectral theorem and pseudoinverse
+- Low-rank approximation and PCA
+- Matrix calculus for ML
 
-| Lesson | Topic |
-|--------|-------|
-| 25 | Projections and Projection Matrices |
-| 26 | Norms and Operator Norms |
-| 27 | Spectral Theorem and Quadratic Forms |
-| 28 | Pseudoinverse and Rank-Deficient Systems |
-| 29 | QR Decomposition and Numerical Stability |
-| 30 | Low-Rank Approximation and PCA |
-| 31 | Conditioning and Perturbation Theory |
-| 32 | Kronecker Products and Tensors |
-| 33 | Matrix Calculus for ML |
+Lesson 34 (optional) covers iterative and randomized methods.
 
-| 34 | Iterative and Randomized Methods (Optional) |
-
-### Recommended Order for Lessons 20–31 (MI-Aligned)
-
-To emphasize geometry-first intuition and make least squares/PCA feel like inevitable consequences rather than isolated tricks, a good study order for the computational + MI core is:
-
-| Position | Lesson | Topic |
-|----------|--------|-------|
-| 1 | 20 | Orthogonality |
-| 2 | 25 | Projections and Projection Matrices |
-| 3 | 21 | Gram-Schmidt Process |
-| 4 | 29 | QR Decomposition and Numerical Stability |
-| 5 | 22 | Least Squares |
-| 6 | 24 | Singular Value Decomposition |
-| 7 | 28 | Pseudoinverse and Rank-Deficient Systems |
-| 8 | 30 | Low-Rank Approximation and PCA |
-| 9 | 26 | Norms and Operator Norms |
-| 10 | 31 | Conditioning and Perturbation Theory |
-
-For a strictly MI-focused path when time is limited, Lessons 10–12 in Part 1 and Lesson 34 in Part 3 can be treated as optional on a first pass.
-
-## File Structure
-
-```
-anki-deck-linear-algebra/
-├── sync_anki.py          # Sync script
-├── content/
-│   ├── config.json       # Deck configuration
-│   ├── lesson_01.json    # Lesson 1 cards
-│   ├── lesson_02.json
-│   └── ...
-├── pyproject.toml
-└── README.md
-```
-
-## Editing Cards
-
-Each lesson file follows this structure:
+## Card Format
 
 ```json
 {
-  "id": "01",
-  "title": "Lesson 01: Vectors",
-  "lesson_title": "Vectors, what even are they?",
-  "objectives": ["..."],
-  "cards": [
-    {
-      "uid": "01-001",
-      "front": "Question text with \\( LaTeX \\)",
-      "back": "Answer text",
-      "tags": ["ch01", "vectors", "definition"]
-    }
-  ]
+  "uid": "linear-algebra-01-001",
+  "front": "Question text with \\( LaTeX \\)",
+  "back": "Answer text",
+  "tags": ["ch01", "vectors"]
 }
 ```
 
-After editing, run `uv run python sync_anki.py` to update Anki.
-
-## Card Tracking
-
-Cards are tracked by UID tags (e.g., `uid:01-001`). This allows the sync script to:
-- Identify existing cards for updates
-- Detect orphaned cards for removal
-- Preserve your Anki review progress
+See [anki-decks](https://github.com/FlyingPumba/anki-decks) for setup and sync instructions.
