@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-09-002",
       "front": "What is the geometric interpretation of the dot product?",
-      "back": "Project one vector onto the other's line, then multiply the lengths.<br><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.<br><br><img src=\"linear-algebra-09-002_01.png\">",
+      "back": "<div>Geometrically, the dot product measures how much one vector points in the direction of another. Mathematically, we project one vector onto the other's line, then multiply the lengths.</div><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.<br><br><div>Signed \"alignment\":</div> <div><ul><li>If θ is acute, cos(θ) &gt; 0 ⇒ a · b &gt; 0 (vectors point generally the same way).</li><li>If θ is right, cos(θ) = 0 ⇒ a · b = 0 (vectors are orthogonal).</li><li>If θ is obtuse, cos(θ) &lt; 0 ⇒ a · b &lt; 0 (vectors point generally opposite ways).</li></ul></div><br><img src=\"linear-algebra-09-002_01.png\"><br>",
       "tags": [
         "ch09",
         "dot-product",
