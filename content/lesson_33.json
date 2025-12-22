@@ -11,7 +11,7 @@
     {
       "uid": "linear-algebra-33-001",
       "front": "What is \\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{a}^T \\vec{x}) \\)?",
-      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{a}^T \\vec{x}) = \\vec{a} \\)\n\nThe gradient of a linear function is the coefficient vector.",
+      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{a}^T \\vec{x}) = \\vec{a} \\)<br><br><b>Intuition:</b> The expression \\( \\vec{a}^T \\vec{x} = a_1 x_1 + a_2 x_2 + \\ldots \\) is just a weighted sum. Each \\( x_i \\) contributes \\( a_i \\) to the total, so \\( \\frac{\\partial}{\\partial x_i} = a_i \\).<br><br><b>Key insight:</b> The gradient of a linear function is the coefficient vector. This is the simplest matrix calculus identity and the building block for everything else.",
       "tags": [
         "ch33",
         "gradient",
@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-33-002",
       "front": "What is \\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{x}^T A \\vec{x}) \\)?",
-      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{x}^T A \\vec{x}) = (A + A^T) \\vec{x} \\)\n\nIf \\( A \\) is symmetric: \\( = 2A\\vec{x} \\)\n\nThis is the gradient of a quadratic form.",
+      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} (\\vec{x}^T A \\vec{x}) = (A + A^T) \\vec{x} \\)<br><br>If \\( A \\) is symmetric: \\( = 2A\\vec{x} \\)<br><br><b>Why \\( A + A^T \\)?</b> The quadratic form can be split: \\( \\vec{x}^T A \\vec{x} \\) has contributions from both \\( A \\) and its transpose. Think of it as: one copy of \\( A \\) from differentiating the left \\( \\vec{x} \\), one from the right.<br><br><b>Derivation hint:</b> Write out \\( \\vec{x}^T A \\vec{x} = \\sum_{i,j} x_i A_{ij} x_j \\) and differentiate w.r.t. \\( x_k \\).<br><br><b>Where it appears:</b> Quadratic forms show up in loss functions, covariance matrices, and energy functions.",
       "tags": [
         "ch33",
         "gradient",
@@ -31,7 +31,7 @@
     {
       "uid": "linear-algebra-33-003",
       "front": "What is \\( \\frac{\\partial}{\\partial \\vec{x}} ||A\\vec{x} - \\vec{b}||^2 \\)?",
-      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} ||A\\vec{x} - \\vec{b}||^2 = 2A^T(A\\vec{x} - \\vec{b}) \\)\n\nSetting to zero gives normal equations: \\( A^T A \\vec{x} = A^T \\vec{b} \\)\n\nThis is the gradient for least squares.",
+      "back": "\\( \\frac{\\partial}{\\partial \\vec{x}} ||A\\vec{x} - \\vec{b}||^2 = 2A^T(A\\vec{x} - \\vec{b}) \\)<br><br><b>Intuition:</b> The residual is \\( \\vec{r} = A\\vec{x} - \\vec{b} \\). To minimize \\( ||\\vec{r}||^2 \\), we need the gradient. The \\( A^T \\) appears because changes in \\( \\vec{x} \\) affect the residual through \\( A \\), and we need to \"pull back\" through \\( A \\).<br><br><b>Setting to zero:</b> \\( A^T(A\\vec{x} - \\vec{b}) = 0 \\) gives the normal equations:<br>\\( A^T A \\vec{x} = A^T \\vec{b} \\)<br><br><b>This is the gradient for least squares</b> - the foundation of linear regression and many optimization problems.",
       "tags": [
         "ch33",
         "gradient",
@@ -51,7 +51,7 @@
     {
       "uid": "linear-algebra-33-005",
       "front": "What is \\( \\frac{\\partial}{\\partial X} \\text{tr}(AX) \\)?",
-      "back": "\\( \\frac{\\partial}{\\partial X} \\text{tr}(AX) = A^T \\)\n\nMore generally:\n\n\\( \\frac{\\partial}{\\partial X} \\text{tr}(X^T A) = A \\)",
+      "back": "\\( \\frac{\\partial}{\\partial X} \\text{tr}(AX) = A^T \\)<br><br><b>Why the transpose?</b> The trace \\( \\text{tr}(AX) = \\sum_i (AX)_{ii} = \\sum_{i,j} A_{ij} X_{ji} \\). Differentiating w.r.t. \\( X_{kl} \\) gives \\( A_{lk} \\), which is \\( (A^T)_{kl} \\).<br><br><b>Related formulas:</b><br>\\( \\frac{\\partial}{\\partial X} \\text{tr}(X^T A) = A \\) (no transpose)<br>\\( \\frac{\\partial}{\\partial X} \\text{tr}(AXB) = A^T B^T \\)<br><br><b>Memory aid:</b> The gradient has the same shape as \\( X \\). Check dimensions to verify your answer.",
       "tags": [
         "ch33",
         "gradient",
@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-33-006",
       "front": "What is the Jacobian of a vector-valued function?",
-      "back": "For \\( f: \\mathbb{R}^n \\to \\mathbb{R}^m \\), the Jacobian is:\n\n\\( J_{ij} = \\frac{\\partial f_i}{\\partial x_j} \\)\n\nAn \\( m \\times n \\) matrix. It's the best linear approximation to \\( f \\) at a point.",
+      "back": "For \\( f: \\mathbb{R}^n \\to \\mathbb{R}^m \\), the Jacobian is the \\( m \\times n \\) matrix:<br><br>\\( J_{ij} = \\frac{\\partial f_i}{\\partial x_j} \\)<br><br><b>Intuition:</b> Each row is the gradient of one output component. Each column shows how one input affects all outputs.<br><br><b>Geometric meaning:</b> The Jacobian is the best linear approximation to \\( f \\) at a point:<br>\\( f(\\vec{x} + \\vec{h}) \\approx f(\\vec{x}) + J \\vec{h} \\)<br><br><b>Shape rule:</b> Jacobian is (output dim) \\( \\times \\) (input dim). For \\( f: \\mathbb{R}^5 \\to \\mathbb{R}^3 \\), \\( J \\) is \\( 3 \\times 5 \\).",
       "tags": [
         "ch33",
         "jacobian",
@@ -71,7 +71,7 @@
     {
       "uid": "linear-algebra-33-007",
       "front": "How does the chain rule work with Jacobians?",
-      "back": "For \\( f \\circ g \\):\n\n\\( J_{f \\circ g} = J_f \\cdot J_g \\)\n\nJacobians multiply like matrices.\n\nThis is backpropagation: multiply Jacobians backward through the computation graph.",
+      "back": "For composition \\( f \\circ g \\):<br><br>\\( J_{f \\circ g} = J_f \\cdot J_g \\)<br><br><b>Intuition:</b> Small changes propagate through each function. The Jacobian of the composition is the product of individual Jacobians - just like the single-variable chain rule \\( (f \\circ g)' = f' \\cdot g' \\).<br><br><b>Order matters:</b> \\( J_f \\) is evaluated at \\( g(\\vec{x}) \\), and \\( J_g \\) at \\( \\vec{x} \\).<br><br><b>Connection to backprop:</b> This IS backpropagation. To get gradients w.r.t. early layers, multiply Jacobians backward through the computation graph. Each layer contributes its local Jacobian.",
       "tags": [
         "ch33",
         "jacobian",
@@ -81,7 +81,7 @@
     {
       "uid": "linear-algebra-33-008",
       "front": "What is \\( \\frac{\\partial}{\\partial A} \\det(A) \\)?",
-      "back": "\\( \\frac{\\partial}{\\partial A} \\det(A) = \\det(A) \\cdot A^{-T} = \\text{adj}(A)^T \\)\n\nwhere \\( \\text{adj}(A) \\) is the adjugate matrix.\n\nUseful for log-determinant: \\( \\frac{\\partial}{\\partial A} \\log \\det(A) = A^{-T} \\)",
+      "back": "\\( \\frac{\\partial}{\\partial A} \\det(A) = \\det(A) \\cdot A^{-T} = \\text{adj}(A)^T \\)<br><br><b>Intuition:</b> The determinant measures \"volume scaling.\" Changing entry \\( A_{ij} \\) affects the determinant proportionally to the cofactor of that entry - which is exactly what the adjugate captures.<br><br><b>Log-determinant (more useful in practice):</b><br>\\( \\frac{\\partial}{\\partial A} \\log \\det(A) = A^{-T} \\)<br><br>The \\( \\det(A) \\) factor cancels, leaving just \\( A^{-T} \\).<br><br><b>Where it appears:</b> Gaussian log-likelihoods involve \\( \\log \\det(\\Sigma) \\), so this gradient is essential for learning covariance matrices.",
       "tags": [
         "ch33",
         "gradient",
@@ -91,7 +91,7 @@
     {
       "uid": "linear-algebra-33-009",
       "front": "What is \\( \\frac{\\partial}{\\partial A} ||A||_F^2 \\)?",
-      "back": "\\( \\frac{\\partial}{\\partial A} ||A||_F^2 = 2A \\)\n\nFrobenius norm squared is just sum of squared entries, so gradient is straightforward.",
+      "back": "\\( \\frac{\\partial}{\\partial A} ||A||_F^2 = 2A \\)<br><br><b>Why so simple?</b> The Frobenius norm squared is just the sum of squared entries:<br>\\( ||A||_F^2 = \\sum_{i,j} A_{ij}^2 \\)<br><br>Differentiating w.r.t. \\( A_{kl} \\) gives \\( 2A_{kl} \\), so the gradient is \\( 2A \\).<br><br><b>Using the trace trick:</b> \\( ||A||_F^2 = \\text{tr}(A^T A) \\), then apply trace derivative rules.<br><br><b>Where it appears:</b> Frobenius norm regularization (like L2 on weights) uses this gradient.",
       "tags": [
         "ch33",
         "gradient",
@@ -101,7 +101,7 @@
     {
       "uid": "linear-algebra-33-010",
       "front": "Why is matrix calculus important for MI?",
-      "back": "Understanding gradients helps:\n\n- Interpret what the model \"wants\" to change\n- Analyze linearized behavior around points\n- Understand optimization dynamics\n- Compute influence functions and attributions\n\nGradients are linear maps; linear algebra applies.",
+      "back": "<b>Gradients reveal what the model \"cares about\":</b><br><ul><li>Large gradient w.r.t. an input = that input strongly affects the output</li><li>Gradient direction = the change that would most increase the output</li></ul><br><b>Jacobians enable local analysis:</b><br><ul><li>Near any point, a neural net behaves like its Jacobian (a linear map)</li><li>Eigenvalues of the Jacobian reveal sensitivity and stability</li></ul><br><b>Practical applications:</b><br><ul><li>Influence functions: how does changing a training point affect predictions?</li><li>Attribution methods: which inputs matter for this output?</li><li>Understanding optimization: why does training converge or diverge?</li></ul><br><b>Key insight:</b> Gradients ARE linear maps, so all of linear algebra applies to understanding them.",
       "tags": [
         "ch33",
         "matrix-calculus",
@@ -111,7 +111,7 @@
     {
       "uid": "linear-algebra-33-011",
       "front": "How do you \"shape-check\" matrix calculus expressions?",
-      "back": "Discipline for avoiding mistakes:\n\n- Always write down shapes (e.g., \\( A \\in \\mathbb{R}^{m \\times n} \\), \\( X \\in \\mathbb{R}^{m \\times n} \\))\n- Gradients have the same shape as the variable you differentiate with respect to\n- Any trace expression \\( \\text{tr}(AXB) \\) must be scalar: inner dimensions must match and result be \\( 1 \\times 1 \\)\n\nIf a gradient or trace has the wrong shape, the formula is wrong.",
+      "back": "<b>The #1 debugging technique for matrix calculus:</b><br><br><b>Rule 1:</b> Write down all shapes explicitly.<br>Example: \\( A \\in \\mathbb{R}^{m \\times n} \\), \\( \\vec{x} \\in \\mathbb{R}^n \\), \\( \\vec{b} \\in \\mathbb{R}^m \\)<br><br><b>Rule 2:</b> Gradients match the variable's shape.<br>If \\( X \\) is \\( m \\times n \\), then \\( \\frac{\\partial f}{\\partial X} \\) is also \\( m \\times n \\).<br><br><b>Rule 3:</b> Trace expressions must be scalar.<br>For \\( \\text{tr}(AXB) \\) to make sense, the product \\( AXB \\) must be square, and the trace extracts a scalar.<br><br><b>Rule 4:</b> Matrix products must have matching inner dimensions.<br>\\( AB \\) requires \\( A \\)'s columns = \\( B \\)'s rows.<br><br><b>If your answer has the wrong shape, it's wrong.</b> This catches most errors before you need to verify the math.",
       "tags": [
         "ch33",
         "matrix-calculus",
@@ -120,8 +120,8 @@
     },
     {
       "uid": "linear-algebra-33-012",
-      "front": "Consider \\( f(\\vec{x}) = \\text{ReLU}(W\\vec{x} + \\vec{b}) \\) where \\( \\vec{x} \\in \\mathbb{R}^5 \\), \\( \\vec{b} \\in \\mathbb{R}^3 \\), and \\( W \\) is \\( 3 \\times 5 \\).\n\nWhat is the Jacobian of \\( f \\)?",
-      "back": "Using chain rule with \\( g(\\vec{x}) = W\\vec{x} + \\vec{b} \\):\n\n\\( J_f = \\frac{\\partial f}{\\partial g} \\cdot \\frac{\\partial g}{\\partial \\vec{x}} \\)\n\n\\( \\frac{\\partial g}{\\partial \\vec{x}} = W \\)\n\n\\( \\frac{\\partial \\text{ReLU}}{\\partial g} = \\text{diag}(\\mathbf{1}_{g_i > 0}) \\) (diagonal matrix with 1 where \\( g_i > 0 \\), else 0)\n\nResult: \\( J_f \\) is \\( W \\) with rows zeroed out wherever \\( (W\\vec{x} + \\vec{b})_i \\leq 0 \\).\n\nShape: \\( 3 \\times 5 \\) (output dim \\( \\times \\) input dim).",
+      "front": "Consider \\( f(\\vec{x}) = \\text{ReLU}(W\\vec{x} + \\vec{b}) \\) where \\( \\vec{x} \\in \\mathbb{R}^5 \\), \\( \\vec{b} \\in \\mathbb{R}^3 \\), and \\( W \\) is \\( 3 \\times 5 \\).<br><br>What is the Jacobian of \\( f \\)?",
+      "back": "<b>Step 1: Apply chain rule</b><br>Let \\( \\vec{z} = W\\vec{x} + \\vec{b} \\), so \\( f = \\text{ReLU}(\\vec{z}) \\).<br><br>\\( J_f = \\frac{\\partial \\text{ReLU}}{\\partial \\vec{z}} \\cdot \\frac{\\partial \\vec{z}}{\\partial \\vec{x}} \\)<br><br><b>Step 2: Compute each Jacobian</b><br>\\( \\frac{\\partial \\vec{z}}{\\partial \\vec{x}} = W \\) (shape: \\( 3 \\times 5 \\))<br><br>\\( \\frac{\\partial \\text{ReLU}}{\\partial \\vec{z}} = \\text{diag}(\\mathbf{1}_{z_i > 0}) \\) - a diagonal matrix with 1s where \\( z_i > 0 \\), 0s elsewhere (shape: \\( 3 \\times 3 \\))<br><br><b>Step 3: Multiply</b><br>\\( J_f = \\text{diag}(\\mathbf{1}_{z_i > 0}) \\cdot W \\)<br><br><b>Result:</b> \\( J_f \\) is \\( W \\) with rows zeroed out wherever the pre-activation \\( (W\\vec{x} + \\vec{b})_i \\leq 0 \\).<br><br><b>Shape:</b> \\( 3 \\times 5 \\) (output dim \\( \\times \\) input dim)",
       "tags": [
         "ch33",
         "jacobian",
@@ -132,7 +132,7 @@
     {
       "uid": "linear-algebra-33-013",
       "front": "Where is the Jacobian of \\( f(\\vec{x}) = \\text{ReLU}(W\\vec{x} + \\vec{b}) \\) not well-defined?",
-      "back": "The Jacobian is undefined wherever any element of \\( (W\\vec{x} + \\vec{b}) \\) equals exactly 0.\n\nReLU is not differentiable at 0: the left derivative is 0, the right derivative is 1.\n\nGeometrically, these are hyperplanes in input space where the output \"kinks.\"",
+      "back": "The Jacobian is undefined wherever any pre-activation \\( (W\\vec{x} + \\vec{b})_i = 0 \\) exactly.<br><br><b>Why?</b> ReLU has a \"kink\" at 0:<br><ul><li>Left derivative: 0</li><li>Right derivative: 1</li></ul>At exactly 0, there's no unique derivative.<br><br><b>Geometric picture:</b> Each neuron's activation boundary is a hyperplane \\( \\vec{w}_i^T \\vec{x} + b_i = 0 \\). The function is piecewise linear, with \"folds\" at these hyperplanes. On the hyperplane itself, the derivative is ambiguous.<br><br><b>In input space:</b> These non-differentiable points form hyperplanes (lines in 2D, planes in 3D, etc.) that partition the input space into linear regions.",
       "tags": [
         "ch33",
         "jacobian",
@@ -143,7 +143,7 @@
     {
       "uid": "linear-algebra-33-014",
       "front": "How do we handle non-differentiability of ReLU at zero in practice?",
-      "back": "Use a subgradient: choose any value in \\( [0, 1] \\) for the derivative at 0.\n\nConvention: most frameworks set \\( \\text{ReLU}'(0) = 0 \\).\n\nThis works because:\n\n- The set of inputs hitting exactly 0 has measure zero\n- Subgradient descent still converges for convex problems\n- In practice, floating point rarely lands exactly on 0",
+      "back": "<b>Solution:</b> Use a subgradient - just pick a value in \\( [0, 1] \\) for the derivative at 0.<br><br><b>Convention:</b> Most frameworks (PyTorch, TensorFlow) set \\( \\text{ReLU}'(0) = 0 \\).<br><br><b>Why this works:</b><br><ul><li><b>Measure zero:</b> The set of inputs landing exactly on 0 has probability zero under continuous distributions</li><li><b>Floating point:</b> In practice, values are almost never exactly 0.0</li><li><b>Subgradient theory:</b> For convex problems, subgradient descent still converges even with non-unique gradients</li></ul><br><b>Bottom line:</b> The theory says there's a problem at 0, but in practice it never matters. Just pick 0 or 1 and move on.",
       "tags": [
         "ch33",
         "subgradient",
