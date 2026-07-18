@@ -107,6 +107,16 @@
         "rank",
         "full-rank"
       ]
+    },
+    {
+      "uid": "linear-algebra-07-011",
+      "front": "How do you compute the inverse of a 2×2 matrix?",
+      "back": "Swap the two diagonal entries, negate the off-diagonal entries, and divide by the determinant:<br><br>\\( A^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix} \\) for \\( A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\)<br><br>This works only when \\( \\det(A) = ad - bc \\neq 0 \\); if the determinant is zero the matrix is not invertible.<br><br><b>Example:</b> \\( A = \\begin{bmatrix} 4 & 7 \\\\ 2 & 6 \\end{bmatrix} \\)<br><ol><li>Determinant: \\( \\det = 4\\cdot 6 - 7\\cdot 2 = 24 - 14 = 10 \\)</li><li>Since \\( 10 \\neq 0 \\), the matrix is invertible</li><li>Apply the formula: \\( A^{-1} = \\frac{1}{10}\\begin{bmatrix} 6 & -7 \\\\ -2 & 4 \\end{bmatrix} = \\begin{bmatrix} 0.6 & -0.7 \\\\ -0.2 & 0.4 \\end{bmatrix} \\)</li></ol>",
+      "tags": [
+        "ch07",
+        "inverse",
+        "computation"
+      ]
     }
   ]
 }

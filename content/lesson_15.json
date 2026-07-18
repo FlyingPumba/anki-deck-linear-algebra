@@ -55,6 +55,16 @@
         "eigenvalues",
         "insight"
       ]
+    },
+    {
+      "uid": "linear-algebra-15-006",
+      "front": "How do you calculate the eigenvalues of a 2×2 matrix from its characteristic equation?",
+      "back": "The eigenvalues are the roots of the characteristic equation \\( \\det(A - \\lambda I) = 0 \\). For a 2×2 matrix, expanding that determinant always collapses to a quadratic you can read straight off the trace and determinant:<br><br>\\( \\lambda^2 - \\text{trace}(A)\\,\\lambda + \\det(A) = 0 \\)<br><br>where \\( \\text{trace}(A) = a + d \\) and \\( \\det(A) = ad - bc \\) for \\( A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\).<br><br>Solve that quadratic (factor or use the quadratic formula) and the two roots are the eigenvalues.<br><br><b>Example:</b> \\( A = \\begin{bmatrix} 2 & 1 \\\\ 1 & 2 \\end{bmatrix} \\) has trace \\( 4 \\) and determinant \\( 3 \\), so \\( \\lambda^2 - 4\\lambda + 3 = 0 \\Rightarrow (\\lambda - 1)(\\lambda - 3) = 0 \\Rightarrow \\lambda = 1, 3 \\).",
+      "tags": [
+        "ch15",
+        "eigenvalues",
+        "characteristic-equation"
+      ]
     }
   ]
 }
