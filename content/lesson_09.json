@@ -21,7 +21,7 @@
     {
       "uid": "linear-algebra-09-002",
       "front": "What is the geometric interpretation of the dot product?",
-      "back": "<div>Geometrically, the dot product measures how much one vector points in the direction of another. Mathematically, we project one vector onto the other's line, then multiply the lengths.</div><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.<br><br><div>Signed \"alignment\":</div> <div><ul><li>If θ is acute, cos(θ) &gt; 0 ⇒ a · b &gt; 0 (vectors point generally the same way).</li><li>If θ is right, cos(θ) = 0 ⇒ a · b = 0 (vectors are orthogonal).</li><li>If θ is obtuse, cos(θ) &lt; 0 ⇒ a · b &lt; 0 (vectors point generally opposite ways).</li></ul></div><br><img src=\"linear-algebra-09-002_01.png\"><br>",
+      "back": "<div>Geometrically, the dot product measures how much one vector points in the direction of another. Mathematically, we project one vector onto the other's line, then multiply the lengths.</div><br>\\( \\vec{v} \\cdot \\vec{w} = ||\\vec{v}|| \\, ||\\vec{w}|| \\cos(\\theta) \\)<br><br>where \\( \\theta \\) is the angle between them.<br><br><div>Signed \"alignment\":</div> <div><ul><li>If θ is acute, cos(θ) &gt; 0 ⇒ \\( \\vec{v} \\cdot \\vec{w} \\) &gt; 0 (vectors point generally the same way).</li><li>If θ is right, cos(θ) = 0 ⇒ \\( \\vec{v} \\cdot \\vec{w} \\) = 0 (vectors are orthogonal).</li><li>If θ is obtuse, cos(θ) &lt; 0 ⇒ \\( \\vec{v} \\cdot \\vec{w} \\) &lt; 0 (vectors point generally opposite ways).</li></ul></div><br><img src=\"linear-algebra-09-002_01.png\"><br>",
       "tags": [
         "ch09",
         "dot-product",
@@ -66,6 +66,16 @@
         "ch09",
         "duality",
         "insight"
+      ]
+    },
+    {
+      "uid": "linear-algebra-09-007",
+      "front": "Why do the algebraic (\\( \\sum_i v_i w_i \\)) and geometric (\\( ||\\vec{v}||\\,||\\vec{w}||\\cos\\theta \\)) dot-product formulas give the same number, and what is that good for?",
+      "back": "They are two expressions for the <b>same number</b> (a provable identity), so both always agree.<br><br><b>Why:</b> the coordinate sum secretly measures alignment. Written in a perpendicular basis, the cross-direction terms cancel and only the shared direction survives, which is exactly \\( ||\\vec{v}||\\,||\\vec{w}||\\cos\\theta \\). (Equivalently, it drops out of the law of cosines applied to the triangle with sides \\( \\vec{v} \\), \\( \\vec{w} \\), \\( \\vec{v}-\\vec{w} \\).)<br><br><b>The payoff:</b> equate the two forms to read the angle straight off the coordinates, no drawing needed:<br><br>\\( \\cos\\theta = \\dfrac{\\vec{v}\\cdot\\vec{w}}{||\\vec{v}||\\,||\\vec{w}||} \\)<br><br><b>Example:</b> \\( \\vec{v} = [1,0] \\), \\( \\vec{w} = [1,1] \\): algebraic \\( 1(1)+0(1)=1 \\); geometric \\( ||\\vec{v}||=1 \\), \\( ||\\vec{w}||=\\sqrt{2} \\), \\( \\cos\\theta=\\tfrac{1}{\\sqrt{2}} \\Rightarrow \\theta=45^\\circ \\). Both give \\( 1 \\).",
+      "tags": [
+        "ch09",
+        "dot-product",
+        "angle"
       ]
     }
   ]
