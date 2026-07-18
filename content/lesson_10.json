@@ -28,6 +28,16 @@
       ]
     },
     {
+      "uid": "linear-algebra-10-003",
+      "front": "How do you find the magnitude and direction of the cross product \\( \\vec{v} \\times \\vec{w} \\)?",
+      "back": "<b>Magnitude:</b> \\( ||\\vec{v} \\times \\vec{w}|| = ||\\vec{v}||\\,||\\vec{w}||\\sin\\theta \\), where \\( \\theta \\) is the angle between them. This is the area of the parallelogram they span (zero when parallel, largest when perpendicular).<br><br><b>Direction:</b> perpendicular to both \\( \\vec{v} \\) and \\( \\vec{w} \\). Of the two perpendicular directions, the <b>right-hand rule</b> picks one: point your right hand's fingers along \\( \\vec{v} \\), curl them toward \\( \\vec{w} \\), and your thumb points along \\( \\vec{v} \\times \\vec{w} \\).<br><br><b>Pairs with the dot product:</b> the dot product uses \\( \\cos\\theta \\) (alignment, largest when parallel); the cross product's magnitude uses \\( \\sin\\theta \\) (spread, largest when perpendicular). Together \\( (\\vec{v} \\cdot \\vec{w})^2 + ||\\vec{v} \\times \\vec{w}||^2 = ||\\vec{v}||^2\\,||\\vec{w}||^2 \\) (since \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\)).<br><br><b>Example:</b> \\( \\vec{v} = \\hat{i} = [1,0,0] \\), \\( \\vec{w} = \\hat{j} = [0,1,0] \\): \\( \\theta = 90^\\circ \\), so \\( ||\\vec{v} \\times \\vec{w}|| = 1\\cdot 1\\cdot\\sin 90^\\circ = 1 \\), and the right-hand rule gives \\( \\vec{v} \\times \\vec{w} = \\hat{k} = [0,0,1] \\).",
+      "tags": [
+        "ch10",
+        "cross-product",
+        "magnitude"
+      ]
+    },
+    {
       "uid": "linear-algebra-10-004",
       "front": "Is the cross product commutative?<br><br>Does \\( \\vec{v} \\times \\vec{w} = \\vec{w} \\times \\vec{v} \\)?",
       "back": "No! The cross product is anti-commutative.<br><br>\\( \\vec{v} \\times \\vec{w} = -(\\vec{w} \\times \\vec{v}) \\)<br><br>Swapping the order flips the sign (reverses direction).",

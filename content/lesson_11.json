@@ -10,7 +10,7 @@
     {
       "uid": "linear-algebra-11-001",
       "front": "How do you compute the 3D cross product using a determinant?",
-      "back": "\\( \\vec{v} \\times \\vec{w} = \\det \\begin{pmatrix} \\hat{i} & v_1 & w_1 \\\\ \\hat{j} & v_2 & w_2 \\\\ \\hat{k} & v_3 & w_3 \\end{pmatrix} \\)<br><br>Expand along the first column with basis vectors \\( \\hat{i}, \\hat{j}, \\hat{k} \\).",
+      "back": "\\( \\vec{v} \\times \\vec{w} = \\det \\begin{pmatrix} \\hat{i} & v_1 & w_1 \\\\ \\hat{j} & v_2 & w_2 \\\\ \\hat{k} & v_3 & w_3 \\end{pmatrix} \\)<br><br>This is a <b>symbolic (mnemonic) determinant</b>, not a literal one: a real determinant needs scalar entries. Treat \\( \\hat{i}, \\hat{j}, \\hat{k} \\) as placeholders and expand along the first column (signs \\( +, -, + \\)), each basis vector times its \\( 2 \\times 2 \\) minor:<br><br>\\( = \\hat{i}\\det\\begin{pmatrix} v_2 & w_2 \\\\ v_3 & w_3 \\end{pmatrix} - \\hat{j}\\det\\begin{pmatrix} v_1 & w_1 \\\\ v_3 & w_3 \\end{pmatrix} + \\hat{k}\\det\\begin{pmatrix} v_1 & w_1 \\\\ v_2 & w_2 \\end{pmatrix} \\)<br><br>Evaluating the minors:<br><br>\\( = \\hat{i}(v_2 w_3 - v_3 w_2) + \\hat{j}(v_3 w_1 - v_1 w_3) + \\hat{k}(v_1 w_2 - v_2 w_1) \\)<br><br>Each basis vector only multiplies a scalar minor, so the result is a genuine vector.",
       "tags": [
         "ch11",
         "cross-product",
