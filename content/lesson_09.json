@@ -61,7 +61,7 @@
     {
       "uid": "linear-algebra-09-006",
       "front": "What is duality in the context of dot products?",
-      "back": "Every linear transformation from n-dimensional space to numbers corresponds to a unique vector in that space.<br><br>Computing the transformation equals taking the dot product with that vector.<br><br>A \\( 1 \\times n \\) matrix \\( [a, b, ...] \\) acting on \\( \\vec{v} \\) gives the same result as \\( [a, b, ...] \\cdot \\vec{v} \\).",
+      "back": "<b>The idea:</b> a linear function that eats a vector and returns a single number is secretly a vector. Every such map from n-D space to numbers corresponds to one unique vector, and applying the map equals taking the dot product with that vector.<br><br><b>Analogy:</b> the function \"how far east are you?\" turns any position into one number, its eastward component. That function is the same as the unit vector pointing east, used through a dot product: \\( \\text{east}(\\vec{v}) = \\hat{e} \\cdot \\vec{v} \\).<br><br><b>Example:</b> the row matrix \\( [2, 3] \\) acting on \\( [x, y] \\) gives \\( 2x + 3y \\), which is exactly \\( [2, 3] \\cdot [x, y] \\). For \\( [x, y] = [4, 1] \\), both give \\( 2(4) + 3(1) = 11 \\).<br><br><b>Why it matters:</b> a \\( 1 \\times n \\) row matrix is just n numbers, and those numbers also form a vector, so the \"measuring\" view (row) and the \"arrow\" view (column) are two faces of one object, linked by transpose. This is why a dot product shows up wherever a linear score is assigned to a vector.",
       "tags": [
         "ch09",
         "duality",
