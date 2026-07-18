@@ -107,6 +107,16 @@
         "ata",
         "positive-semi-definite"
       ]
+    },
+    {
+      "uid": "linear-algebra-23-011",
+      "front": "How do you compute the covariance matrix for a given set of vectors?",
+      "back": "The covariance matrix collects every pairwise covariance into one grid: entry \\( (i,j) \\) is the covariance between feature \\( i \\) and feature \\( j \\), and the diagonal holds each feature's variance.<br><br><b>Given \\( n \\) vectors:</b><ol><li>Stack them as the rows of a data matrix \\( X \\) of shape \\( n \\times d \\) (\\( n \\) samples, \\( d \\) features).</li><li>Center: subtract the mean vector (the column means) from every row to get \\( X_c \\).</li><li>\\( S = \\frac{1}{n-1} X_c^T X_c \\) (unbiased; divide by \\( n \\) instead for the population/MLE version).</li></ol>Equivalently, as a sum of outer products: \\( S = \\frac{1}{n-1} \\sum_{k=1}^{n} (\\vec{x}_k - \\bar{\\vec{x}})(\\vec{x}_k - \\bar{\\vec{x}})^T \\).<br><br>The result is \\( d \\times d \\), symmetric, and positive semidefinite (it has the \\( A^T A \\) form). Diagonal entries are variances, off-diagonal entries are covariances.<br><br><b>Example:</b> three vectors \\( (1,2),\\ (3,6),\\ (5,4) \\). Mean \\( (3,4) \\); centered rows \\( (-2,-2),\\ (0,2),\\ (2,0) \\).<br><br>\\( S = \\frac{1}{2} X_c^T X_c = \\begin{bmatrix} 4 & 2 \\\\ 2 & 4 \\end{bmatrix} \\)<br>Each feature has variance \\( 4 \\); their covariance is \\( 2 \\).",
+      "tags": [
+        "ch23",
+        "covariance",
+        "computation"
+      ]
     }
   ]
 }
